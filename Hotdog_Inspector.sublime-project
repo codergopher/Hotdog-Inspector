@@ -1,0 +1,47 @@
+{
+	"folders":
+	[
+		{
+			"path": "./"
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Hotdog_Inspector - all",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "all"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		},
+		{
+			"name": "Hotdog_Inspector - clean",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "clean"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		},
+		{
+			"name": "Hotdog_Inspector - Hotdog_Inspector",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "Hotdog_Inspector"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		},
+		{
+			"name": "Hotdog_Inspector - Hotdog_Inspector/fast",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "Hotdog_Inspector/fast"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		},
+		{
+			"name": "Hotdog_Inspector - edit_cache",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "edit_cache"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		},
+		{
+			"name": "Hotdog_Inspector - rebuild_cache",
+			"cmd": ["C:/mingw64/bin/mingw32-make.exe", "-f", "Makefile", "rebuild_cache"],
+			"working_dir": "${project_path}",
+			"file_regex": "^(..[^:]*)(?::|\\()([0-9]+)(?::|\\))(?:([0-9]+):)?\\s*(.*)"
+		}
+	]
+}

@@ -1,0 +1,3 @@
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/edit_cache.dir
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/rebuild_cache.dir
