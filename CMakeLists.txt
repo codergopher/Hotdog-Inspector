@@ -11,4 +11,4 @@ file (GLOB source_files "${source_dir}/*.cpp")
 
 add_executable (Hotdog_Inspector ${source_files})
 
-target_link_libraries(Hotdog_Inspector SDL2 SDL2main SDL2_image)
+target_link_libraries(Hotdog_Inspector mingw32 SDL2main SDL2 SDL2_image)

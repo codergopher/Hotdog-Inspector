@@ -9,4 +9,6 @@
 C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp
 iostream
 -
+SDL2/SDL.h
+-
 
