@@ -93,12 +93,12 @@ clean: CMakeFiles/Hotdog_Inspector.dir/clean
 CMakeFiles/Hotdog_Inspector.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=1,2 "Built target Hotdog_Inspector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=1,2,3 "Built target Hotdog_Inspector"
 .PHONY : CMakeFiles/Hotdog_Inspector.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Hotdog_Inspector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Hotdog_Inspector.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles 0
 .PHONY : CMakeFiles/Hotdog_Inspector.dir/rule

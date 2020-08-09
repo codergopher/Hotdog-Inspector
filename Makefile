@@ -142,6 +142,33 @@ Hotdog_Inspector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/build
 .PHONY : Hotdog_Inspector/fast
 
+src/jsoncpp.obj: src/jsoncpp.cpp.obj
+
+.PHONY : src/jsoncpp.obj
+
+# target to build an object file
+src/jsoncpp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj
+.PHONY : src/jsoncpp.cpp.obj
+
+src/jsoncpp.i: src/jsoncpp.cpp.i
+
+.PHONY : src/jsoncpp.i
+
+# target to preprocess a source file
+src/jsoncpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.i
+.PHONY : src/jsoncpp.cpp.i
+
+src/jsoncpp.s: src/jsoncpp.cpp.s
+
+.PHONY : src/jsoncpp.s
+
+# target to generate assembly for a file
+src/jsoncpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.s
+.PHONY : src/jsoncpp.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Hotdog_Inspector
+	@echo ... src/jsoncpp.obj
+	@echo ... src/jsoncpp.i
+	@echo ... src/jsoncpp.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

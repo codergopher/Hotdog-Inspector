@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
   "Hotdog_Inspector.exe"
   "Hotdog_Inspector.exe.manifest"

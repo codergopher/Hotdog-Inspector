@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/jsoncpp.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
