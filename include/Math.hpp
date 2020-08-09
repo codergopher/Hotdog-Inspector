@@ -213,6 +213,9 @@ struct IntRect
 	{}
 };
 
+Vector2f toVector2f(const Vector2i& p_v);
+Vector2i toVector2i(const Vector2f& p_v);
+
 float roundToScale(float f, float p_zoom);
 
 Vector2f roundToScale(Vector2f vec, float p_zoom);

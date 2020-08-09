@@ -24,7 +24,7 @@ void GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 	CameraCreateInfo createInfo = {};
 	createInfo.pos = p_pos;
 	createInfo.size = p_size;
-	createInfo.zoom = 3;
+	createInfo.zoom = 8;
 	createInfo.lag = 0.08f;
 	camera = Camera(createInfo);
 	camera.init();

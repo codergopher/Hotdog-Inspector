@@ -54,9 +54,6 @@ int main(int argc, char* args[])
 	window.setIcon(icon);
 
 
-	SDL_Event event;
-
-	bool quit = false;
 
 	// Time stepping
 	const double dt = 0.01f;
@@ -66,7 +63,7 @@ int main(int argc, char* args[])
 	double oneSecond = 0;
 	int framesRenderedInOneSecond = 0;
 
-	while(!quit)
+	while(!game.shouldQuit())
 	{
 		double newTime = hireTimeInSeconds();
 		double frameTime = newTime - currentTime;
@@ -83,16 +80,7 @@ int main(int argc, char* args[])
 
 		while (accumulator >= dt)
 		{
-			while (SDL_PollEvent(&event))
-			{
-				if (event.type == SDL_QUIT)
-					quit = true;
-				else
-				{
-					getKeyBoardState(event, gKeys);
-					getMouseState(event, gMouse);
-				}
-			}
+
 
 
 			game.mainLoop(dt);

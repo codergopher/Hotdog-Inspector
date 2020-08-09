@@ -8,8 +8,7 @@ Game::Game(RenderWindow* p_window)
 window(p_window)
 {
 	loadTextures();
-	loadWorld();
-	
+	loadWorld();	
 }
 
 Game::~Game()
@@ -48,7 +47,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["t0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, 15);
+		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(32, 32);
 		createInfo.frameSize = Vector2i(64, 64);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -97,7 +96,7 @@ void Game::loadWorld()
 		createInfo.name = "Frame";
 		createInfo.tex = textures["Frame 0"];
 		createInfo.alpha = 255;
-		createInfo.color = Color(23, 35, 122);
+		createInfo.color = Color(0, 0, 0);
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(64, 64);
@@ -106,14 +105,27 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 		world.createSprite(createInfo, 7);	
-	
 	}
-
 }
 
 
+bool Game::shouldQuit()
+{
+	return quit;
+}
+
 void Game::mainLoop(const float& p_dt)
 {
+	while (SDL_PollEvent(&event))
+	{
+		if (event.type == SDL_QUIT)
+			quit = true;
+		else
+		{
+
+		}
+	}
+
 	world.update(p_dt);
 
 	world.refresh();

@@ -1,88 +1,73 @@
 #include <SDL2/SDL.h>
 
+#include "Math.hpp"
 #include "Controls.hpp"
 
 extern int gMouseWheelDelta;
 
-void getKeyBoardState(SDL_Event& event, bool* keys)
-{
-	if (event.type == SDL_KEYDOWN)
-	{
-		switch (event.key.keysym.sym)
-		{
-			case SDLK_w:
-				keys[W] = true;
-				break;
-			case SDLK_a:
-				keys[A] = true;
-				break;
-			case SDLK_s:
-				keys[S] = true;
-				break;
-			case SDLK_d:
-				keys[D] = true;
-				break;
 
-		}
-	}
-	else if (event.type == SDL_KEYUP)
-	{
-		switch (event.key.keysym.sym)
-		{
-			case SDLK_w:
-				keys[W] = false;
-				break;
-			case SDLK_a:
-				keys[A] = false;
-				break;
-			case SDLK_s:
-				keys[S] = false;
-				break;
-			case SDLK_d:
-				keys[D] = false;
-				break;
-		}
-	}
-	else
-		return;
+Vector2f Controls::getWorldMousePos()
+{
+	return Vector2f(0, 0);
 }
 
-void getMouseState(SDL_Event& event, bool* mouse)
+Vector2f Controls::getScreenMousePos()
 {
-	if (event.type == SDL_MOUSEBUTTONDOWN)
+	Vector2i mouseCoords;
+
+	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
+
+	return toVector2f(mouseCoords);
+}
+
+bool Controls::isLeftClick()
+{
+	return false;
+}
+
+bool Controls::isRightClick()
+{
+	return false;
+}
+
+void Controls::update(SDL_Event* p_event)
+{
+	mouseWheelDelta = 0;
+
+	if (p_event->type == SDL_MOUSEBUTTONDOWN)
 	{
-		switch (event.button.button)
+		switch (p_event->button.button)
 		{
 			case SDL_BUTTON_LEFT:
-				mouse[LCLICK] = true;
+				leftClick = true;
 				break;
 			case SDL_BUTTON_RIGHT:
-				mouse[RCLICK] = true;
+				rightClick = true;
 				break;
 			case SDL_BUTTON_MIDDLE:
-				mouse[MCLICK] = true;
+				middleClick = true;
 				break;
 		}
 	}
-	else if (event.type == SDL_MOUSEBUTTONUP)
+	else if (p_event->type == SDL_MOUSEBUTTONUP)
 	{
-		switch (event.button.button)
+		switch (p_event->button.button)
 		{
 			case SDL_BUTTON_LEFT:
-				mouse[LCLICK] = false;
+				leftClick = false;
 				break;
 			case SDL_BUTTON_RIGHT:
-				mouse[RCLICK] = false;
+				leftClick = false;
 				break;
 			case SDL_BUTTON_MIDDLE:
-				mouse[MCLICK] = false;
+				leftClick = false;
 				break;
 		}	
 	}
-	else if (event.type == SDL_MOUSEWHEEL)
+	else if (p_event->type == SDL_MOUSEWHEEL)
 	{
-		if (event.wheel.y != 0)
-			gMouseWheelDelta += event.wheel.y;
+		if (p_event->wheel.y != 0)
+			mouseWheelDelta += event->wheel.y;
 	}
 
 	else

@@ -3,6 +3,14 @@
 
 #include <iostream>
 
+Vector2f toVector2f(const Vector2i& p_v)
+{
+	return {(float)p_v.x, (float)p_v.y};
+}
+Vector2i toVector2i(const Vector2f& p_v)
+{
+	return {(int)p_v.x, (int)p_v.y};
+}
 
 float roundToScale(float f, float zoom)
 {

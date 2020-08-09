@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 
+#include "Controls.hpp"
 #include "RenderWindow.hpp"
 #include "GameWorld.hpp"
 #include "Math.hpp"
@@ -20,8 +21,12 @@ public:
 	void loadTextures();
 	void loadWorld();
 	void mainLoop(const float& p_dt);
+	bool shouldQuit();
 private:
+	Controls controls;
+	SDL_Event event;
 	RenderWindow* window;
 	GameWorld world;
 	std::map<std::string, SDL_Texture*> textures;
+	bool quit;
 };
