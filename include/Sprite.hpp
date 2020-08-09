@@ -51,6 +51,9 @@ struct SpriteCreateInfo
 	float prevAngle;
 	float depth;
 	float zoomModifier;
+
+	b2Body* body;
+	bool hasPhysics;
 };
 
 class Sprite
@@ -95,6 +98,8 @@ public:
 
 	const float& getZoomModifier() const { return zoomModifier; }
 
+	b2Body* getBody() { return body; }
+
 	void setPos(Vector2f p_pos);
 	void setScale(Vector2f p_scale);
 	void setAngle(float p_angle) { angle = p_angle; }
@@ -127,7 +132,9 @@ protected:
 
 	bool pleaseDelete = false;
 
+
 	Frame currentFrame;
 	std::vector<Frame> frames;
 
+	b2Body* body;
 };
