@@ -1,6 +1,6 @@
 #include "Animation.hpp"
 
-#include <jsoncpp/json/json.h>
+#include <json/json.h>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>

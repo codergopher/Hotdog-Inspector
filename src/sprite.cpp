@@ -97,7 +97,6 @@ void Sprite::updatePrev()
 
 void Sprite::update(const float& p_dt)
 {
-	move(Vector2f(0.01f, 0));
 }
 
 void Sprite::play(AnimationCycle& p_cycle)
