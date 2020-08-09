@@ -2,8 +2,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include <Box2D/Box2D.h>
-
 #include <vector>
 #include <string>
 
@@ -100,6 +98,7 @@ public:
 	void setAngle(float p_angle) { angle = p_angle; }
 	void setColor(Color p_color) { color = p_color; }
 
+	void move(Vector2f p_v);
 
 	void loadFrames(Vector2i p_size);
 	void updatePrev();
