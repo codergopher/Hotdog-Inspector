@@ -6,7 +6,6 @@
 #include <jsoncpp/json/json.h>
 #include <fstream>
 
-#include <Box2D/Box2D.h>
 
 #include "Game.hpp"
 
@@ -47,9 +46,9 @@ int main(int argc, char* args[])
 	if (!IMG_Init(IMG_INIT_PNG))
 		std::cout << "Failed to init SDL_image ERROR :" << IMG_GetError() << std::endl;
 	
-	RenderWindow window("FARMHOLD v1.0 FPS:", gWinWidth, gWinHeight);
+	RenderWindow window("HotDog Inspector v1.0 FPS:", gWinWidth, gWinHeight);
 
-	SDL_Surface* icon = window.loadSurface("res/icons/32x32_farmhold_0.png");
+	SDL_Surface* icon = window.loadSurface("res/idea_1.png");
 	Game game(&window);
 	window.setIcon(icon);
 

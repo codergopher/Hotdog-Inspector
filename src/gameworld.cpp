@@ -1,8 +1,6 @@
 #include <iostream>
 #include <algorithm>
 
-#include <Box2D/Box2D.h>
-
 #include "GameWorld.hpp"
 #include "Sprite.hpp"
 #include "Camera.hpp"
@@ -97,15 +95,9 @@ void GameWorld::update(const double& dt)
 
 void GameWorld::refresh()
 {
-	for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
-	{
-		Sprite* e = i->second;
-		b2Body* body = e->getBody();
-
-		if(body != nullptr)
-		{
-			e->setPos(scaleToVector2f(body->GetPosition()));
-			e->setAngle(body->GetAngle() * 180.f/b2_pi);
-		}
-	}
+	// for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
+	// {
+	// 	Sprite* e = i->second;
+	// 	//not needed
+	// }
 }

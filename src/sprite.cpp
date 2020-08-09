@@ -24,8 +24,7 @@ scale(1, 1),
 angle(0),
 prevAngle(0.f),
 depth(1), 
-zoomModifier(0), 
-body(nullptr)
+zoomModifier(0)
 {}
 
 
@@ -33,10 +32,7 @@ body(nullptr)
 Sprite::~Sprite() 
 {
 	//std::cout << "Deleted " << name << std::endl;
-	if (body != nullptr)
-	{
 
-	}
 }
 
 Sprite::Sprite(const SpriteCreateInfo& p_info)
@@ -53,8 +49,7 @@ frameSize(p_info.frameSize),
 scale(p_info.scale),
 angle(p_info.angle),
 depth(p_info.depth),
-zoomModifier(p_info.zoomModifier),
-body(p_info.body)
+zoomModifier(p_info.zoomModifier)
 {
 
 	loadFrames(frameSize);

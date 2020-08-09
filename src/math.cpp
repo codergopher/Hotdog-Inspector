@@ -1,6 +1,6 @@
 #include "Math.hpp"
 #include <math.h>
-#include <bits/stdc++.h>
+
 #include <iostream>
 
 
@@ -89,27 +89,6 @@ Vector2f clamp(Vector2f vec, Vector2f min, Vector2f max)
 
 	return clamped;
 }
-
-Vector2f toVector2f(const b2Vec2& vec)
-{
-	return {vec.x, vec.y};
-}
-
-Vector2f scaleToVector2f(const b2Vec2& vec)
-{
-	return {vec.x * 30.f, vec.y * 30.f};
-}
-
-b2Vec2 to_b2Vec2(const Vector2f& vec)
-{
-	return {vec.x, vec.y};
-}
-
-b2Vec2 scaleToBox2D( const Vector2f& vec)
-{
-	return {vec.x / 30.f, vec.y / 30.f};
-}
-
 
 
 Mat3x3::Mat3x3()

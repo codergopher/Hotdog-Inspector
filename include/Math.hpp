@@ -1,8 +1,8 @@
 #pragma once
 
+#include <iostream>
 #include <math.h>
-#include <bits/stdc++.h>
-#include <Box2D/Box2D.h>
+
 
 namespace math
 {
@@ -227,12 +227,6 @@ float dotProduct(Vector2f a, Vector2f b);
 Vector2f normalise(Vector2f vec);
 
 Vector2f clamp(Vector2f vec, Vector2f min, Vector2f max);
-
-Vector2f toVector2f(const b2Vec2& vec);
-Vector2f scaleToVector2f(const b2Vec2& vec);
-
-b2Vec2 to_b2Vec2( const Vector2f& vec);
-b2Vec2 scaleToBox2D( const Vector2f& vec);
 
 struct Mat3x3
 {

@@ -18,7 +18,6 @@ Particle::Particle(const SpriteCreateInfo& p_info)
 	angle = p_info.angle;
 	depth = p_info.depth;
 	zoomModifier = p_info.zoomModifier;
-	body = p_info.body;
 	
 	loadFrames(frameSize);
 	currentFrame = frames[0];
