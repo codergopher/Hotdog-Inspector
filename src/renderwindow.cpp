@@ -141,8 +141,8 @@ void RenderWindow::render(GameWorld& p_world, const double& p_alpha)
 		double x = (pos.x - origin.x * scale.x) * camZoom - (camPos.x * camZoom * e->getDepth() - cam.getHalfSize().x);
 		double y = (pos.y - origin.y * scale.y) * camZoom - (camPos.y * camZoom * e->getDepth() - cam.getHalfSize().y);
 
-		dst.x = roundToInt(roundToScale(x, camZoom));
-		dst.y = roundToInt(roundToScale(y, camZoom));
+		dst.x = roundToInt(roundToScale(x, 1/camZoom));
+		dst.y = roundToInt(roundToScale(y, 1/camZoom));
 		dst.w = frame.rect.w * scale.x * camZoom;
 		dst.h = frame.rect.h * scale.y * camZoom;
 

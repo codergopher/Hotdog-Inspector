@@ -58,7 +58,12 @@ zoomModifier(p_info.zoomModifier)
 
 void Sprite::setPos(Vector2f p_pos)
 {	
-	pos = roundToInt(p_pos);
+	pos = p_pos;
+}
+
+void Sprite::move(Vector2f p_v)
+{
+	setPos(pos + p_v);
 }
 
 void Sprite::setScale(Vector2f p_scale)
@@ -92,7 +97,7 @@ void Sprite::updatePrev()
 
 void Sprite::update(const float& p_dt)
 {
-
+	move(Vector2f(0.01f, 0));
 }
 
 void Sprite::play(AnimationCycle& p_cycle)
