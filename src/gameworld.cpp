@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
+#include "Conveyor.hpp"
 #include "GameWorld.hpp"
 #include "Sprite.hpp"
 #include "Camera.hpp"
@@ -28,6 +29,18 @@ void GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 	camera = Camera(createInfo);
 	camera.init();
 }
+
+
+void GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	
+
+	Conveyor c(p_info);
+	conveyors.push_back(c);
+
+	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, &conveyors.back()));
+}
+
 
 void GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {

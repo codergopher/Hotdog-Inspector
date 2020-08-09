@@ -44,6 +44,11 @@ int roundToInt(float f)
 	return (int)f;
 }
 
+Vector2f roundToInt(const Vector2f& p_v)
+{
+	return {(float)roundToInt(p_v.x), (float)roundToInt(p_v.y)};
+}
+
 float distance(Vector2f a, Vector2f b)
 {
 	return sqrt( powf((a.x - b.x), 2) + powf((a.y - b.y), 2));

@@ -58,7 +58,7 @@ zoomModifier(p_info.zoomModifier)
 
 void Sprite::setPos(Vector2f p_pos)
 {	
-	pos = p_pos;
+	pos = roundToInt(p_pos);
 }
 
 void Sprite::setScale(Vector2f p_scale)

@@ -219,6 +219,8 @@ Vector2f roundToScale(Vector2f vec, float p_zoom);
 
 int roundToInt(float f);
 
+Vector2f roundToInt(const Vector2f& p_v);
+
 float distance(Vector2f a, Vector2f b);
 float sqrDistance(Vector2f a, Vector2f b);
 

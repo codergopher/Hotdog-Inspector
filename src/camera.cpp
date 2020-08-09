@@ -4,6 +4,7 @@
 
 extern int gMouseWheelDelta;
 extern float* gCameraZoom;
+extern bool gKeys[4];
 
 CameraCreateInfo::CameraCreateInfo()
 :pos(0.f, 0.f), size(0.f, 0.f), zoom(1.f), lag(0.f) {}
@@ -73,6 +74,7 @@ void Camera::update(Vector2f p_target)
 
 	if (zoom < 1)
 		zoom = 1;
+	
 
 	dis = p_target - pos;
 	vel = dis * lag;

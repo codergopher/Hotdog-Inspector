@@ -1,6 +1,6 @@
 { "frames": [
    {
-    "filename": "HOTDOG CONCEPT 0.png",
+    "filename": "conveyor_belt_0 0.ase",
     "frame": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -9,7 +9,7 @@
     "duration": 100
    },
    {
-    "filename": "HOTDOG CONCEPT 1.png",
+    "filename": "conveyor_belt_0 1.ase",
     "frame": { "x": 64, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -18,7 +18,7 @@
     "duration": 100
    },
    {
-    "filename": "HOTDOG CONCEPT 2.png",
+    "filename": "conveyor_belt_0 2.ase",
     "frame": { "x": 128, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -27,7 +27,7 @@
     "duration": 100
    },
    {
-    "filename": "HOTDOG CONCEPT 3.png",
+    "filename": "conveyor_belt_0 3.ase",
     "frame": { "x": 192, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -39,15 +39,12 @@
  "meta": {
   "app": "https://github.com/LibreSprite/LibreSprite/",
   "version": "1.0-dev",
-  "image": "C:\\Users\\jwism\\Downloads\\HOTDOG CONCEPT-sheet.png",
+  "image": "/home/martin/Dev/LowRez GameJam 2020/res/conveyor_belt_0.png",
   "format": "RGBA8888",
   "size": { "w": 256, "h": 64 },
   "scale": "1",
   "frameTags": [
    { "name": "Conveyor", "from": 0, "to": 3, "direction": "forward" }
-  ],
-  "layers": [
-   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
   ]
  }
 }

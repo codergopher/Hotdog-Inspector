@@ -6,6 +6,7 @@
 #include "Sprite.hpp"
 #include "Math.hpp"
 #include "Camera.hpp"
+#include "Conveyor.hpp"
 #include "Particle.hpp"
 
 class GameWorld
@@ -14,6 +15,7 @@ public:
 	~GameWorld();
 	GameWorld() {}
 	void createCamera(Vector2f p_pos, Vector2f p_size);
+	void createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
 	void createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	void createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	
@@ -23,6 +25,7 @@ public:
 	void update(const double& dt);
 	void refresh();
 private:
+	std::list<Conveyor> conveyors;
 	Camera camera;
 	std::list<Sprite> entities;
 	std::vector<Particle*> particles;
