@@ -1,6 +1,6 @@
 #include "Animation.hpp"
 
-#include <jsoncpp/json/json.h>
+#include <json/json.h>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -44,7 +44,7 @@ std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 
 	std::vector<Frame> allFrames = {};
 
-	for (uint i=0; i < frames.size(); ++i)
+	for (Uint8 i=0; i < frames.size(); ++i)
 	{
 		// intermediate json frames for each info bit
 		const Json::Value jsonFrame = frames[i];
@@ -69,7 +69,7 @@ std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 
 	// break up the frames into different cycles
 
-	for (uint i=0; i < jsonFrameTags.size(); ++i)
+	for (Uint8 i=0; i < jsonFrameTags.size(); ++i)
 	{
 		AnimationCycle c;
 

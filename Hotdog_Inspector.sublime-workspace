@@ -61,6 +61,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/json/json.h",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/Hotdog_Inspector.sublime-project",
+		"/C/Users/jwism/Documents/Projects/Sublime Text/SDL2/WebAssembly Test/src/main.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeLists.txt",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/cmake_install.cmake",
 		"/C/Users/jwism/Documents/Projects/Sublime Text/SDL2/Out of Control/index.html",
 		"/C/Users/jwism/Downloads/shell_minimal.html",
 		"/C/Users/jwism/Documents/Projects/Sublime Text/SDL2/Out of Control/include/ground.h",
@@ -157,7 +163,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 245.0
+		"height": 352.0
 	},
 	"output.find_results":
 	{

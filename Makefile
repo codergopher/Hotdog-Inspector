@@ -142,6 +142,276 @@ Hotdog_Inspector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/build
 .PHONY : Hotdog_Inspector/fast
 
+src/animation.obj: src/animation.cpp.obj
+
+.PHONY : src/animation.obj
+
+# target to build an object file
+src/animation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/animation.cpp.obj
+.PHONY : src/animation.cpp.obj
+
+src/animation.i: src/animation.cpp.i
+
+.PHONY : src/animation.i
+
+# target to preprocess a source file
+src/animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/animation.cpp.i
+.PHONY : src/animation.cpp.i
+
+src/animation.s: src/animation.cpp.s
+
+.PHONY : src/animation.s
+
+# target to generate assembly for a file
+src/animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/animation.cpp.s
+.PHONY : src/animation.cpp.s
+
+src/camera.obj: src/camera.cpp.obj
+
+.PHONY : src/camera.obj
+
+# target to build an object file
+src/camera.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/camera.cpp.obj
+.PHONY : src/camera.cpp.obj
+
+src/camera.i: src/camera.cpp.i
+
+.PHONY : src/camera.i
+
+# target to preprocess a source file
+src/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
+
+src/camera.s: src/camera.cpp.s
+
+.PHONY : src/camera.s
+
+# target to generate assembly for a file
+src/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
+
+src/controls.obj: src/controls.cpp.obj
+
+.PHONY : src/controls.obj
+
+# target to build an object file
+src/controls.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.obj
+.PHONY : src/controls.cpp.obj
+
+src/controls.i: src/controls.cpp.i
+
+.PHONY : src/controls.i
+
+# target to preprocess a source file
+src/controls.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.i
+.PHONY : src/controls.cpp.i
+
+src/controls.s: src/controls.cpp.s
+
+.PHONY : src/controls.s
+
+# target to generate assembly for a file
+src/controls.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.s
+.PHONY : src/controls.cpp.s
+
+src/game.obj: src/game.cpp.obj
+
+.PHONY : src/game.obj
+
+# target to build an object file
+src/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj
+.PHONY : src/game.cpp.obj
+
+src/game.i: src/game.cpp.i
+
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
+
+src/gameworld.obj: src/gameworld.cpp.obj
+
+.PHONY : src/gameworld.obj
+
+# target to build an object file
+src/gameworld.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj
+.PHONY : src/gameworld.cpp.obj
+
+src/gameworld.i: src/gameworld.cpp.i
+
+.PHONY : src/gameworld.i
+
+# target to preprocess a source file
+src/gameworld.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.i
+.PHONY : src/gameworld.cpp.i
+
+src/gameworld.s: src/gameworld.cpp.s
+
+.PHONY : src/gameworld.s
+
+# target to generate assembly for a file
+src/gameworld.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.s
+.PHONY : src/gameworld.cpp.s
+
+src/imgui.obj: src/imgui.cpp.obj
+
+.PHONY : src/imgui.obj
+
+# target to build an object file
+src/imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui.cpp.obj
+.PHONY : src/imgui.cpp.obj
+
+src/imgui.i: src/imgui.cpp.i
+
+.PHONY : src/imgui.i
+
+# target to preprocess a source file
+src/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui.cpp.i
+.PHONY : src/imgui.cpp.i
+
+src/imgui.s: src/imgui.cpp.s
+
+.PHONY : src/imgui.s
+
+# target to generate assembly for a file
+src/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui.cpp.s
+.PHONY : src/imgui.cpp.s
+
+src/imgui_demo.obj: src/imgui_demo.cpp.obj
+
+.PHONY : src/imgui_demo.obj
+
+# target to build an object file
+src/imgui_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_demo.cpp.obj
+.PHONY : src/imgui_demo.cpp.obj
+
+src/imgui_demo.i: src/imgui_demo.cpp.i
+
+.PHONY : src/imgui_demo.i
+
+# target to preprocess a source file
+src/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_demo.cpp.i
+.PHONY : src/imgui_demo.cpp.i
+
+src/imgui_demo.s: src/imgui_demo.cpp.s
+
+.PHONY : src/imgui_demo.s
+
+# target to generate assembly for a file
+src/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_demo.cpp.s
+.PHONY : src/imgui_demo.cpp.s
+
+src/imgui_draw.obj: src/imgui_draw.cpp.obj
+
+.PHONY : src/imgui_draw.obj
+
+# target to build an object file
+src/imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_draw.cpp.obj
+.PHONY : src/imgui_draw.cpp.obj
+
+src/imgui_draw.i: src/imgui_draw.cpp.i
+
+.PHONY : src/imgui_draw.i
+
+# target to preprocess a source file
+src/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_draw.cpp.i
+.PHONY : src/imgui_draw.cpp.i
+
+src/imgui_draw.s: src/imgui_draw.cpp.s
+
+.PHONY : src/imgui_draw.s
+
+# target to generate assembly for a file
+src/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_draw.cpp.s
+.PHONY : src/imgui_draw.cpp.s
+
+src/imgui_sdl.obj: src/imgui_sdl.cpp.obj
+
+.PHONY : src/imgui_sdl.obj
+
+# target to build an object file
+src/imgui_sdl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj
+.PHONY : src/imgui_sdl.cpp.obj
+
+src/imgui_sdl.i: src/imgui_sdl.cpp.i
+
+.PHONY : src/imgui_sdl.i
+
+# target to preprocess a source file
+src/imgui_sdl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.i
+.PHONY : src/imgui_sdl.cpp.i
+
+src/imgui_sdl.s: src/imgui_sdl.cpp.s
+
+.PHONY : src/imgui_sdl.s
+
+# target to generate assembly for a file
+src/imgui_sdl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.s
+.PHONY : src/imgui_sdl.cpp.s
+
+src/imgui_widgets.obj: src/imgui_widgets.cpp.obj
+
+.PHONY : src/imgui_widgets.obj
+
+# target to build an object file
+src/imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj
+.PHONY : src/imgui_widgets.cpp.obj
+
+src/imgui_widgets.i: src/imgui_widgets.cpp.i
+
+.PHONY : src/imgui_widgets.i
+
+# target to preprocess a source file
+src/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.i
+.PHONY : src/imgui_widgets.cpp.i
+
+src/imgui_widgets.s: src/imgui_widgets.cpp.s
+
+.PHONY : src/imgui_widgets.s
+
+# target to generate assembly for a file
+src/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.s
+.PHONY : src/imgui_widgets.cpp.s
+
 src/jsoncpp.obj: src/jsoncpp.cpp.obj
 
 .PHONY : src/jsoncpp.obj
@@ -196,6 +466,114 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/math.obj: src/math.cpp.obj
+
+.PHONY : src/math.obj
+
+# target to build an object file
+src/math.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj
+.PHONY : src/math.cpp.obj
+
+src/math.i: src/math.cpp.i
+
+.PHONY : src/math.i
+
+# target to preprocess a source file
+src/math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.i
+.PHONY : src/math.cpp.i
+
+src/math.s: src/math.cpp.s
+
+.PHONY : src/math.s
+
+# target to generate assembly for a file
+src/math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.s
+.PHONY : src/math.cpp.s
+
+src/particle.obj: src/particle.cpp.obj
+
+.PHONY : src/particle.obj
+
+# target to build an object file
+src/particle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj
+.PHONY : src/particle.cpp.obj
+
+src/particle.i: src/particle.cpp.i
+
+.PHONY : src/particle.i
+
+# target to preprocess a source file
+src/particle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.i
+.PHONY : src/particle.cpp.i
+
+src/particle.s: src/particle.cpp.s
+
+.PHONY : src/particle.s
+
+# target to generate assembly for a file
+src/particle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.s
+.PHONY : src/particle.cpp.s
+
+src/renderwindow.obj: src/renderwindow.cpp.obj
+
+.PHONY : src/renderwindow.obj
+
+# target to build an object file
+src/renderwindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj
+.PHONY : src/renderwindow.cpp.obj
+
+src/renderwindow.i: src/renderwindow.cpp.i
+
+.PHONY : src/renderwindow.i
+
+# target to preprocess a source file
+src/renderwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.i
+.PHONY : src/renderwindow.cpp.i
+
+src/renderwindow.s: src/renderwindow.cpp.s
+
+.PHONY : src/renderwindow.s
+
+# target to generate assembly for a file
+src/renderwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.s
+.PHONY : src/renderwindow.cpp.s
+
+src/sprite.obj: src/sprite.cpp.obj
+
+.PHONY : src/sprite.obj
+
+# target to build an object file
+src/sprite.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj
+.PHONY : src/sprite.cpp.obj
+
+src/sprite.i: src/sprite.cpp.i
+
+.PHONY : src/sprite.i
+
+# target to preprocess a source file
+src/sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.i
+.PHONY : src/sprite.cpp.i
+
+src/sprite.s: src/sprite.cpp.s
+
+.PHONY : src/sprite.s
+
+# target to generate assembly for a file
+src/sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.s
+.PHONY : src/sprite.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -205,12 +583,54 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Hotdog_Inspector
+	@echo ... src/animation.obj
+	@echo ... src/animation.i
+	@echo ... src/animation.s
+	@echo ... src/camera.obj
+	@echo ... src/camera.i
+	@echo ... src/camera.s
+	@echo ... src/controls.obj
+	@echo ... src/controls.i
+	@echo ... src/controls.s
+	@echo ... src/game.obj
+	@echo ... src/game.i
+	@echo ... src/game.s
+	@echo ... src/gameworld.obj
+	@echo ... src/gameworld.i
+	@echo ... src/gameworld.s
+	@echo ... src/imgui.obj
+	@echo ... src/imgui.i
+	@echo ... src/imgui.s
+	@echo ... src/imgui_demo.obj
+	@echo ... src/imgui_demo.i
+	@echo ... src/imgui_demo.s
+	@echo ... src/imgui_draw.obj
+	@echo ... src/imgui_draw.i
+	@echo ... src/imgui_draw.s
+	@echo ... src/imgui_sdl.obj
+	@echo ... src/imgui_sdl.i
+	@echo ... src/imgui_sdl.s
+	@echo ... src/imgui_widgets.obj
+	@echo ... src/imgui_widgets.i
+	@echo ... src/imgui_widgets.s
 	@echo ... src/jsoncpp.obj
 	@echo ... src/jsoncpp.i
 	@echo ... src/jsoncpp.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/math.obj
+	@echo ... src/math.i
+	@echo ... src/math.s
+	@echo ... src/particle.obj
+	@echo ... src/particle.i
+	@echo ... src/particle.s
+	@echo ... src/renderwindow.obj
+	@echo ... src/renderwindow.i
+	@echo ... src/renderwindow.s
+	@echo ... src/sprite.obj
+	@echo ... src/sprite.i
+	@echo ... src/sprite.s
 .PHONY : help
 
 

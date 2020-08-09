@@ -1,6 +1,6 @@
 #pragma once
 
-#include <jsoncpp/json/json.h>
+#include <json/json.h>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -38,7 +38,7 @@ struct AnimationCycle
 	{
 	}
 	~AnimationCycle() {}
-	uint currentFrame;
+	Uint8 currentFrame;
 	float delta;
 	float playBackSpeed;
 	std::string name;
