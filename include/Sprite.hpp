@@ -7,6 +7,7 @@
 
 #include "Math.hpp"
 #include "Animation.hpp"
+#include "Clickable.hpp"
 
 // A simple Colour structure. For simplicity, I have called it
 // Color instead of Colour(much to my chagrin)
@@ -52,6 +53,8 @@ struct SpriteCreateInfo
 	float prevAngle;
 	float depth;
 	float zoomModifier;
+
+	Clickable* clickable;
 };
 
 // The basic unit that can be rendered
@@ -88,6 +91,8 @@ public:
 
 	Vector2f& getPos() { return pos; }
 
+	Vector2f* getPosPtr() { return &pos; }
+
 	const Vector2f& getOrigin() const { return origin; }
 
 	const Vector2f& getScale() const { return scale; }
@@ -101,6 +106,8 @@ public:
 	const float& getPrevAngle() const { return prevAngle; }
 
 	const float& getZoomModifier() const { return zoomModifier; }
+
+	Clickable* getClickable() { return clickable; }
 
 	void setPos(Vector2f p_pos);
 	void setScale(Vector2f p_scale);
@@ -155,6 +162,9 @@ protected:
 	// Set to 0 if you wish for this sprite to be an exeption
 	// from the camera's zoom
 	float zoomModifier;
+
+	// A ptr to the clickable that attaches to the sprite
+	Clickable* clickable;
 
 	// Should the sprite be deleted?
 	bool pleaseDelete = false;

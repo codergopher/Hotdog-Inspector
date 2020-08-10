@@ -5,7 +5,7 @@
 
 // Class to draw a custom cursor to the mouse pos, and 
 // also is a Clickable item because it will iteract with Clickables
-class Cursor : public Sprite, public Clickable
+class Cursor : public Sprite
 {
 public:
 	using Sprite::Sprite;
@@ -14,4 +14,5 @@ public:
 private:
 	// Vector2f* to the target position, which is the mouse coordinates
 	const Vector2f* target;
+	Clickable* clickable;
 };

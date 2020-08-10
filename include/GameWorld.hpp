@@ -21,14 +21,17 @@ public:
 	:controls(p_controls) {}
 
 	// Create a camera
-	void createCamera(Vector2f p_pos, Vector2f p_size);
+	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
 
 	// Create ______ (fill in the blank). The p_drawOrder specifies the layering of the 
 	// renderer. A higher p_drawOrder will result in being draw on top of lower p_drawOrder
-	void createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
-	void createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
-	void createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
-	void createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
+	Conveyor* createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
+	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
+	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
+	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
+
+	// Create clickable
+	Clickable* createClickable(ClickableCreateInfo& p_info);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
@@ -38,6 +41,9 @@ public:
 
 	// Get a reference to the camera
 	const Camera& getCamera();
+
+	// Check if any clickables are colliding
+	void clickableTest();
 
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt);
@@ -60,4 +66,6 @@ private:
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;
+
+	std::list<Clickable> clickables;
 };

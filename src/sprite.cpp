@@ -24,7 +24,8 @@ scale(1, 1),
 angle(0),
 prevAngle(0.f),
 depth(1), 
-zoomModifier(0)
+zoomModifier(0),
+clickable(nullptr)
 {}
 
 
@@ -49,7 +50,8 @@ frameSize(p_info.frameSize),
 scale(p_info.scale),
 angle(p_info.angle),
 depth(p_info.depth),
-zoomModifier(p_info.zoomModifier)
+zoomModifier(p_info.zoomModifier),
+clickable(p_info.clickable)
 {
 
 	loadFrames(frameSize);

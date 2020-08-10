@@ -87,7 +87,24 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createCursor(createInfo, 8);	
+
+		// Info for the clickable
+		ClickableCreateInfo clickableInfo = {};
+		clickableInfo.pos = Vector2f(0, 0);
+		clickableInfo.halfSize = Vector2f(2.5f, 2.5f);
+
+		// Create the clickable
+		Clickable* clickable = world.createClickable(clickableInfo);
+
+		// Set the cursor's clickable to be the clickable just created
+		createInfo.clickable = clickable;
+
+		Cursor* cursor = world.createCursor(createInfo, 8);
+
+		clickable->setPosPtr(cursor->getPosPtr());
+
+
+
 	
 	}
 
@@ -105,7 +122,21 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createConveyor(createInfo, 0);	
+
+		// Info for the clickable
+		ClickableCreateInfo clickableInfo = {};
+		clickableInfo.pos = Vector2f(0, 0);
+		clickableInfo.halfSize = Vector2f(5.f , 5.f);
+
+		// Create the clickable
+		Clickable* clickable = world.createClickable(clickableInfo);
+
+		// Set the cursor's clickable to be the clickable just created
+		createInfo.clickable = clickable;
+
+		Conveyor* conveyor = world.createConveyor(createInfo, 0);
+
+		clickable->setPosPtr(conveyor->getPosPtr());	
 	
 	}
 
