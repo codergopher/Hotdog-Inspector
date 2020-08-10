@@ -20,9 +20,9 @@ public:
 	void setZoom(float p_zoom);
 	void setLag(float p_lag);
 	Vector2f getPrevPos();
-	Vector2f getPos();
-	Vector2f getHalfSize();
-	float getZoom();
+	Vector2f getPos() const;
+	Vector2f getHalfSize() const;
+	float getZoom() const;
 	void updatePrev();
 	void update(Vector2f p_target);
 private:

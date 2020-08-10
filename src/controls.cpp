@@ -2,16 +2,26 @@
 
 #include "Math.hpp"
 #include "Controls.hpp"
+#include "Camera.hpp"
 
 extern int gMouseWheelDelta;
 
 
-Vector2f Controls::getWorldMousePos()
+Vector2f Controls::getWorldMousePos() const
 {
-	return Vector2f(0, 0);
+
+	Vector2i mouseCoords;
+
+	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
+	Vector2f worldCoords = toVector2f(mouseCoords);
+
+
+	worldCoords -= camera->getPos() + camera->getHalfSize();
+	worldCoords /= camera->getZoom();
+	return worldCoords;
 }
 
-Vector2f Controls::getScreenMousePos()
+Vector2f Controls::getScreenMousePos() const
 {
 	Vector2i mouseCoords;
 
@@ -39,6 +49,7 @@ bool Controls::isMiddleClick()
 void Controls::update(SDL_Event* p_event)
 {
 	mouseWheelDelta = 0;
+
 
 	if (p_event->type == SDL_MOUSEBUTTONDOWN)
 	{
@@ -74,10 +85,12 @@ void Controls::update(SDL_Event* p_event)
 	{
 		if (p_event->wheel.y != 0)
 			mouseWheelDelta += p_event->wheel.y;
+
+		else
+			mouseWheelDelta = 0;
 	}
 
-	else
-		return;
+
 }
 
 void Controls::printState()
@@ -85,6 +98,8 @@ void Controls::printState()
 	std::cout << "Mouse screen coords: ";
 	getScreenMousePos().print();
 	std::cout << std::endl;
+	std::cout << "Mouse world coords: ";
+	getWorldMousePos().print();
 
 	std::cout << "Left Mouse Button: " << leftClick << std::endl;
 	std::cout << "Right Mouse Mutton: " << rightClick << std::endl;

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <Math.hpp>
+#include "Math.hpp"
+#include "Camera.hpp"
+
 
 enum KEY_DEFS
 {
@@ -26,10 +28,19 @@ class Controls
 {
 public:
 	Controls()
-	:mouseWheelDelta(4)
+	:
+	camera(nullptr),
+	leftClick(false), 
+	rightClick(false),
+	middleClick(false),
+	mouseWheelDelta(0)
+	
 	{}
-	Vector2f getWorldMousePos();
-	Vector2f getScreenMousePos();
+
+	void setCamera(const Camera* p_camera) { camera = p_camera; }
+
+	Vector2f getWorldMousePos() const;
+	Vector2f getScreenMousePos() const;
 	bool isLeftClick();
 	bool isRightClick();
 	bool isMiddleClick();
@@ -38,6 +49,8 @@ public:
 	void printState();
 
 private:
+	const Camera* camera;
+
 	bool leftClick;
 	bool rightClick;
 	bool middleClick;

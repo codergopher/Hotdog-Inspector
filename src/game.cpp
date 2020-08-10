@@ -40,7 +40,7 @@ void Game::loadTextures()
 void Game::loadWorld()
 {
 	world.createCamera(Vector2f(0, 0), Vector2f(gWinWidth, gWinHeight));
-
+	controls.setCamera(&world.getCamera());
 	//test
 	{
 		SpriteCreateInfo createInfo = {};
@@ -65,13 +65,13 @@ void Game::loadWorld()
 		createInfo.tex = textures["box"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(10, -23);
+		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(4, 4);
 		createInfo.frameSize = Vector2i(8, 8);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createSprite(createInfo, 0);	
+		world.createSprite(createInfo, 8);	
 	
 	}
 
@@ -123,11 +123,11 @@ void Game::mainLoop(const float& p_dt)
 			quit = true;
 		else
 		{
-			
+			controls.update(&event);
 		}
 
 	}
-	controls.update(&event);
+	
 	controls.printState();
 
 

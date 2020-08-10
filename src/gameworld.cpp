@@ -89,9 +89,7 @@ void GameWorld::update(const double& dt)
 
 		// 		//std::cout << "haha, going to delete this lol" << std::endl;
 		// 		std::vector<Particle*>::iterator p = std::find(particles.begin(), particles.end(), (Particle*)e);
-
 		// 		PhysicsObject* physicsObject = e->getPhysicsObject();
-
 		// 		if (physicsObject != nullptr)
 		// 			physics->deleteObject(physicsObject);
 

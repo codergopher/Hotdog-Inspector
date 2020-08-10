@@ -48,17 +48,17 @@ Vector2f Camera::getPrevPos()
 	return prevPos; 
 }
 
-Vector2f Camera::getPos()
+Vector2f Camera::getPos() const
 {
 	return pos; 
 }
 
-Vector2f Camera::getHalfSize()
+Vector2f Camera::getHalfSize() const
 {
 	return halfSize;
 }
 
-float Camera::getZoom()
+float Camera::getZoom() const
 {
 	return zoom;
 }

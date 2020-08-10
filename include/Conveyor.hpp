@@ -5,8 +5,9 @@
 
 #include "Sprite.hpp"
 #include "Animation.hpp"
+#include "Clickable.hpp"
 
-class Conveyor : public Sprite
+class Conveyor : public Sprite, public Clickable
 {
 public:
 	Conveyor();
