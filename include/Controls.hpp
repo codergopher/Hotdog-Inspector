@@ -26,16 +26,16 @@ class Controls
 {
 public:
 	Controls()
-	{}
-	Controls(SDL_Event* p_event) 
-	:event(p_event)
+	:mouseWheelDelta(4)
 	{}
 	Vector2f getWorldMousePos();
 	Vector2f getScreenMousePos();
 	bool isLeftClick();
 	bool isRightClick();
+	bool isMiddleClick();
 
 	void update(SDL_Event* p_event);
+	void printState();
 
 private:
 	bool leftClick;
@@ -43,6 +43,4 @@ private:
 	bool middleClick;
 
 	int mouseWheelDelta;
-
-	SDL_Event* event;
 };

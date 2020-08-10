@@ -22,13 +22,19 @@ Vector2f Controls::getScreenMousePos()
 
 bool Controls::isLeftClick()
 {
-	return false;
+	return leftClick;
 }
 
 bool Controls::isRightClick()
 {
-	return false;
+	return rightClick;
 }
+
+bool Controls::isMiddleClick()
+{
+	return middleClick;
+}
+
 
 void Controls::update(SDL_Event* p_event)
 {
@@ -57,19 +63,31 @@ void Controls::update(SDL_Event* p_event)
 				leftClick = false;
 				break;
 			case SDL_BUTTON_RIGHT:
-				leftClick = false;
+				rightClick = false;
 				break;
 			case SDL_BUTTON_MIDDLE:
-				leftClick = false;
+				middleClick = false;
 				break;
 		}	
 	}
 	else if (p_event->type == SDL_MOUSEWHEEL)
 	{
 		if (p_event->wheel.y != 0)
-			mouseWheelDelta += event->wheel.y;
+			mouseWheelDelta += p_event->wheel.y;
 	}
 
 	else
 		return;
+}
+
+void Controls::printState()
+{
+	std::cout << "Mouse screen coords: ";
+	getScreenMousePos().print();
+	std::cout << std::endl;
+
+	std::cout << "Left Mouse Button: " << leftClick << std::endl;
+	std::cout << "Right Mouse Mutton: " << rightClick << std::endl;
+	std::cout << "Middle Mouse Button: " << middleClick << std::endl;
+	std::cout << "Mouse wheel delta: " << mouseWheelDelta << std::endl; 
 }

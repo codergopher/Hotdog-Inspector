@@ -8,7 +8,8 @@ Game::Game(RenderWindow* p_window)
 window(p_window)
 {
 	loadTextures();
-	loadWorld();	
+	loadWorld();
+
 }
 
 Game::~Game()
@@ -122,9 +123,13 @@ void Game::mainLoop(const float& p_dt)
 			quit = true;
 		else
 		{
-
+			
 		}
+
 	}
+	controls.update(&event);
+	controls.printState();
+
 
 	world.update(p_dt);
 

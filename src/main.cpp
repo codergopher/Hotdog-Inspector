@@ -17,7 +17,7 @@
 
 bool kBox2DScale = 30.f;
 
-bool gShowFrameRate = true;
+bool gShowFrameRate = false;
 
 int gWinWidth = 1280;
 int gWinHeight = 720;
