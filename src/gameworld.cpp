@@ -13,13 +13,14 @@ extern int gWinHeight;
 
 GameWorld::~GameWorld()
 {
+	// Delete any particles that haven't been deleted
 	for (Particle* p : particles)
 	{
 		delete p;
 	}
 }
 
-
+// create the camera, pretty simple
 void GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 {
 	CameraCreateInfo createInfo = {};
@@ -28,55 +29,50 @@ void GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 	createInfo.zoom = 8;
 	createInfo.lag = 0.08f;
 	camera = Camera(createInfo);
-	camera.init();
 }
 
-
+// p_drawOrder is the drawing heiarchy
 void GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
 {
-	
-
 	Conveyor c(p_info);
 	conveyors.push_back(c);
 
-	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, &conveyors.back()));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &conveyors.back()));
 }
 
 
 void GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	
-
 	Sprite e(p_info);
-	entities.push_back(e);
+	sprites.push_back(e);
 
-	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, &entities.back()));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &sprites.back()));
 }
 
+// Create a particle on the heap
 void GameWorld::createParticle(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	Particle* p = new Particle(p_info);
 
 	particles.push_back(p);
 
-	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, particles.back()));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, particles.back()));
 }
 
-Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
+void GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	cursor = Cursor(p_info);
 	cursor.setTarget(controls->getWorldMousePos());
 
-	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, &cursor));
-
-	return &cursor;
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &cursor));
 }
 
 
 
-const std::multimap<int, Sprite*>& GameWorld::getAllEntities()
+const std::multimap<int, Sprite*>& GameWorld::getAllSprites()
 {
-	return allEntities;
+	return allSprites;
 }
 
 const Camera& GameWorld::getCamera()
@@ -90,9 +86,11 @@ void GameWorld::update(const double& dt)
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
 
-	controls->printState();
+	//controls->printState();
 
-	for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
+	// Iterate through all of the sprites and update them
+	// NOTE: Should have an Entity class and then only update Entities
+	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 	{
 		Sprite* e = i->second;
 
@@ -109,7 +107,7 @@ void GameWorld::update(const double& dt)
 
 		// 		delete e;
 		// 		particles.erase(p);
-		// 		allEntities.erase(i);
+		// 		allSprites.erase(i);
 		// 		continue;
 		// 	}
 		// }
@@ -120,7 +118,7 @@ void GameWorld::update(const double& dt)
 
 void GameWorld::refresh()
 {
-	// for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
+	// for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 	// {
 	// 	Sprite* e = i->second;
 	// 	//not needed

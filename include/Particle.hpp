@@ -4,6 +4,7 @@
 
 #include "Sprite.hpp"
 
+// A modified sprite, really
 class Particle : public Sprite
 {
 public:
@@ -18,6 +19,7 @@ private:
 	float alphaLifeTime = 300.f;	
 };
 
+// Particles should originate from a particle source
 class ParticleSource
 {
 

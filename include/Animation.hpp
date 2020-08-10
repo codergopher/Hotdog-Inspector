@@ -13,6 +13,8 @@
 
 #include "Math.hpp"
 
+// A frame is a rectangular section of a texture
+
 struct Frame
 {
 	Frame(){}
@@ -28,6 +30,8 @@ struct Frame
 	SDL_Texture* tex;
 };
 
+// An AnimationCycle is a collection of frames, plus other data.
+
 struct AnimationCycle
 {
 	AnimationCycle()
@@ -38,12 +42,16 @@ struct AnimationCycle
 	{
 	}
 	~AnimationCycle() {}
+	// The frame currently being rendered in the cycle
 	Uint8 currentFrame;
+
+	// A counter that must accumulate to a set number before the next frame
 	float delta;
+
 	float playBackSpeed;
 	std::string name;
 	std::vector<Frame> frames;
 };
 
-
+// Creates a set of AnimationCycles, and the std::string is the tag of the cycle in the libresprite .json
 std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath);

@@ -18,6 +18,8 @@ world(&controls)
 
 Game::~Game()
 {
+
+	// Destroys all textures that haven't been destroyed when we quit the game
 	for (std::map<std::string, SDL_Texture*>::iterator i = textures.begin(); i != textures.end(); ++i)
 	{
 		SDL_DestroyTexture(i->second);
@@ -26,14 +28,16 @@ Game::~Game()
 }
 void Game::loadTextures()
 {
-	SDL_Texture* t0 = window->loadTexture("res/idea_1.png");
-	textures.insert(std::pair<std::string, SDL_Texture*>("t0", t0));
+	// Load our textures, and give each one a name
+
+	SDL_Texture* t0 = window->loadTexture("res/floor_0.png");
+	textures.insert(std::pair<std::string, SDL_Texture*>("Floor 0", t0));
 
 	SDL_Texture* t1 = window->loadTexture("res/cursor_0.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Cursor 0", t1));
 
 	SDL_Texture* t2 = window->loadTexture("res/conveyor_belt_0.png");
-	textures.insert(std::pair<std::string, SDL_Texture*>("Conveyor Belt 0", t2));
+	textures.insert(std::pair<std::string, SDL_Texture*>("Conveyor 0", t2));
 
 	SDL_Texture* t3 = window->loadTexture("res/frame_0.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Frame 0", t3));
@@ -42,14 +46,22 @@ void Game::loadTextures()
 }
 
 void Game::loadWorld()
-{
+{	
+
+	// create the world
+
+	// The camera. First param is the position of cam, second is the view port of the camera
 	world.createCamera(Vector2f(0, 0), Vector2f(gWinWidth, gWinHeight));
+
+	// The controls need a ptr to the camera, so that we can calculate the
+	// in game coordinates of the mouse
 	controls.setCamera(&world.getCamera());
-	//test
+	
+	// The floor
 	{
 		SpriteCreateInfo createInfo = {};
-		createInfo.name = "t0";
-		createInfo.tex = textures["t0"];
+		createInfo.name = "Floor";
+		createInfo.tex = textures["Floor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
@@ -79,10 +91,11 @@ void Game::loadWorld()
 	
 	}
 
+	// The Conveyor
 	{
 		SpriteCreateInfo createInfo = {};
 		createInfo.name = "Conveyor";
-		createInfo.tex = textures["Conveyor Belt 0"];
+		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
@@ -96,6 +109,7 @@ void Game::loadWorld()
 	
 	}
 
+	// Frame to clip off anything outside the 64x64 playpen
 	{
 		SpriteCreateInfo createInfo = {};
 		createInfo.name = "Frame";
@@ -113,12 +127,13 @@ void Game::loadWorld()
 	}
 }
 
-
+// Should the game quit?
 bool Game::shouldQuit()
 {
 	return quit;
 }
 
+// Main loop for the game
 void Game::mainLoop(const float& p_dt)
 {
 	while (SDL_PollEvent(&event))
@@ -127,15 +142,16 @@ void Game::mainLoop(const float& p_dt)
 			quit = true;
 		else
 		{
+			// Update the state of the controls
 			controls.update(&event);
 		}
 
 	}
 	
-	//controls.printState();
-
-
+	// Update the game based on the deltaTime(p_dt)
 	world.update(p_dt);
 
+	// I used to use refresh when I was using Box2D. The refresh method would
+	// set the pos of the Sprites to the pos of the Box2D body, if the sprite had a body
 	world.refresh();
 }

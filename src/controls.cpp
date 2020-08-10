@@ -55,6 +55,8 @@ void Controls::update(SDL_Event* p_event)
 
 	screenMousePos = toVector2f(mouseCoords);
 
+
+	// Update the mouse buttons and the mouse wheel
 	mouseWheelDelta = 0;
 
 
@@ -100,6 +102,7 @@ void Controls::update(SDL_Event* p_event)
 
 }
 
+// Nice little fucntion to pin the state of everything
 void Controls::printState()
 {
 	std::cout << "Mouse screen coords: ";

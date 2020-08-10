@@ -2,6 +2,7 @@
 
 #include "Math.hpp"
 
+// A clickable is anything that can interact with the cursor
 class Clickable
 {
 public:

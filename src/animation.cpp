@@ -13,15 +13,18 @@
 
 #include "Math.hpp"
 
+// Print the frame, for debugging purposes
 void Frame::print()
 {
 	std::cout << "x: " << rect.x << "\n" << "y: " << rect.y << "\n" << "w: " << rect.w << "\n" << "h: " << rect.h << std::endl;
 	std::cout << "duration: " << duration << std::endl;  
 }
 
+// Create a std::map with a string as a key to the values.
+// This creates a set of animations from a .json Libresprite file
 std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 {
-    //load a anim file
+    //Everything inside the .json
 	Json::Value root;
 
 	std::ifstream ifs;
@@ -31,17 +34,18 @@ std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 	builder["collectComments"] = true;
 	JSONCPP_STRING errs;
 
+	// load everything in the file into root
 	if (!parseFromStream(builder, ifs, &root, &errs))
 		std::cout << errs << std::endl;
 
-	// seperate the frames from the meta
+	// seperate the frames from everything else
 	const Json::Value frames = root["frames"];
 
+	// Seperate the meta data(tags) from everything else
 	const Json::Value meta = root["meta"];
 
-	// the animation cycles
-	
-
+	// Store all of the frames. Will sort them into seperate
+	// animation cycles later
 	std::vector<Frame> allFrames = {};
 
 	for (Uint8 i=0; i < frames.size(); ++i)
@@ -60,26 +64,36 @@ std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 		frame.rect.w =  std::stoi(jsonRect["w"].asString());
 		frame.rect.h =  std::stoi(jsonRect["h"].asString());
 
+		// and create a new frame
 		allFrames.push_back(frame);
 	}
 
+	// From here, we seperate all of th frames into their
+	// respective AnimationCycle
+
 	std::map<std::string, AnimationCycle> cycles;
 
+	// Get the frame tags from the meta data
 	const Json::Value jsonFrameTags = meta["frameTags"];
 
 	// break up the frames into different cycles
 
 	for (Uint8 i=0; i < jsonFrameTags.size(); ++i)
 	{
+		// Temporary Animation cycle
 		AnimationCycle c;
 
+		// Get a tag from the meta data
 		const Json::Value tag = jsonFrameTags[i]; 
 
+		// Fill out the Animation cycle meta data
 		c.name = tag["name"].asString();
 		c.playBackSpeed = 1.f;
 		c.currentFrame = 0;
 		c.delta = 0;
 
+		// And last but not least tuck all of the the 
+		// animation cycle's respective frames into the cycle
 		int start = std::stoi(tag["from"].asString());
 		int end = std::stoi(tag["to"].asString());
 
@@ -88,9 +102,9 @@ std::map<std::string, AnimationCycle> loadAnimationFile(const char* p_filePath)
 			c.frames.push_back(allFrames[j]);
 		}
 
+		// Create a new animation cycle, and name it to be the cycle tag
 		cycles.insert(std::pair<std::string, AnimationCycle>(c.name, c));
 	}
 
 	return cycles;
-
 }

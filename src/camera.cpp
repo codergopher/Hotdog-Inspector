@@ -2,10 +2,6 @@
 #include "Math.hpp"
 #include <iostream>
 
-extern int gMouseWheelDelta;
-extern float* gCameraZoom;
-extern bool gKeys[4];
-
 CameraCreateInfo::CameraCreateInfo()
 :pos(0.f, 0.f), size(0.f, 0.f), zoom(1.f), lag(0.f) {}
 
@@ -23,10 +19,6 @@ Camera::Camera(CameraCreateInfo& p_info)
 	lag = p_info.lag;
 }
 
-void Camera::init()
-{
-	gCameraZoom = &zoom;
-}
 
 void Camera::setPos(Vector2f p_pos)
 {
@@ -70,12 +62,13 @@ void Camera::updatePrev()
 
 void Camera::update(Vector2f p_target)
 {
-	zoom += gMouseWheelDelta;
 
+	// If the camera zoom is less than 1, everything will break
 	if (zoom < 1)
 		zoom = 1;
 	
-
+	// Smooth camera movement
+	// Not too useful for our game
 	dis = p_target - pos;
 	vel = dis * lag;
 

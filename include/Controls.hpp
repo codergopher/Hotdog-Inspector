@@ -4,26 +4,7 @@
 #include "Math.hpp"
 #include "Camera.hpp"
 
-
-enum KEY_DEFS
-{
-	W,
-	A,
-	S,
-	D,
-};
-
-enum MOUSE_DEFS
-{
-	LCLICK = 1,
-	RCLICK = 2,
-	MCLICK = 3,
-};
-
-void getKeyBoardState(SDL_Event& event, bool* keys);
-
-void getMouseState(SDL_Event& event, bool* mouse);
-
+// Nice little package for LMB, RMB, MMB, and mouse pos
 class Controls
 {
 public:
@@ -49,12 +30,14 @@ public:
 	void printState();
 
 private:
+	// Ptr to camera needed to gather the in-world mouse coords
 	const Camera* camera;
 
 	bool leftClick;
 	bool rightClick;
 	bool middleClick;
 
+	// Amount of scrolling done in a set amout of time
 	int mouseWheelDelta;
 
 	Vector2f worldMousePos;

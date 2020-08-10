@@ -7,7 +7,6 @@ void Cursor::setTarget(const Vector2f* p_target)
 
 void Cursor::update(const float& p_dt)
 {
-	std::cout << "haha oh yeah" << std::endl;
-	target->print();
+	// Set the cursor pos to be the mouse pos
 	setPos((*target));
 }

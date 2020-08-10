@@ -8,6 +8,8 @@
 #include "Math.hpp"
 #include "Animation.hpp"
 
+// A simple Colour structure. For simplicity, I have called it
+// Color instead of Colour(much to my chagrin)
 struct Color
 {
 	int r;
@@ -31,6 +33,7 @@ struct Color
 	}
 };
 
+// A struct to supply a sprite with parameters
 struct SpriteCreateInfo
 {
 	SpriteCreateInfo();
@@ -51,21 +54,27 @@ struct SpriteCreateInfo
 	float zoomModifier;
 };
 
+// The basic unit that can be rendered
 class Sprite
 {
 public:
 
 	Sprite(){}
 	Sprite(const SpriteCreateInfo& p_info);
+	// A virtual destructor, in case sub classes wish
+	// to have their own destructor definition
 	virtual ~Sprite();
 
+	// Should this Sprite be deleted?
+	// Useful if the Sprite was created with the new keyword
 	bool shouldDelete() const { return pleaseDelete; }
 
+	// Pretty straight forward here
 	const std::string& getName() const { return name; }
 
 	SDL_Texture* getTex() const { return tex; }
 
-	 Color getColor()  { return color; }
+	Color getColor()  { return color; }
 
 	const Uint8& getAlpha() const { return alpha; }
 
@@ -98,11 +107,21 @@ public:
 	void setAngle(float p_angle) { angle = p_angle; }
 	void setColor(Color p_color) { color = p_color; }
 
+	// Move the sprite by an offset
 	void move(Vector2f p_v);
 
+	// LoadFrames is mostly useless, and somewhat obsolete. However,
+	// keep it anyways or else some refactoring is in order
 	void loadFrames(Vector2i p_size);
+
+	// Set the previous pos and angle to be the current pos and angle
 	void updatePrev();
+
+	// Virtual update method, if subclasses wish to define their own
+	// update method
 	virtual void update(const float& p_dt);
+
+	// Virtial method to play an AnimationCycle
 	virtual void play(AnimationCycle& p_cycle);
 
 protected:
@@ -110,23 +129,41 @@ protected:
 
 	SDL_Texture* tex;
 	Color color;
+
+	// These 2 are useless. I think this is dead code
 	SDL_Rect src;
 	SDL_Rect dst;
+
+	// Fairly self explanitory here
 	Uint8 alpha;
 	SDL_RendererFlip flip;
+
+	// Prev pos is the keep a record of where the sprite was in
+	// the last time step, so that the renderer can "guess" where the 
+	// sprite should be drawn in between timesteps
 	Vector2f prevPos;
 	Vector2f pos;
+
+	// Straight forward here
 	Vector2f origin;
 	Vector2i frameSize;
 	Vector2f scale;
 	float angle;
 	float prevAngle;
 	float depth;
+
+	// Set to 0 if you wish for this sprite to be an exeption
+	// from the camera's zoom
 	float zoomModifier;
 
+	// Should the sprite be deleted?
 	bool pleaseDelete = false;
 
+	// The current section of the texture to be rendered
 	Frame currentFrame;
+
+	// This here is deprecated, but don't delete it unless you
+	// want to do some refactoring
 	std::vector<Frame> frames;
 
 };

@@ -92,12 +92,12 @@ void RenderWindow::clear()
 
 void RenderWindow::render(GameWorld& p_world, const double& p_alpha)
 {
-	std::multimap<int, Sprite*> allEntities = p_world.getAllEntities();
+	std::multimap<int, Sprite*> allSprites = p_world.getAllSprites();
 
 	Camera cam = p_world.getCamera();
 	Vector2f camPos = cam.getPos() * p_alpha + cam.getPrevPos() * (1.0f - p_alpha);
 	
-	for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
+	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 	{
 		Sprite* e = i->second;
 

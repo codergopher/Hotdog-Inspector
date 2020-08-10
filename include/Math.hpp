@@ -3,13 +3,14 @@
 #include <iostream>
 #include <math.h>
 
-
+// Some vars
 namespace math
 {
 	const float degToRad = 0.017453293f;
 	const float pi = 3.14159265359f;
 }
 
+// 2D vector class, with ints
 struct Vector2i
 {
 	int x, y;
@@ -17,6 +18,7 @@ struct Vector2i
 	Vector2i(int p_x, int p_y)
 	:x(p_x), y(p_y) {}
 
+	// print that rascal
 	void print()
 	{
 		std::cout << x << ", " << y;
@@ -71,6 +73,7 @@ struct Vector2i
 	}
 };
 
+// 2D vector class, with floats
 struct Vector2f
 {
 	float x, y;
@@ -133,7 +136,7 @@ struct Vector2f
 };
 
 
-
+// 3D vector class, with floats
 struct Vector3f
 {
 	float x, y, z;
@@ -204,6 +207,7 @@ struct Vector3f
 };
 
 
+// Rectangle of integers
 struct IntRect
 {
 	int x, y, w, h;
@@ -213,18 +217,28 @@ struct IntRect
 	{}
 };
 
+// Convert vector ints to floats and vice versa
 Vector2f toVector2f(const Vector2i& p_v);
 Vector2i toVector2i(const Vector2f& p_v);
 
+// round a float to be a multiple of some number
 float roundToScale(float f, float p_zoom);
 
+// Round a vector to be a multiple of a given number
 Vector2f roundToScale(Vector2f vec, float p_zoom);
 
+// Round down to a integer
 int roundToInt(float f);
 
+// Round vector down to a integer
 Vector2f roundToInt(const Vector2f& p_v);
 
+// Signed Distance between 2 Vectors
 float distance(Vector2f a, Vector2f b);
+
+// Signed square distance between 2 vectors.
+// It is computationally faster to compute the sqr distance
+// rather than the true distance
 float sqrDistance(Vector2f a, Vector2f b);
 
 float dotProduct(Vector2f a, Vector2f b);
@@ -233,6 +247,9 @@ Vector2f normalise(Vector2f vec);
 
 Vector2f clamp(Vector2f vec, Vector2f min, Vector2f max);
 
+
+// 3x3 vector for homogenous tranfromations
+// Can Scale, translate, and rotate
 struct Mat3x3
 {
 	Mat3x3();
