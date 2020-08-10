@@ -7,27 +7,15 @@
 extern int gMouseWheelDelta;
 
 
-Vector2f Controls::getWorldMousePos() const
+const Vector2f* Controls::getWorldMousePos() const
 {
 
-	Vector2i mouseCoords;
-
-	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-	Vector2f worldCoords = toVector2f(mouseCoords);
-
-
-	worldCoords -= camera->getPos() + camera->getHalfSize();
-	worldCoords /= camera->getZoom();
-	return worldCoords;
+	return &worldMousePos;
 }
 
-Vector2f Controls::getScreenMousePos() const
+const Vector2f* Controls::getScreenMousePos() const
 {
-	Vector2i mouseCoords;
-
-	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-
-	return toVector2f(mouseCoords);
+	return &screenMousePos;
 }
 
 bool Controls::isLeftClick()
@@ -48,6 +36,25 @@ bool Controls::isMiddleClick()
 
 void Controls::update(SDL_Event* p_event)
 {
+	//update the world mouse position
+
+	Vector2i mouseCoords;
+
+	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
+	worldMousePos = toVector2f(mouseCoords);
+
+
+	worldMousePos -= camera->getPos() + camera->getHalfSize();
+	worldMousePos /= camera->getZoom();
+
+	//update the screen mouse position
+
+	mouseCoords = {0, 0};
+
+	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
+
+	screenMousePos = toVector2f(mouseCoords);
+
 	mouseWheelDelta = 0;
 
 
@@ -96,10 +103,10 @@ void Controls::update(SDL_Event* p_event)
 void Controls::printState()
 {
 	std::cout << "Mouse screen coords: ";
-	getScreenMousePos().print();
+	screenMousePos.print();
 	std::cout << std::endl;
 	std::cout << "Mouse world coords: ";
-	getWorldMousePos().print();
+	worldMousePos.print();
 
 	std::cout << "Left Mouse Button: " << leftClick << std::endl;
 	std::cout << "Right Mouse Mutton: " << rightClick << std::endl;

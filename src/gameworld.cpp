@@ -6,6 +6,7 @@
 #include "Sprite.hpp"
 #include "Camera.hpp"
 #include "Particle.hpp"
+#include "Cursor.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -61,6 +62,17 @@ void GameWorld::createParticle(SpriteCreateInfo& p_info, int p_drawOrder)
 	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, particles.back()));
 }
 
+Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	cursor = Cursor(p_info);
+	cursor.setTarget(controls->getWorldMousePos());
+
+	allEntities.insert(std::pair<int, Sprite*>(p_drawOrder, &cursor));
+
+	return &cursor;
+}
+
+
 
 const std::multimap<int, Sprite*>& GameWorld::getAllEntities()
 {
@@ -77,6 +89,8 @@ void GameWorld::update(const double& dt)
 {
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
+
+	controls->printState();
 
 	for (std::multimap<int, Sprite*>::iterator i = allEntities.begin(); i != allEntities.end(); ++i)
 	{

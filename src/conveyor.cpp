@@ -23,7 +23,7 @@ Conveyor::Conveyor(const SpriteCreateInfo& p_info)
 	currentFrame = frames[0];
 
 	animationSet = loadAnimationFile("res/conveyor_belt_0.json");
-	animationSet["Conveyor"].playBackSpeed = 1.4f;
+	animationSet["Conveyor"].playBackSpeed = 0.2f;
 }
 
 void Conveyor::update(const float& p_dt)

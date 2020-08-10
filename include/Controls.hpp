@@ -34,13 +34,13 @@ public:
 	rightClick(false),
 	middleClick(false),
 	mouseWheelDelta(0)
-	
+		
 	{}
 
 	void setCamera(const Camera* p_camera) { camera = p_camera; }
 
-	Vector2f getWorldMousePos() const;
-	Vector2f getScreenMousePos() const;
+	const Vector2f* getWorldMousePos() const;
+	const Vector2f* getScreenMousePos() const;
 	bool isLeftClick();
 	bool isRightClick();
 	bool isMiddleClick();
@@ -56,4 +56,7 @@ private:
 	bool middleClick;
 
 	int mouseWheelDelta;
+
+	Vector2f worldMousePos;
+	Vector2f screenMousePos;
 };

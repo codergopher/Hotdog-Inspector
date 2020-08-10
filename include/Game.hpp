@@ -23,6 +23,7 @@ public:
 	void mainLoop(const float& p_dt);
 	bool shouldQuit();
 private:
+	Cursor* cursor;
 	Controls controls;
 	SDL_Event event;
 	RenderWindow* window;

@@ -5,8 +5,12 @@ extern int gWinHeight;
 
 Game::Game(RenderWindow* p_window)
 :
-window(p_window)
+window(p_window),
+world(&controls)
 {
+	//disable the nasty looking cursor to make way for ours
+	SDL_ShowCursor(SDL_DISABLE);
+
 	loadTextures();
 	loadWorld();
 
@@ -25,8 +29,8 @@ void Game::loadTextures()
 	SDL_Texture* t0 = window->loadTexture("res/idea_1.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("t0", t0));
 
-	SDL_Texture* t1 = window->loadTexture("res/test_0.png");
-	textures.insert(std::pair<std::string, SDL_Texture*>("box", t1));
+	SDL_Texture* t1 = window->loadTexture("res/cursor_0.png");
+	textures.insert(std::pair<std::string, SDL_Texture*>("Cursor 0", t1));
 
 	SDL_Texture* t2 = window->loadTexture("res/conveyor_belt_0.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Conveyor Belt 0", t2));
@@ -58,20 +62,20 @@ void Game::loadWorld()
 	
 	}
 
-	//box
+	//cursor
 	{
 		SpriteCreateInfo createInfo = {};
-		createInfo.name = "Box";
-		createInfo.tex = textures["box"];
+		createInfo.name = "Cursor";
+		createInfo.tex = textures["Cursor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(4, 4);
-		createInfo.frameSize = Vector2i(8, 8);
+		createInfo.origin = Vector2f(2.5f, 2.5f);
+		createInfo.frameSize = Vector2i(5, 5);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createSprite(createInfo, 8);	
+		world.createCursor(createInfo, 8);	
 	
 	}
 
@@ -128,7 +132,7 @@ void Game::mainLoop(const float& p_dt)
 
 	}
 	
-	controls.printState();
+	//controls.printState();
 
 
 	world.update(p_dt);
