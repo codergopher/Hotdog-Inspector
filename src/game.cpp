@@ -150,13 +150,13 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.color = Color(0, 0, 0);
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, 0);
+		createInfo.pos = Vector2f(-32, 0);
 		createInfo.origin = Vector2f(0, 0);
 		createInfo.frameSize = Vector2i(4, 5);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createText(createInfo, "hello", 8);	
+		world.createText(createInfo, "hello codergopher", 8);	
 		//world.createCharacter(createInfo, "e", 8);
 	}
 	// Frame to clip off anything outside the 64x64 playpen
