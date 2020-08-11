@@ -142,10 +142,10 @@ void Game::loadWorld()
 		clickable->setPosPtr(conveyor->getPosPtr());	
 	
 	}
-	// character test
+	// text test
 	{
 		SpriteCreateInfo createInfo = {};
-		createInfo.name = "character";
+		createInfo.name = "Text";
 		createInfo.tex = textures["Font 0"];
 		createInfo.alpha = 255;
 		createInfo.color = Color(0, 0, 0);
@@ -156,8 +156,8 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createCharacter(createInfo, "e", 8);	
-		//world.createSprite(createInfo, 8);
+		world.createText(createInfo, "hello", 8);	
+		//world.createCharacter(createInfo, "e", 8);
 	}
 	// Frame to clip off anything outside the 64x64 playpen
 	{

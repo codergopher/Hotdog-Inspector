@@ -39,3 +39,5 @@ CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj: src/renderwindow.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj: src/sprite.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj: src/text.cpp
+

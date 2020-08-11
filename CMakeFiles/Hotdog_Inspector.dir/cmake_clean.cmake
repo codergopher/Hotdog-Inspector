@@ -18,6 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj"
+  "CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj"
   "Hotdog_Inspector.exe"
   "Hotdog_Inspector.exe.manifest"
   "Hotdog_Inspector.pdb"

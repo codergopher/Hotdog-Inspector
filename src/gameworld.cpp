@@ -54,6 +54,20 @@ Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string char
 	return &characters.back();
 }
 
+Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder)
+{
+	Text c(p_info, string);
+
+	for (int i = 0; i < c.getSize(); i++)
+	{
+		characters.push_back(c.getCharacter(i));
+		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
+	}
+
+	texts.push_back(c);
+	return &texts.back();
+}
+
 
 Sprite* GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {

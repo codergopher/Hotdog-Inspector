@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/particle.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/renderwindow.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/sprite.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj"
+  "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/text.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

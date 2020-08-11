@@ -655,6 +655,33 @@ src/sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.s
 .PHONY : src/sprite.cpp.s
 
+src/text.obj: src/text.cpp.obj
+
+.PHONY : src/text.obj
+
+# target to build an object file
+src/text.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj
+.PHONY : src/text.cpp.obj
+
+src/text.i: src/text.cpp.i
+
+.PHONY : src/text.i
+
+# target to preprocess a source file
+src/text.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.i
+.PHONY : src/text.cpp.i
+
+src/text.s: src/text.cpp.s
+
+.PHONY : src/text.s
+
+# target to generate assembly for a file
+src/text.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.s
+.PHONY : src/text.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -721,6 +748,9 @@ help:
 	@echo ... src/sprite.obj
 	@echo ... src/sprite.i
 	@echo ... src/sprite.s
+	@echo ... src/text.obj
+	@echo ... src/text.i
+	@echo ... src/text.s
 .PHONY : help
 
 
