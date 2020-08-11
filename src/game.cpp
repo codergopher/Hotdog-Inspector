@@ -42,6 +42,9 @@ void Game::loadTextures()
 	SDL_Texture* t3 = window->loadTexture("res/frame_0.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Frame 0", t3));
 
+	SDL_Texture* t4 = window->loadTexture("res/font.png");
+	textures.insert(std::pair<std::string, SDL_Texture*>("Font 0", t4));
+
 
 }
 
@@ -139,7 +142,23 @@ void Game::loadWorld()
 		clickable->setPosPtr(conveyor->getPosPtr());	
 	
 	}
-
+	// character test
+	{
+		SpriteCreateInfo createInfo = {};
+		createInfo.name = "character";
+		createInfo.tex = textures["Font 0"];
+		createInfo.alpha = 255;
+		createInfo.color = Color(0, 0, 0);
+		createInfo.flip = SDL_FLIP_NONE;
+		createInfo.pos = Vector2f(0, 0);
+		createInfo.origin = Vector2f(0, 0);
+		createInfo.frameSize = Vector2i(4, 5);
+		createInfo.scale = Vector2f(1.0f, 1.0f);
+		createInfo.depth = 0;
+		createInfo.zoomModifier = 1.f;
+		world.createCharacter(createInfo, "e", 8);	
+		//world.createSprite(createInfo, 8);
+	}
 	// Frame to clip off anything outside the 64x64 playpen
 	{
 		SpriteCreateInfo createInfo = {};

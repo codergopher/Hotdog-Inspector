@@ -5,6 +5,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/animation.cpp.obj: src/animation.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/camera.cpp.obj: src/camera.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/character.cpp.obj: src/character.cpp
+
 CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.obj: src/controls.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.obj: src/conveyor.cpp

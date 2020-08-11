@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/animation.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/animation.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/camera.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/camera.cpp.obj"
+  "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/character.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/character.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/controls.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/conveyor.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/cursor.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj"

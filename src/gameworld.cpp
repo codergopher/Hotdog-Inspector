@@ -44,6 +44,16 @@ Conveyor* GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
 	return &conveyors.back();
 }
 
+Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
+{
+	Character c(p_info, character);
+	characters.push_back(c);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
+
+	return &characters.back();
+}
+
 
 Sprite* GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {

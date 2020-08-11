@@ -10,6 +10,7 @@
 #include "Particle.hpp"
 #include "Controls.hpp"
 #include "Cursor.hpp"
+#include "Character.hpp"
 
 // The place where all of the sprites live
 class GameWorld
@@ -29,6 +30,7 @@ public:
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
+	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
 	// Create clickable
 	Clickable* createClickable(ClickableCreateInfo& p_info);
@@ -59,6 +61,7 @@ private:
 	// Ptr to the controls
 	Controls* controls;
 	std::list<Conveyor> conveyors;
+	std::list<Character> characters;
 
 	Camera camera;
 	std::list<Sprite> sprites;
