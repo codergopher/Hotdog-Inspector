@@ -87,10 +87,12 @@ int main(int argc, char* args[])
 		double newTime = hireTimeInSeconds();
 		double frameTime = newTime - currentTime;
 
+		// Limit FPS is cap is enabled
+
 		if (limitFPS && frameTime < 1000/targetFPS)
 		{
 			SDL_Delay(1000/targetFPS - frameTime);
-			frameTime = newTime - currentTime; //so that dt reflects limited framerate
+			frameTime = newTime - currentTime; //Ensures that dt reflects limited framerate
 		}
 
 		// Avoid the spiral of death. If the program is too slow, don't update the game
