@@ -250,6 +250,33 @@ src/conveyor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.s
 .PHONY : src/conveyor.cpp.s
 
+src/cursor.obj: src/cursor.cpp.obj
+
+.PHONY : src/cursor.obj
+
+# target to build an object file
+src/cursor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj
+.PHONY : src/cursor.cpp.obj
+
+src/cursor.i: src/cursor.cpp.i
+
+.PHONY : src/cursor.i
+
+# target to preprocess a source file
+src/cursor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.i
+.PHONY : src/cursor.cpp.i
+
+src/cursor.s: src/cursor.cpp.s
+
+.PHONY : src/cursor.s
+
+# target to generate assembly for a file
+src/cursor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.s
+.PHONY : src/cursor.cpp.s
+
 src/game.obj: src/game.cpp.obj
 
 .PHONY : src/game.obj
@@ -622,6 +649,9 @@ help:
 	@echo ... src/conveyor.obj
 	@echo ... src/conveyor.i
 	@echo ... src/conveyor.s
+	@echo ... src/cursor.obj
+	@echo ... src/cursor.i
+	@echo ... src/cursor.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s

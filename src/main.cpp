@@ -17,10 +17,13 @@
 
 bool kBox2DScale = 30.f;
 
-bool gShowFrameRate = false;
+bool gShowFrameRate = true;
 
 int gWinWidth = 1280;
 int gWinHeight = 720;
+
+bool limitFPS = true;
+int targetFPS = 120; //otherwise my computer starts screaming when testing
 
 Vector2f gGravity = {0.f, 0.f};
 
@@ -80,8 +83,15 @@ int main(int argc, char* args[])
 
 	while(!game.shouldQuit())
 	{
+
 		double newTime = hireTimeInSeconds();
 		double frameTime = newTime - currentTime;
+
+		if (limitFPS && frameTime < 1000/targetFPS)
+		{
+			SDL_Delay(1000/targetFPS - frameTime);
+			frameTime = newTime - currentTime; //so that dt reflects limited framerate
+		}
 
 		// Avoid the spiral of death. If the program is too slow, don't update the game
 
