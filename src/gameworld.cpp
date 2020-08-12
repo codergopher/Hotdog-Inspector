@@ -11,6 +11,17 @@
 extern int gWinWidth;
 extern int gWinHeight;
 
+bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
+{
+	size_t hashA = (size_t)p_a.a + (size_t)p_a.b;
+	size_t hashB = (size_t)p_b.a + (size_t)p_b.b;
+
+	if (hashA == hashB)
+		return true;
+
+	return false;
+}
+
 GameWorld::~GameWorld()
 {
 	// Delete any particles that haven't been deleted
@@ -156,18 +167,56 @@ void GameWorld::collisionTest()
 			}
 
 			if (SpriteVsSprite(x, y))
+			{
+				CollisionInfo collision = {x, y};
+
+				collision.freshCollision = true;
+				collision.framesLeft = collisionFrames;
+
+				if (allCollisions.size() == 0)
+				{
+					allCollisions.push_back(collision);
+					continue;
+				}
+				for (CollisionInfo& otherCollision : allCollisions)
+				{
+					if (collision == otherCollision)
+					{
+						otherCollision.freshCollision = false;
+						otherCollision.framesLeft = collisionFrames;
+					}
+					else
+					{
+						allCollisions.push_back(collision);
+					}
+
+				}
+				
+
 				resolveCollision(x, y);
+			}
 		}
 	}
 }
 
 void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 {	
-	controls->printState();
+	// Vector2f posA = p_a->getPos();
+	// Vector2f posB = p_b->getPos();
+
+	// Vector2f delta = posB - posA;
+
+	// float deltaLength = delta.length();
+	// Vector2f normal = normalise(delta);
+
+	// Vector2f correction = normal * deltaLength;
+
 	if (controls->isLeftClick())
 	{
+
 		if (p_a->getName() == "Cursor")
 		{
+			
 			p_b->setPos(p_a->getPos());
 		}
 
@@ -175,6 +224,30 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 		{
 			p_a->setPos(p_b->getPos());
 		}
+	}
+}
+void GameWorld::updateCollisions()
+{
+	for (std::list<CollisionInfo>::iterator i = allCollisions.begin(); i != allCollisions.end(); )
+	{
+		if ((*i).freshCollision == true)
+		{
+			i->a->onCollisionBegin(i->b);
+			i->b->onCollisionBegin(i->a);
+		}
+
+		(*i).framesLeft = (*i).framesLeft - 1;
+
+		if ((*i).framesLeft < 0)
+		{
+			i->a->onCollisionEnd(i->b);
+			i->b->onCollisionEnd(i->a);
+
+			i = allCollisions.erase(i);
+		}
+
+		++i;
+
 	}
 }
 
@@ -212,4 +285,7 @@ void GameWorld::update(const double& dt)
 
 	//Check for collisions
 	collisionTest();
+
+	// Delete old collisions
+	updateCollisions();
 }

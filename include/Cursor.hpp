@@ -10,7 +10,11 @@ public:
 	using Sprite::Sprite;
 	void setTarget(const Vector2f* p_target);
 	void update(const float& p_dt) override;
+
+	void onCollisionBegin(Sprite* p_sprite) override;
+	void onCollisionEnd(Sprite* p_sprite) override;
 private:
 	// Vector2f* to the target position, which is the mouse coordinates
 	const Vector2f* target;
+	Sprite* slot0;
 };

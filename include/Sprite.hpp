@@ -134,6 +134,9 @@ public:
 	// Virtial method to play an AnimationCycle
 	virtual void play(AnimationCycle& p_cycle);
 
+	virtual void onCollisionBegin(Sprite* p_sprite);
+	virtual void onCollisionEnd(Sprite* p_sprite);
+
 protected:
 	std::string name;
 

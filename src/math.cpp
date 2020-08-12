@@ -3,6 +3,12 @@
 
 #include <iostream>
 
+// Get the absoulte value of a vector
+Vector2f abs(const Vector2f& p_v)
+{
+	return { abs(p_v.x), abs(p_v.y) };
+}
+
 Vector2f toVector2f(const Vector2i& p_v)
 {
 	return {(float)p_v.x, (float)p_v.y};

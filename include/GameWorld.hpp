@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include <map>
+#include <set>
 
 #include "Sprite.hpp"
 #include "Math.hpp"
@@ -13,6 +14,19 @@
 #include "Character.hpp"
 #include "Text.hpp"
 
+struct CollisionInfo
+{
+	Sprite* a;
+	Sprite* b;
+
+	// Mutable so that we can this var is changeable in 
+	// a const context.
+	mutable int framesLeft;
+	mutable bool freshCollision;
+};
+
+bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b);
+
 // The place where all of the sprites live
 class GameWorld
 {
@@ -20,7 +34,11 @@ public:
 	// Destructor
 	~GameWorld();
 	GameWorld(Controls* p_controls)
-	:controls(p_controls) {}
+	:controls(p_controls),
+	collisionFrames(2) 
+	{
+		allCollisions.resize(0);
+	}
 
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
@@ -52,6 +70,8 @@ public:
 
 	void resolveCollision(Sprite* p_a, Sprite* p_b);
 
+	void updateCollisions();
+
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt);
 private:
@@ -64,10 +84,17 @@ private:
 	std::list<Text> texts;
 	std::list<Character> characters;
 
+
 	Camera camera;
 	std::list<Sprite> sprites;
 	std::vector<Particle*> particles;
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;
+
+	// A set of all of the collisions.
+	// std::set ensures that there are only unique collisions
+	std::list<CollisionInfo> allCollisions;
+
+	int collisionFrames;
 };

@@ -120,3 +120,13 @@ void Sprite::play(AnimationCycle& p_cycle)
 		currentFrame = p_cycle.frames[p_cycle.currentFrame];
 	}
 }
+
+void Sprite::onCollisionBegin(Sprite* p_sprite)
+{
+
+}
+
+void Sprite::onCollisionEnd(Sprite* p_sprite)
+{
+	
+}

@@ -67,7 +67,7 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(32, 32);
+		createInfo.origin = Vector2f(31.5, 31.5);
 		createInfo.frameSize = Vector2i(64, 64);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
@@ -147,12 +147,12 @@ void Game::loadWorld()
 		createInfo.color = Color(0, 0, 0);
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(64, 64);
-		createInfo.frameSize = Vector2i(128, 128);
+		createInfo.origin = Vector2f(114, 64);
+		createInfo.frameSize = Vector2i(228, 128);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createSprite(createInfo, 7);	
+		world.createSprite(createInfo, 10);	
 	}
 }
 
