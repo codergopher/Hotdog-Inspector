@@ -31,11 +31,13 @@ public:
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
+
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
-	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 
 	// Create clickable
 	Clickable* createClickable(ClickableCreateInfo& p_info);
+
+		Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
@@ -62,7 +64,6 @@ private:
 
 	// Ptr to the controls
 	Controls* controls;
-	
 	std::list<Conveyor> conveyors;
 	std::list<Text> texts;
 	std::list<Character> characters;

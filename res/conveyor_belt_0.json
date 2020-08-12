@@ -1,38 +1,38 @@
 { "frames": [
    {
     "filename": "conveyor_belt_0 0.ase",
-    "frame": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "frame": { "x": 0, "y": 0, "w": 62, "h": 38 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 62, "h": 38 },
+    "sourceSize": { "w": 62, "h": 38 },
     "duration": 100
    },
    {
     "filename": "conveyor_belt_0 1.ase",
-    "frame": { "x": 64, "y": 0, "w": 64, "h": 64 },
+    "frame": { "x": 62, "y": 0, "w": 62, "h": 38 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 62, "h": 38 },
+    "sourceSize": { "w": 62, "h": 38 },
     "duration": 100
    },
    {
     "filename": "conveyor_belt_0 2.ase",
-    "frame": { "x": 128, "y": 0, "w": 64, "h": 64 },
+    "frame": { "x": 124, "y": 0, "w": 62, "h": 38 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 62, "h": 38 },
+    "sourceSize": { "w": 62, "h": 38 },
     "duration": 100
    },
    {
     "filename": "conveyor_belt_0 3.ase",
-    "frame": { "x": 192, "y": 0, "w": 64, "h": 64 },
+    "frame": { "x": 186, "y": 0, "w": 62, "h": 38 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 62, "h": 38 },
+    "sourceSize": { "w": 62, "h": 38 },
     "duration": 100
    }
  ],
@@ -41,7 +41,7 @@
   "version": "1.0-dev",
   "image": "/home/martin/Dev/LowRez GameJam 2020/res/conveyor_belt_0.png",
   "format": "RGBA8888",
-  "size": { "w": 256, "h": 64 },
+  "size": { "w": 248, "h": 38 },
   "scale": "1",
   "frameTags": [
    { "name": "Conveyor", "from": 0, "to": 3, "direction": "forward" }
