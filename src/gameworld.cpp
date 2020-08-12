@@ -7,10 +7,20 @@
 #include "Camera.hpp"
 #include "Particle.hpp"
 #include "Cursor.hpp"
-#include "Clickable.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
+
+bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
+{
+	size_t hashA = (size_t)p_a.a + (size_t)p_a.b;
+	size_t hashB = (size_t)p_b.a + (size_t)p_b.b;
+
+	if (hashA == hashB)
+		return true;
+
+	return false;
+}
 
 GameWorld::~GameWorld()
 {
@@ -102,15 +112,6 @@ Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_
 	return &texts.back();
 }
 
-Clickable* GameWorld::createClickable(ClickableCreateInfo& p_info)
-{
-	Clickable c(p_info);
-
-	clickables.push_back(c);
-
-	return &clickables.back();
-}
-
 
 const std::multimap<int, Sprite*>& GameWorld::getAllSprites()
 {
@@ -122,24 +123,131 @@ const Camera& GameWorld::getCamera()
 	return camera;
 }
 
-void GameWorld::clickableTest()
+// Method to determine if two clickables are colliding
+bool GameWorld::SpriteVsSprite(Sprite* p_a, Sprite* p_b)
 {
-	std::list<Clickable>::iterator first = clickables.begin();
-	std::list<Clickable>::iterator last = clickables.end();
+
+	Vector2f delta = p_b->getPos() - p_a->getPos();
+	Vector2f totalSize = p_b->getHalfBounds() + p_a->getHalfBounds();
+
+	if (abs(delta.x) < totalSize.x &&
+		abs(delta.y) < totalSize.y)
+	{	
+
+		return true;
+	}
+
+	return false;
+}
+
+void GameWorld::collisionTest()
+{
+	std::multimap<int, Sprite*>::iterator first = allSprites.begin();
+	std::multimap<int, Sprite*>::iterator last = allSprites.end();
 
 	for (auto a = first; a != last; ++a)
 	{
 		for (auto b = std::next(a, 1); b != last; ++b)
-		{
-			if (&a == &b)
+		{	
+			Sprite* x = a->second;
+			Sprite* y = b->second;
+			if (&x == &y)
+			{
 				continue;
+			}
 
-			// if (ClickableVsClickable(*a, *b))
-			// 	std::cout << "Hahah yes!" << std::endl;
+			if (x->isClickable() != true)
+			{
+				continue;
+			}
 
-			// else
-			// 	std::cout << "Haha no!" << std::endl;
+			if (y->isClickable() != true)
+			{
+				continue;
+			}
+
+			if (SpriteVsSprite(x, y))
+			{
+				CollisionInfo collision = {x, y};
+
+				collision.freshCollision = true;
+				collision.framesLeft = collisionFrames;
+
+				if (allCollisions.size() == 0)
+				{
+					allCollisions.push_back(collision);
+					continue;
+				}
+				for (CollisionInfo& otherCollision : allCollisions)
+				{
+					if (collision == otherCollision)
+					{
+						otherCollision.freshCollision = false;
+						otherCollision.framesLeft = collisionFrames;
+					}
+					else
+					{
+						allCollisions.push_back(collision);
+					}
+
+				}
+				
+
+				resolveCollision(x, y);
+			}
 		}
+	}
+}
+
+void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
+{	
+	// Vector2f posA = p_a->getPos();
+	// Vector2f posB = p_b->getPos();
+
+	// Vector2f delta = posB - posA;
+
+	// float deltaLength = delta.length();
+	// Vector2f normal = normalise(delta);
+
+	// Vector2f correction = normal * deltaLength;
+
+	if (controls->isLeftClick())
+	{
+
+		if (p_a->getName() == "Cursor")
+		{
+			
+			p_b->setPos(p_a->getPos());
+		}
+
+		if (p_b->getName() == "Cursor")
+		{
+			p_a->setPos(p_b->getPos());
+		}
+	}
+}
+void GameWorld::updateCollisions()
+{
+	for (std::list<CollisionInfo>::iterator i = allCollisions.begin(); i != allCollisions.end(); )
+	{
+		if ((*i).freshCollision == true)
+		{
+			i->a->onCollisionBegin(i->b);
+			i->b->onCollisionBegin(i->a);
+		}
+
+		(*i).framesLeft = (*i).framesLeft - 1;
+
+		if ((*i).framesLeft < 0)
+		{
+			i->a->onCollisionEnd(i->b);
+			i->b->onCollisionEnd(i->a);
+
+			i = allCollisions.erase(i);
+		}
+
+		++i;
+
 	}
 }
 
@@ -147,13 +255,6 @@ void GameWorld::update(const double& dt)
 {
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
-
-	// update the clickables
-	for (auto& c : clickables)
-		c.update(dt);
-
-	// check for collisions
-	clickableTest();
 
 	// Iterate through all of the sprites and update them
 	// NOTE: Should have an Entity class and then only update Entities
@@ -182,14 +283,9 @@ void GameWorld::update(const double& dt)
 		e->update(dt);
 	}
 
+	//Check for collisions
+	collisionTest();
 
-}
-
-void GameWorld::refresh()
-{
-	// for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
-	// {
-	// 	Sprite* e = i->second;
-	// 	//not needed
-	// }
+	// Delete old collisions
+	updateCollisions();
 }

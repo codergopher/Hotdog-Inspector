@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include <map>
+#include <set>
 
 #include "Sprite.hpp"
 #include "Math.hpp"
@@ -13,6 +14,19 @@
 #include "Character.hpp"
 #include "Text.hpp"
 
+struct CollisionInfo
+{
+	Sprite* a;
+	Sprite* b;
+
+	// Mutable so that we can this var is changeable in 
+	// a const context.
+	mutable int framesLeft;
+	mutable bool freshCollision;
+};
+
+bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b);
+
 // The place where all of the sprites live
 class GameWorld
 {
@@ -20,7 +34,11 @@ public:
 	// Destructor
 	~GameWorld();
 	GameWorld(Controls* p_controls)
-	:controls(p_controls) {}
+	:controls(p_controls),
+	collisionFrames(2) 
+	{
+		allCollisions.resize(0);
+	}
 
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
@@ -34,10 +52,7 @@ public:
 
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
-	// Create clickable
-	Clickable* createClickable(ClickableCreateInfo& p_info);
-
-		Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
@@ -48,16 +63,17 @@ public:
 	// Get a reference to the camera
 	const Camera& getCamera();
 
+	bool SpriteVsSprite(Sprite* p_a, Sprite* p_b);
+
 	// Check if any clickables are colliding
-	void clickableTest();
+	void collisionTest();
+
+	void resolveCollision(Sprite* p_a, Sprite* p_b);
+
+	void updateCollisions();
 
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt);
-
-	// Not in use.
-	// I used to use refresh when I was using Box2D. The refresh method would
-	// set the pos of the Sprites to the pos of the Box2D body, if the sprite had a body
-	void refresh();
 private:
 	// The cursor
 	Cursor cursor;
@@ -68,6 +84,7 @@ private:
 	std::list<Text> texts;
 	std::list<Character> characters;
 
+
 	Camera camera;
 	std::list<Sprite> sprites;
 	std::vector<Particle*> particles;
@@ -75,5 +92,9 @@ private:
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;
 
-	std::list<Clickable> clickables;
+	// A set of all of the collisions.
+	// std::set ensures that there are only unique collisions
+	std::list<CollisionInfo> allCollisions;
+
+	int collisionFrames;
 };

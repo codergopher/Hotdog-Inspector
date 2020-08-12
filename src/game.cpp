@@ -67,7 +67,7 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(32, 32);
+		createInfo.origin = Vector2f(31.5, 31.5);
 		createInfo.frameSize = Vector2i(64, 64);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
@@ -90,23 +90,11 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
-		// Info for the clickable
-		ClickableCreateInfo clickableInfo = {};
-		clickableInfo.pos = Vector2f(0, 0);
-		clickableInfo.halfSize = Vector2f(2.5f, 2.5f);
+		// It's a clickable!
+		createInfo.clickable = true;
+		createInfo.halfBounds = Vector2f(2.5f, 2.5f);
 
-		// Create the clickable
-		Clickable* clickable = world.createClickable(clickableInfo);
-
-		// Set the cursor's clickable to be the clickable just created
-		createInfo.clickable = clickable;
-
-		Cursor* cursor = world.createCursor(createInfo, 8);
-
-		clickable->setPosPtr(cursor->getPosPtr());
-
-
-
+		world.createCursor(createInfo, 8);
 	
 	}
 
@@ -125,21 +113,11 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
-		// Info for the clickable
-		ClickableCreateInfo clickableInfo = {};
-		clickableInfo.pos = Vector2f(0, 0);
-		clickableInfo.halfSize = Vector2f(5.f , 5.f);
+		// it's a clickable
+		createInfo.clickable = true;
+		createInfo.halfBounds = Vector2f(31.f, 16.f);
 
-		// Create the clickable
-		Clickable* clickable = world.createClickable(clickableInfo);
-
-		// Set the cursor's clickable to be the clickable just created
-		createInfo.clickable = clickable;
-
-		Conveyor* conveyor = world.createConveyor(createInfo, 0);
-
-		clickable->setPosPtr(conveyor->getPosPtr());	
-	
+	    world.createConveyor(createInfo, 0);
 	}
 
 	// text test
@@ -156,7 +134,7 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createText(createInfo, "hello codergopher!", 8);	
+		world.createText(createInfo, "cpp is better than python", 8);	
 		//world.createCharacter(createInfo, "e", 8);
 	}
 
@@ -169,12 +147,12 @@ void Game::loadWorld()
 		createInfo.color = Color(0, 0, 0);
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(64, 64);
-		createInfo.frameSize = Vector2i(128, 128);
+		createInfo.origin = Vector2f(114, 64);
+		createInfo.frameSize = Vector2i(228, 128);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createSprite(createInfo, 7);	
+		world.createSprite(createInfo, 10);	
 	}
 }
 
@@ -201,8 +179,4 @@ void Game::mainLoop(const float& p_dt)
 	
 	// Update the game based on the deltaTime(p_dt)
 	world.update(p_dt);
-
-	// I used to use refresh when I was using Box2D. The refresh method would
-	// set the pos of the Sprites to the pos of the Box2D body, if the sprite had a body
-	world.refresh();
 }

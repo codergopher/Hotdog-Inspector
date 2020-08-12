@@ -5,7 +5,6 @@
 
 #include "Sprite.hpp"
 #include "Animation.hpp"
-#include "Clickable.hpp"
 
 class Character : public Sprite
 {

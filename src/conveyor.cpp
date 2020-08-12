@@ -18,6 +18,8 @@ Conveyor::Conveyor(const SpriteCreateInfo& p_info)
 	scale = p_info.scale;
 	depth = p_info.depth;
 	zoomModifier = p_info.zoomModifier;
+	clickable = p_info.clickable;
+	halfBounds = p_info.halfBounds;
 	
 	loadFrames(frameSize);
 	currentFrame = frames[0];

@@ -7,7 +7,6 @@
 
 #include "Math.hpp"
 #include "Animation.hpp"
-#include "Clickable.hpp"
 
 // A simple Colour structure. For simplicity, I have called it
 // Color instead of Colour(much to my chagrin)
@@ -54,7 +53,8 @@ struct SpriteCreateInfo
 	float depth;
 	float zoomModifier;
 
-	Clickable* clickable;
+	bool clickable;
+	Vector2f halfBounds;
 };
 
 // The basic unit that can be rendered
@@ -64,6 +64,7 @@ public:
 
 	Sprite(){}
 	Sprite(const SpriteCreateInfo& p_info);
+
 	// A virtual destructor, in case sub classes wish
 	// to have their own destructor definition
 	virtual ~Sprite();
@@ -107,7 +108,9 @@ public:
 
 	const float& getZoomModifier() const { return zoomModifier; }
 
-	Clickable* getClickable() { return clickable; }
+	bool isClickable() { return clickable; }
+
+	const Vector2f& getHalfBounds() const { return halfBounds; }
 
 	void setPos(Vector2f p_pos);
 	void setScale(Vector2f p_scale);
@@ -130,6 +133,9 @@ public:
 
 	// Virtial method to play an AnimationCycle
 	virtual void play(AnimationCycle& p_cycle);
+
+	virtual void onCollisionBegin(Sprite* p_sprite);
+	virtual void onCollisionEnd(Sprite* p_sprite);
 
 protected:
 	std::string name;
@@ -163,8 +169,9 @@ protected:
 	// from the camera's zoom
 	float zoomModifier;
 
-	// A ptr to the clickable that attaches to the sprite
-	Clickable* clickable;
+	// Every sprite has the potential to be a clickable
+	bool clickable;
+	Vector2f halfBounds;
 
 	// Should the sprite be deleted?
 	bool pleaseDelete = false;

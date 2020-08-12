@@ -217,6 +217,9 @@ struct IntRect
 	{}
 };
 
+// Get the absoulte value of a vector
+Vector2f abs(const Vector2f& p_v);
+
 // Convert vector ints to floats and vice versa
 Vector2f toVector2f(const Vector2i& p_v);
 Vector2i toVector2i(const Vector2f& p_v);
