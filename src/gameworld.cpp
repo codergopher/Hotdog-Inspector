@@ -173,25 +173,22 @@ void GameWorld::collisionTest()
 				collision.freshCollision = true;
 				collision.framesLeft = collisionFrames;
 
-				if (allCollisions.size() == 0)
-				{
-					allCollisions.push_back(collision);
-					continue;
-				}
+				bool duplicate = false;
 				for (CollisionInfo& otherCollision : allCollisions)
 				{
 					if (collision == otherCollision)
 					{
+						duplicate = true;
 						otherCollision.freshCollision = false;
 						otherCollision.framesLeft = collisionFrames;
-					}
-					else
-					{
-						allCollisions.push_back(collision);
-					}
 
+					}
 				}
-				
+				if (!duplicate) 
+				{
+					allCollisions.push_back(collision);
+				}
+
 
 				resolveCollision(x, y);
 			}
@@ -214,20 +211,28 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 	if (controls->isLeftClick())
 	{
 
-		if (p_a->getName() == "Cursor")
+
+		Cursor* cursor = dynamic_cast<Cursor*>(p_a);
+
+		if(cursor)
 		{
-			
-			p_b->setPos(p_a->getPos());
+			cursor->setSlot(p_b);
 		}
 
-		if (p_b->getName() == "Cursor")
-		{
-			p_a->setPos(p_b->getPos());
+	
+
+		cursor = dynamic_cast<Cursor*>(p_b);
+
+		if (cursor)
+		{	
+			cursor->setSlot(p_a);
 		}
+
+		
 	}
 }
 void GameWorld::updateCollisions()
-{
+{	
 	for (std::list<CollisionInfo>::iterator i = allCollisions.begin(); i != allCollisions.end(); )
 	{
 		if ((*i).freshCollision == true)

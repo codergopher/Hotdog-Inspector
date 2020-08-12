@@ -72,6 +72,9 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
+
+		createInfo.clickable = true;
+		createInfo.halfBounds = Vector2f(32.f, 32.f);
 		world.createSprite(createInfo, 0);	
 	
 	}
@@ -94,8 +97,9 @@ void Game::loadWorld()
 		createInfo.clickable = true;
 		createInfo.halfBounds = Vector2f(2.5f, 2.5f);
 
-		world.createCursor(createInfo, 8);
-	
+		Cursor* c = world.createCursor(createInfo, 8);
+		c->init();
+		c->setControls(&controls);
 	}
 
 	// The Conveyor
