@@ -44,30 +44,6 @@ Conveyor* GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
 	return &conveyors.back();
 }
 
-Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
-{
-	Character c(p_info, character);
-	characters.push_back(c);
-
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-
-	return &characters.back();
-}
-
-Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder)
-{
-	Text c(p_info, string);
-
-	for (int i = 0; i < c.getSize(); i++)
-	{
-		characters.push_back(c.getCharacter(i));
-		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-	}
-
-	texts.push_back(c);
-	return &texts.back();
-}
-
 
 Sprite* GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {
@@ -102,6 +78,30 @@ Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 	return &cursor;
 }
 
+Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
+{
+	Character c(p_info, character);
+	characters.push_back(c);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
+
+	return &characters.back();
+}
+
+Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder)
+{
+	Text c(p_info, string);
+
+	for (int i = 0; i < c.getSize(); i++)
+	{
+		characters.push_back(c.getCharacter(i));
+		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
+	}
+
+	texts.push_back(c);
+	return &texts.back();
+}
+
 Clickable* GameWorld::createClickable(ClickableCreateInfo& p_info)
 {
 	Clickable c(p_info);
@@ -134,11 +134,11 @@ void GameWorld::clickableTest()
 			if (&a == &b)
 				continue;
 
-			//if (ClickableVsClickable(*a, *b))
-				//std::cout << "Hahah yes!" << std::endl;
+			// if (ClickableVsClickable(*a, *b))
+			// 	std::cout << "Hahah yes!" << std::endl;
 
-			//else
-				//std::cout << "Haha no!" << std::endl;
+			// else
+			// 	std::cout << "Haha no!" << std::endl;
 		}
 	}
 }
@@ -154,8 +154,6 @@ void GameWorld::update(const double& dt)
 
 	// check for collisions
 	clickableTest();
-
-	//controls->printState();
 
 	// Iterate through all of the sprites and update them
 	// NOTE: Should have an Entity class and then only update Entities

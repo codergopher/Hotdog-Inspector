@@ -45,7 +45,6 @@ void Game::loadTextures()
 	SDL_Texture* t4 = window->loadTexture("res/font.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Font 0", t4));
 
-
 }
 
 void Game::loadWorld()
@@ -118,10 +117,10 @@ void Game::loadWorld()
 		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, 0);
+		createInfo.pos = Vector2f(0, -4);
 		createInfo.angle = 0.0f;
-		createInfo.origin = Vector2f(32, 32);
-		createInfo.frameSize = Vector2i(64, 64);
+		createInfo.origin = Vector2f(31, 16);
+		createInfo.frameSize = Vector2i(62, 38);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
@@ -142,6 +141,7 @@ void Game::loadWorld()
 		clickable->setPosPtr(conveyor->getPosPtr());	
 	
 	}
+
 	// text test
 	{
 		SpriteCreateInfo createInfo = {};
@@ -159,6 +159,7 @@ void Game::loadWorld()
 		world.createText(createInfo, "hello codergopher!", 8);	
 		//world.createCharacter(createInfo, "e", 8);
 	}
+
 	// Frame to clip off anything outside the 64x64 playpen
 	{
 		SpriteCreateInfo createInfo = {};

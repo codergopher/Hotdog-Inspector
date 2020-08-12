@@ -1,7 +1,8 @@
 #include "Text.hpp"
 
 Text::Text(const SpriteCreateInfo& p_info, std::string p_string)
-:info(p_info), string(p_string)
+:string(p_string),
+info(p_info)
 {
 	for (Uint8 i = 0; i < string.length(); i++)
 	{
