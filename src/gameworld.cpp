@@ -134,11 +134,11 @@ void GameWorld::clickableTest()
 			if (&a == &b)
 				continue;
 
-			if (ClickableVsClickable(*a, *b))
-				std::cout << "Hahah yes!" << std::endl;
+			//if (ClickableVsClickable(*a, *b))
+				//std::cout << "Hahah yes!" << std::endl;
 
-			else
-				std::cout << "Haha no!" << std::endl;
+			//else
+				//std::cout << "Haha no!" << std::endl;
 		}
 	}
 }
