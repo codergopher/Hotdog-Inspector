@@ -34,10 +34,7 @@ public:
 
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
-	// Create clickable
-	Clickable* createClickable(ClickableCreateInfo& p_info);
-
-		Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
@@ -48,16 +45,15 @@ public:
 	// Get a reference to the camera
 	const Camera& getCamera();
 
+	bool SpriteVsSprite(Sprite* p_a, Sprite* p_b);
+
 	// Check if any clickables are colliding
-	void clickableTest();
+	void collisionTest();
+
+	void resolveCollision(Sprite* p_a, Sprite* p_b);
 
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt);
-
-	// Not in use.
-	// I used to use refresh when I was using Box2D. The refresh method would
-	// set the pos of the Sprites to the pos of the Box2D body, if the sprite had a body
-	void refresh();
 private:
 	// The cursor
 	Cursor cursor;
@@ -74,6 +70,4 @@ private:
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;
-
-	std::list<Clickable> clickables;
 };

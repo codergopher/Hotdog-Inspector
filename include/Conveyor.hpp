@@ -5,7 +5,6 @@
 
 #include "Sprite.hpp"
 #include "Animation.hpp"
-#include "Clickable.hpp"
 
 class Conveyor : public Sprite
 {
@@ -19,5 +18,4 @@ public:
 
 private:
 	std::map<std::string, AnimationCycle> animationSet;
-	Clickable* clickable;
 };

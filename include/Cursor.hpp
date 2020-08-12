@@ -1,7 +1,6 @@
 #pragma once
 #include "Math.hpp"
 #include "Sprite.hpp"
-#include "Clickable.hpp"
 
 // Class to draw a custom cursor to the mouse pos, and 
 // also is a Clickable item because it will iteract with Clickables
@@ -14,5 +13,4 @@ public:
 private:
 	// Vector2f* to the target position, which is the mouse coordinates
 	const Vector2f* target;
-	Clickable* clickable;
 };
