@@ -216,7 +216,8 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 
 		if(cursor)
 		{
-			cursor->setSlot(p_b);
+			if (!cursor->isSlotFull())
+				cursor->setSlot(p_b);
 		}
 
 	
@@ -225,7 +226,8 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 
 		if (cursor)
 		{	
-			cursor->setSlot(p_a);
+			if (!cursor->isSlotFull())
+				cursor->setSlot(p_a);
 		}
 
 		
