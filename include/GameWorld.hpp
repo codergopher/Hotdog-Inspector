@@ -58,7 +58,7 @@ public:
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 
-	void deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i);
+	void deleteSprite(Sprite* sprite);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}

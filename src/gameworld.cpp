@@ -124,7 +124,7 @@ Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_
 	return &texts.back();
 }
 
-void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i)
+void GameWorld::deleteSprite(Sprite* sprite)
 {
 	// Check if it's in the cursor slot
 	if (sprite == cursor->getSlot())
@@ -159,8 +159,6 @@ void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterat
 
 		std::cout << "Deleted " << cursorTest->getName() << std::endl;
 		delete cursor;
-		// Remove this Sprite* from allSprites
-		allSprites.erase(i);
 
 		// Has been deleted, so carry on to the next sprite
 		return;
@@ -175,9 +173,6 @@ void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterat
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Conveyor*>::iterator conveyorIndex = std::find(conveyors.begin(), conveyors.end(), conveyorTest);
 		conveyors.erase(conveyorIndex);
-
-		// Remove this Sprite* from allSprites
-		allSprites.erase(i);
 
 		delete conveyorTest;
 		return;
@@ -194,8 +189,6 @@ void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterat
 
 		particles.erase(particleIndex);
 
-		// Remove this Sprite* from allSprites
-		allSprites.erase(i);
 
 		delete particleTest;
 		return;
@@ -211,8 +204,6 @@ void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterat
 		std::vector<Sprite*>::iterator index = std::find(sprites.begin(), sprites.end(), spriteTest);
 		sprites.erase(index);
 
-		// Remove this Sprite* from allSprites
-		allSprites.erase(i);
 
 		delete spriteTest;
 
@@ -386,7 +377,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 
 		if (sprite->shouldDelete())
 		{
-			deleteSprite(sprite, i);
+			deleteSprite(sprite);
+			allSprites.erase(i);
 			continue;
 		}
 		if (sprite->isClickable() && SpriteVsSprite(sprite, conveyors[0]))
@@ -435,7 +427,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 
             	//It's a clickable!
             	createInfo.clickable = true;
-            	createInfo.halfBounds = Vector2f(2.5f, 2.5f);
+            	createInfo.halfBounds = Vector2f(2.5f, 8.5f);
 
             	createSprite(createInfo, 9);
             	std::cout << "spawned a dog :O" << std::endl;
