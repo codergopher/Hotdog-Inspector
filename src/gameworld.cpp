@@ -423,7 +423,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
             	SpriteCreateInfo createInfo = {};
             	createInfo.name = "Test";
 
-            	createInfo.tex = p_textures["Hotdog 0"];
+            	createInfo.tex = p_textures[clickableTextures[0]];
             	createInfo.alpha = 255;
             	createInfo.flip = SDL_FLIP_NONE;
             	createInfo.pos = Vector2f(-32, -9);

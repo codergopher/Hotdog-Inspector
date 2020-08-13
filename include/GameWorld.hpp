@@ -84,6 +84,8 @@ private:
 
 	 //for moving clickables
     float moveSpeed = .1f;
+
+
 	// The cursor
 	Cursor* cursor;
 
@@ -107,8 +109,9 @@ private:
 
 	int collisionFrames;
 
-	//for spawning clickables
+	    //for spawning clickables
 	std::string clickableTextures[1] = {"Hotdog 0"};
     float timer = 100;
+	
 
 };
