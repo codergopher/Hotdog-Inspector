@@ -108,7 +108,7 @@ void Game::loadWorld()
 		//createInfo.clickable = false;
 		createInfo.halfBounds = Vector2f(2.5f, 2.5f);
 
-		Cursor* c = world.createCursor(createInfo, 8);
+		Cursor* c = world.createCursor(createInfo, 19);
 		c->init();
 		c->setControls(&controls);
 	}
@@ -122,7 +122,7 @@ void Game::loadWorld()
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, -4);
 		createInfo.angle = 0.0f;
-		createInfo.origin = Vector2f(31, 16);
+		createInfo.origin = Vector2f(31, 12);
 		createInfo.frameSize = Vector2i(62, 38);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
@@ -131,7 +131,7 @@ void Game::loadWorld()
 		// it's a clickable
 		//createInfo.clickable = true;
 		createInfo.clickable = false;
-		createInfo.halfBounds = Vector2f(31.f, 16.f);
+		createInfo.halfBounds = Vector2f(31.f, 12.f);
 
 	    world.createConveyor(createInfo, 0);
 	}
