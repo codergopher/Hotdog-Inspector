@@ -5,6 +5,7 @@
 
 #include "Sprite.hpp"
 #include "Math.hpp"
+#include "Cursor.hpp"
 
 extern float* gCameraZoom;
 
@@ -30,7 +31,6 @@ halfBounds(0.0f, 0.0f)
 {}
 
 
-
 Sprite::~Sprite() 
 {
 	//std::cout << "Deleted " << name << std::endl;
@@ -53,7 +53,8 @@ angle(p_info.angle),
 depth(p_info.depth),
 zoomModifier(p_info.zoomModifier),
 clickable(p_info.clickable),
-halfBounds(p_info.halfBounds)
+halfBounds(p_info.halfBounds),
+pleaseDelete(false)
 {
 
 	loadFrames(frameSize);
@@ -123,7 +124,7 @@ void Sprite::play(AnimationCycle& p_cycle)
 
 void Sprite::onCollisionBegin(Sprite* p_sprite)
 {
-
+	
 }
 
 void Sprite::onCollisionEnd(Sprite* p_sprite)

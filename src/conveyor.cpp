@@ -1,25 +1,10 @@
 #include "Conveyor.hpp"
-
+#include "Cursor.hpp"
 Conveyor::Conveyor() {}
 
 Conveyor::Conveyor(const SpriteCreateInfo& p_info)
-
+:Sprite::Sprite(p_info)
 {
-	name = p_info.name;
-	tex = p_info.tex;
-	color = p_info.color;
-	alpha = p_info.alpha;
-	flip = p_info.flip;
-	prevPos = p_info.pos,
-	pos = p_info.pos;
-	angle = p_info.angle;
-	origin = p_info.origin;
-	frameSize = p_info.frameSize;
-	scale = p_info.scale;
-	depth = p_info.depth;
-	zoomModifier = p_info.zoomModifier;
-	clickable = p_info.clickable;
-	halfBounds = p_info.halfBounds;
 	
 	loadFrames(frameSize);
 	currentFrame = frames[0];
@@ -41,4 +26,9 @@ void Conveyor::animate(const float& p_dt)
 	// This is where we would have the logic for when animations
 	// should happen
 	play(animationSet["Conveyor"]);
+}
+
+void Conveyor::onCollisionBegin(Sprite* p_sprite)
+{
+
 }

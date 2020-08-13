@@ -4,6 +4,8 @@
 #include <map>
 #include <set>
 
+#include <memory>
+
 #include "Sprite.hpp"
 #include "Math.hpp"
 #include "Camera.hpp"
@@ -23,6 +25,8 @@ struct CollisionInfo
 	// a const context.
 	mutable int framesLeft;
 	mutable bool freshCollision;
+
+	bool contains(Sprite* p_sprite);
 };
 
 bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b);
@@ -53,6 +57,8 @@ public:
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+
+	void deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i);
 	
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
@@ -76,17 +82,17 @@ public:
 	void update(const double& dt);
 private:
 	// The cursor
-	Cursor cursor;
+	Cursor* cursor;
 
 	// Ptr to the controls
 	Controls* controls;
-	std::list<Conveyor> conveyors;
+	std::vector<Conveyor*> conveyors;
 	std::list<Text> texts;
 	std::list<Character> characters;
 
 
 	Camera camera;
-	std::list<Sprite> sprites;
+	std::vector<Sprite*> sprites;
 	std::vector<Particle*> particles;
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
