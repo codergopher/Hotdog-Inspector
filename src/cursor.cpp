@@ -13,29 +13,28 @@ void Cursor::init()
 
 }
 
-void Cursor::setTarget(const Vector2f* p_target)
-{
-	target = p_target;
-}
-
 void Cursor::update(const float& p_dt)
 {
 	// Set the cursor pos to be the mouse pos
-	setPos((*target));
+	setPos(*controls->getWorldMousePos());
 
+	// If the user is pressing left mouse, move the slotted sprite
 	if (controls->isLeftClick() && slot)
 	{
+		slot->mustDelete(true);
 		slot->setPos(getPos());
 	}
 }
 
 void Cursor::onCollisionBegin(Sprite* p_sprite)
 {	
-
+	// Nothing here
 }
 
 void Cursor::onCollisionEnd(Sprite* p_sprite)
 {
+	// If the collision ends with a sprite,
+	// and the sprite is in the slot, remove the sprite from the slot
 	if (p_sprite == slot)
 	{
 		slot = nullptr;
@@ -52,7 +51,10 @@ Sprite* Cursor::getSlot()
 void Cursor::setSlot(Sprite* p_sprite)
 {
 	slot = p_sprite;
-	slotFull = true;
+	if (p_sprite != nullptr)
+		slotFull = true;
+	else
+		slotFull = false;
 }
 
 bool Cursor::isSlotFull()

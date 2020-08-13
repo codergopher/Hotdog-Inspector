@@ -73,6 +73,8 @@ public:
 	// Useful if the Sprite was created with the new keyword
 	bool shouldDelete() const { return pleaseDelete; }
 
+	void mustDelete(bool should) { pleaseDelete = should; }
+
 	// Pretty straight forward here
 	const std::string& getName() const { return name; }
 

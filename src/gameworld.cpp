@@ -11,6 +11,16 @@
 extern int gWinWidth;
 extern int gWinHeight;
 
+bool CollisionInfo::contains(Sprite* p_sprite)
+{
+	if (p_sprite == a)
+		return true;
+	if (p_sprite == b)
+		return true;
+
+	return false;
+}
+
 bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 {
 	size_t hashA = (size_t)p_a.a + (size_t)p_a.b;
@@ -24,10 +34,13 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 
 GameWorld::~GameWorld()
 {
-	// Delete any particles that haven't been deleted
-	for (Particle* p : particles)
+	// Delete any sprites that haven't been deleted
+	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 	{
-		delete p;
+		Sprite* s = i->second;
+
+		std::cout << s->getName() << std::endl;
+		delete s;
 	}
 }
 
@@ -46,24 +59,24 @@ Camera* GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 // p_drawOrder is the drawing heiarchy
 Conveyor* GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
 {
-	Conveyor c(p_info);
+	Conveyor* c = new Conveyor(p_info);
 	conveyors.push_back(c);
 
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &conveyors.back()));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, c));
 
-	return &conveyors.back();
+	return c;
 }
 
 
 Sprite* GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	
-	Sprite e(p_info);
-	sprites.push_back(e);
+	Sprite* s = new Sprite(p_info);
+	sprites.push_back(s);
 
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &sprites.back()));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, s));
 
-	return &sprites.back();
+	return s;
 }
 
 // Create a particle on the heap
@@ -80,12 +93,11 @@ Particle* GameWorld::createParticle(SpriteCreateInfo& p_info, int p_drawOrder)
 
 Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 {
-	cursor = Cursor(p_info);
-	cursor.setTarget(controls->getWorldMousePos());
+	cursor = new Cursor(p_info);
 
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &cursor));
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, cursor));
 
-	return &cursor;
+	return cursor;
 }
 
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
@@ -112,6 +124,101 @@ Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_
 	return &texts.back();
 }
 
+void GameWorld::deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i)
+{
+	// Check if it's in the cursor slot
+	if (sprite == cursor->getSlot())
+		cursor->setSlot(nullptr);
+
+	// If this sprite is part of a CollisionInfo, delete that collision info
+	
+	// Dum dum move right here. Create a vector of all of the collisions that must be removed
+	std::vector<std::list<CollisionInfo>::iterator> badCollisions = {};
+
+	for (std::list<CollisionInfo>::iterator c = allCollisions.begin(); c != allCollisions.end(); c++)
+	{
+		if (c->contains(sprite))
+		{
+			badCollisions.push_back(c);
+		}
+		
+	}
+
+	// And now delete all of the bad collisions
+	for (auto& c : badCollisions)
+		allCollisions.erase(c);
+
+
+	// Reinterpret the pointer to test what it is
+
+	// Determine what data type this is
+	Cursor* cursorTest = dynamic_cast<Cursor*>(sprite);
+
+	if (cursorTest)
+	{
+
+		std::cout << "Deleted " << cursorTest->getName() << std::endl;
+		delete cursor;
+		// Remove this Sprite* from allSprites
+		allSprites.erase(i);
+
+		// Has been deleted, so carry on to the next sprite
+		return;
+	}
+
+	Conveyor* conveyorTest = dynamic_cast<Conveyor*>(sprite);
+
+	if (conveyorTest)
+	{	
+		std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Conveyor*>::iterator conveyorIndex = std::find(conveyors.begin(), conveyors.end(), conveyorTest);
+		conveyors.erase(conveyorIndex);
+
+		// Remove this Sprite* from allSprites
+		allSprites.erase(i);
+
+		delete conveyorTest;
+		return;
+	}
+
+	Particle* particleTest = dynamic_cast<Particle*>(sprite);
+
+	if (particleTest)
+	{	
+
+		std::cout << "Deleted " << particleTest->getName() << std::endl;
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Particle*>::iterator particleIndex = std::find(particles.begin(), particles.end(), particleTest);
+
+		particles.erase(particleIndex);
+
+		// Remove this Sprite* from allSprites
+		allSprites.erase(i);
+
+		delete particleTest;
+		return;
+	}
+
+	Sprite* spriteTest = dynamic_cast<Sprite*>(sprite);
+
+	if (spriteTest)
+	{	
+		std::cout << "Deleted " << spriteTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Sprite*>::iterator index = std::find(sprites.begin(), sprites.end(), spriteTest);
+		sprites.erase(index);
+
+		// Remove this Sprite* from allSprites
+		allSprites.erase(i);
+
+		delete spriteTest;
+
+		return;
+	}
+}
 
 const std::multimap<int, Sprite*>& GameWorld::getAllSprites()
 {
@@ -207,27 +314,29 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 	// Vector2f normal = normalise(delta);
 
 	// Vector2f correction = normal * deltaLength;
-
 	if (controls->isLeftClick())
 	{
+		// Check if p_a is a Cursor
+		// Turn the Sprite ptr into a Cursor ptr
+		Cursor* cursorTest = dynamic_cast<Cursor*>(p_a);
 
-
-		Cursor* cursor = dynamic_cast<Cursor*>(p_a);
-
-		if(cursor)
+		// Check to make sure the the Sprite ptr converted back to a Cursor ptr
+		if(cursorTest)
 		{
-			if (!cursor->isSlotFull())
-				cursor->setSlot(p_b);
+			// If the cursor slot isn't full, set it to be this slot
+			if (!cursorTest->isSlotFull())
+				cursorTest->setSlot(p_b);
 		}
 
-	
+		// Check if p_a is a Cursor
+		cursorTest = dynamic_cast<Cursor*>(p_b);
 
-		cursor = dynamic_cast<Cursor*>(p_b);
-
-		if (cursor)
+		// Check to make sure the the Sprite ptr converted back to a Cursor ptr
+		if (cursorTest)
 		{	
-			if (!cursor->isSlotFull())
-				cursor->setSlot(p_a);
+			// If the cursor slot isn't full, set it to be this slot
+			if (!cursorTest->isSlotFull())
+				cursorTest->setSlot(p_a);
 		}
 
 		
@@ -235,16 +344,22 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 }
 void GameWorld::updateCollisions()
 {	
+
+	// Iterate through a list of all collisions
 	for (std::list<CollisionInfo>::iterator i = allCollisions.begin(); i != allCollisions.end(); )
 	{
+		// If the collision just happened, call the onCollisionBegin methods for the sprites
 		if ((*i).freshCollision == true)
 		{
 			i->a->onCollisionBegin(i->b);
 			i->b->onCollisionBegin(i->a);
 		}
 
+		// Reduce the frames left that the collision will be active for
 		(*i).framesLeft = (*i).framesLeft - 1;
 
+		// If there are no more collision frames left,
+		// remove the collision from the list and call the onCollisionEnd method for the sprites
 		if ((*i).framesLeft < 0)
 		{
 			i->a->onCollisionEnd(i->b);
@@ -267,8 +382,13 @@ void GameWorld::update(const double& dt)
 	// NOTE: Should have an Entity class and then only update Entities
 	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 	{
-		Sprite* e = i->second;
+		Sprite* sprite = i->second;
 
+		if (sprite->shouldDelete())
+		{
+			deleteSprite(sprite, i);
+			continue;
+		}
 		// if (e->shouldDelete())
 		// {	
 		// 	if (e->getName() == "Particle")
@@ -286,8 +406,8 @@ void GameWorld::update(const double& dt)
 		// 		continue;
 		// 	}
 		// }
-		e->updatePrev();
-		e->update(dt);
+		sprite->updatePrev();
+		sprite->update(dt);
 	}
 
 	//Check for collisions

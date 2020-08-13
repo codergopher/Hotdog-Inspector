@@ -11,20 +11,26 @@ public:
 	using Sprite::Sprite;
 	void setControls(Controls* p_controls);
 	void init();
-	void setTarget(const Vector2f* p_target);
 	void update(const float& p_dt) override;
 
 	void onCollisionBegin(Sprite* p_sprite) override;
 	void onCollisionEnd(Sprite* p_sprite) override;
 
 	Sprite* getSlot();
+
+	
 	void setSlot(Sprite*);
 
 	bool isSlotFull();
 private:
-	// Vector2f* to the target position, which is the mouse coordinates
+	// Ptr to the controls, to set the cursor to be
+	// the mouse position
 	Controls* controls;
-	const Vector2f* target;
+
+	// The sprite that is currently grabbed by the
+	// cursor
 	Sprite* slot;
+
+	// Is the slot full or empty?
 	bool slotFull;
 };
