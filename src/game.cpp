@@ -55,6 +55,9 @@ void Game::loadTextures()
 	SDL_Texture* t5 = window->loadTexture("res/clickable/normal.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Hotdog 0", t5));
 
+    SDL_Texture* t6 = window->loadTexture("res/clickable/moldy.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Hotdog 1", t6));
+
 }
 
 void Game::loadWorld()

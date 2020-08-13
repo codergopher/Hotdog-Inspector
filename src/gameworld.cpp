@@ -78,6 +78,26 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.halfBounds = Vector2f(2.5f, 8.5f);
         clickables.push_back(createInfo);
     }
+    	//HOTDOG MOLDY
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Bad Hotdog 0";
+
+        createInfo.tex = p_textures["Hotdog 1"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-32, -9);
+        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        clickables.push_back(createInfo);
+    }
 }
 
 // create the camera, pretty simple
@@ -430,7 +450,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
-        	createSprite(clickables.at(0), 9);
+        	createSprite(clickables.at(rand() % 2), 9);
         	dawgs++;
         	std::cout << "\n" << dawgs << std::endl;
     	}
