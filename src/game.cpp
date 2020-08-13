@@ -1,4 +1,3 @@
-#include "ClickableSpawner.hpp"
 #include "Game.hpp"
 
 extern int gWinWidth;
@@ -168,8 +167,6 @@ void Game::loadWorld()
 		createInfo.zoomModifier = 1.f;
 		world.createSprite(createInfo, 10);	
 	}
-
-	world.createClickableSpawner(textures);	
 }
 
 // Should the game quit?
@@ -194,5 +191,5 @@ void Game::mainLoop(const float& p_dt)
 	}
 	
 	// Update the game based on the deltaTime(p_dt)
-	world.update(p_dt);
+	world.update(p_dt, textures);
 }

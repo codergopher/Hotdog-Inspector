@@ -15,7 +15,6 @@
 #include "Cursor.hpp"
 #include "Character.hpp"
 #include "Text.hpp"
-#include "ClickableSpawner.hpp"
 
 struct CollisionInfo
 {
@@ -59,8 +58,6 @@ public:
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 
-	ClickableSpawner* createClickableSpawner(std::map<std::string, SDL_Texture*> p_textures);
-
 	void deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i);
 	
 	// Not in use. The particle system currently isn't operational
@@ -82,12 +79,10 @@ public:
 	void updateCollisions();
 
 	// Move everything forward in time, by a set amount(dt)
-	void update(const double& dt);
+	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
 	// The cursor
 	Cursor* cursor;
-
-	ClickableSpawner* clickableSpawner;
 
 	// Ptr to the controls
 	Controls* controls;
@@ -108,4 +103,9 @@ private:
 	std::list<CollisionInfo> allCollisions;
 
 	int collisionFrames;
+
+	//for spawning clickables
+	std::string clickableTextures[1] = {"Hotdog 0"};
+    float timer = 0;
+
 };

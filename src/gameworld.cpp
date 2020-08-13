@@ -7,7 +7,6 @@
 #include "Camera.hpp"
 #include "Particle.hpp"
 #include "Cursor.hpp"
-#include "ClickableSpawner.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -99,13 +98,6 @@ Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, cursor));
 
 	return cursor;
-}
-
-ClickableSpawner* GameWorld::createClickableSpawner(std::map<std::string, SDL_Texture*> p_textures)
-{
-	clickableSpawner = new ClickableSpawner(this, p_textures);
-
-	return clickableSpawner;
 }
 
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
@@ -381,7 +373,7 @@ void GameWorld::updateCollisions()
 	}
 }
 
-void GameWorld::update(const double& dt)
+void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_textures)
 {
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
@@ -416,6 +408,33 @@ void GameWorld::update(const double& dt)
 		// }
 		sprite->updatePrev();
 		sprite->update(dt);
+
+		timer+= dt;
+    	if (timer > 50.0f)
+    	{
+        	timer = 0;
+        	{
+            	SpriteCreateInfo createInfo = {};
+            	createInfo.name = "Test";
+
+            	createInfo.tex = p_textures["Hotdog 0"];
+            	createInfo.alpha = 255;
+            	createInfo.flip = SDL_FLIP_NONE;
+            	createInfo.pos = Vector2f(0, 0);
+            	createInfo.origin = Vector2f(6.f, 12.5f);
+            	createInfo.frameSize = Vector2i(12, 25);
+            	createInfo.scale = Vector2f(1.0f, 1.0f);
+            	createInfo.depth = 0;
+            	createInfo.zoomModifier = 1.f;
+
+            	//It's a clickable!
+            	createInfo.clickable = true;
+            	createInfo.halfBounds = Vector2f(2.5f, 2.5f);
+
+            	createSprite(createInfo, 9);
+            	std::cout << "spawned a dog :O" << std::endl;
+        	}
+    }
 	}
 
 	//Check for collisions
