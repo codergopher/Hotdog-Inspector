@@ -389,6 +389,12 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			deleteSprite(sprite, i);
 			continue;
 		}
+		if (sprite->isClickable() && SpriteVsSprite(sprite, conveyors[0]))
+		{
+			std::cout << "moving" << std::endl;
+			std::cout << std::to_string(moveSpeed) << std::endl;
+			sprite->move(Vector2f(.1f, 0));
+		}
 		// if (e->shouldDelete())
 		// {	
 		// 	if (e->getName() == "Particle")
@@ -420,7 +426,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
             	createInfo.tex = p_textures["Hotdog 0"];
             	createInfo.alpha = 255;
             	createInfo.flip = SDL_FLIP_NONE;
-            	createInfo.pos = Vector2f(0, 0);
+            	createInfo.pos = Vector2f(-32, -9);
             	createInfo.origin = Vector2f(6.f, 12.5f);
             	createInfo.frameSize = Vector2i(12, 25);
             	createInfo.scale = Vector2f(1.0f, 1.0f);

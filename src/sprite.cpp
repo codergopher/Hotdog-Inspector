@@ -102,6 +102,7 @@ void Sprite::updatePrev()
 
 void Sprite::update(const float& p_dt)
 {
+
 }
 
 void Sprite::play(AnimationCycle& p_cycle)

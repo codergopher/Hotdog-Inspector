@@ -82,7 +82,8 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
-		createInfo.clickable = true;
+		//createInfo.clickable = true;
+		createInfo.clickable = false;
 		createInfo.halfBounds = Vector2f(32.f, 32.f);
 		world.createSprite(createInfo, 0);	
 	
@@ -104,6 +105,7 @@ void Game::loadWorld()
 
 		// It's a clickable!
 		createInfo.clickable = true;
+		//createInfo.clickable = false;
 		createInfo.halfBounds = Vector2f(2.5f, 2.5f);
 
 		Cursor* c = world.createCursor(createInfo, 8);
@@ -127,7 +129,8 @@ void Game::loadWorld()
 		createInfo.zoomModifier = 1.f;
 
 		// it's a clickable
-		createInfo.clickable = true;
+		//createInfo.clickable = true;
+		createInfo.clickable = false;
 		createInfo.halfBounds = Vector2f(31.f, 16.f);
 
 	    world.createConveyor(createInfo, 0);
