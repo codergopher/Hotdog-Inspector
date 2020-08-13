@@ -435,7 +435,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 
             	//It's a clickable!
             	createInfo.clickable = true;
-            	createInfo.halfBounds = Vector2f(2.5f, 2.5f);
+            	createInfo.halfBounds = Vector2f(2.5f, 8.5f);
 
             	createSprite(createInfo, 9);
             	std::cout << "spawned a dog :O" << std::endl;
