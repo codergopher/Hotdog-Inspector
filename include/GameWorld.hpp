@@ -15,6 +15,7 @@
 #include "Cursor.hpp"
 #include "Character.hpp"
 #include "Text.hpp"
+#include "ClickableSpawner.hpp"
 
 struct CollisionInfo
 {
@@ -38,7 +39,7 @@ public:
 	// Destructor
 	~GameWorld();
 	GameWorld(Controls* p_controls)
-	:controls(p_controls),
+	:controls(p_controls), 
 	collisionFrames(2) 
 	{
 		allCollisions.resize(0);
@@ -57,6 +58,8 @@ public:
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+
+	ClickableSpawner* createClickableSpawner(std::map<std::string, SDL_Texture*> p_textures);
 
 	void deleteSprite(Sprite* sprite, std::multimap<int, Sprite*>::iterator i);
 	
@@ -83,6 +86,8 @@ public:
 private:
 	// The cursor
 	Cursor* cursor;
+
+	ClickableSpawner* clickableSpawner;
 
 	// Ptr to the controls
 	Controls* controls;

@@ -223,6 +223,33 @@ src/character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/character.cpp.s
 .PHONY : src/character.cpp.s
 
+src/clickablespawner.obj: src/clickablespawner.cpp.obj
+
+.PHONY : src/clickablespawner.obj
+
+# target to build an object file
+src/clickablespawner.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/clickablespawner.cpp.obj
+.PHONY : src/clickablespawner.cpp.obj
+
+src/clickablespawner.i: src/clickablespawner.cpp.i
+
+.PHONY : src/clickablespawner.i
+
+# target to preprocess a source file
+src/clickablespawner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/clickablespawner.cpp.i
+.PHONY : src/clickablespawner.cpp.i
+
+src/clickablespawner.s: src/clickablespawner.cpp.s
+
+.PHONY : src/clickablespawner.s
+
+# target to generate assembly for a file
+src/clickablespawner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/clickablespawner.cpp.s
+.PHONY : src/clickablespawner.cpp.s
+
 src/controls.obj: src/controls.cpp.obj
 
 .PHONY : src/controls.obj
@@ -700,6 +727,9 @@ help:
 	@echo ... src/character.obj
 	@echo ... src/character.i
 	@echo ... src/character.s
+	@echo ... src/clickablespawner.obj
+	@echo ... src/clickablespawner.i
+	@echo ... src/clickablespawner.s
 	@echo ... src/controls.obj
 	@echo ... src/controls.i
 	@echo ... src/controls.s

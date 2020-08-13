@@ -7,6 +7,7 @@
 #include "Camera.hpp"
 #include "Particle.hpp"
 #include "Cursor.hpp"
+#include "ClickableSpawner.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -98,6 +99,13 @@ Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, cursor));
 
 	return cursor;
+}
+
+ClickableSpawner* GameWorld::createClickableSpawner(std::map<std::string, SDL_Texture*> p_textures)
+{
+	clickableSpawner = new ClickableSpawner(this, p_textures);
+
+	return clickableSpawner;
 }
 
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)

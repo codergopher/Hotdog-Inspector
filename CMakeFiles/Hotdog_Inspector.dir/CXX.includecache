@@ -6,27 +6,23 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/gameworld.cpp
 iostream
 -
-SDL2/SDL.h
+algorithm
 -
-SDL2/SDL_image.h
--
-stdlib.h
--
-time.h
--
-json/json.h
--
-fstream
--
-Game.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Game.hpp
-Math.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Math.hpp
-RenderWindow.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/RenderWindow.hpp
-Controls.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Controls.hpp
+Conveyor.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Conveyor.hpp
+GameWorld.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/GameWorld.hpp
+Sprite.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Sprite.hpp
+Camera.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Camera.hpp
+Particle.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Particle.hpp
+Cursor.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Cursor.hpp
+ClickableSpawner.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/ClickableSpawner.hpp
 

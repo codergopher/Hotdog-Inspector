@@ -19,4 +19,6 @@ private:
 
     GameWorld* world;
     std::map<std::string, SDL_Texture*> textures;
+
+    float timer = 0;
 };

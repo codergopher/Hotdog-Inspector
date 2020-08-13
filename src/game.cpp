@@ -169,7 +169,7 @@ void Game::loadWorld()
 		world.createSprite(createInfo, 10);	
 	}
 
-	ClickableSpawner clickableSpawner(&world, textures);
+	world.createClickableSpawner(textures);	
 }
 
 // Should the game quit?
