@@ -20,6 +20,7 @@ public:
 	{
 		return world;
 	}
+	std::map<std::string, SDL_Texture*>& getTextures();
 	void loadTextures();
 	void loadWorld();
 	void mainLoop(const float& p_dt);

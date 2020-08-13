@@ -1,3 +1,4 @@
+#include "ClickableSpawner.hpp"
 #include "Game.hpp"
 
 extern int gWinWidth;
@@ -26,6 +27,12 @@ Game::~Game()
 		std::cout << "Destroyed texture " << i->first << std::endl;
 	}
 }
+
+std::map<std::string, SDL_Texture*>& Game::getTextures()
+{
+    return textures;
+}
+
 void Game::loadTextures()
 {
 	// Load our textures, and give each one a name
@@ -44,6 +51,9 @@ void Game::loadTextures()
 
 	SDL_Texture* t4 = window->loadTexture("res/font.png");
 	textures.insert(std::pair<std::string, SDL_Texture*>("Font 0", t4));
+
+	SDL_Texture* t5 = window->loadTexture("res/clickable/normal.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Hotdog 0", t5));
 
 }
 
@@ -158,6 +168,8 @@ void Game::loadWorld()
 		createInfo.zoomModifier = 1.f;
 		world.createSprite(createInfo, 10);	
 	}
+
+	ClickableSpawner clickableSpawner(&world, textures);
 }
 
 // Should the game quit?
