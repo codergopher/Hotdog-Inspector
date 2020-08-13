@@ -37,12 +37,11 @@ class GameWorld
 public:
 	// Destructor
 	~GameWorld();
-	GameWorld(Controls* p_controls)
-	:controls(p_controls), 
-	collisionFrames(2) 
-	{
-		allCollisions.resize(0);
-	}
+	GameWorld(){}
+	GameWorld(Controls* p_controls);
+
+	// Create the clickable structs
+	void createClickableData(std::map<std::string, SDL_Texture*> p_textures);
 
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
@@ -81,7 +80,6 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
-
 	 //for moving clickables
     float moveSpeed = .1f;
 
@@ -110,8 +108,8 @@ private:
 	int collisionFrames;
 
 	    //for spawning clickables
-	std::string clickableTextures[1] = {"Hotdog 0"};
+	std::vector<SpriteCreateInfo> clickables;
     float timer = 100;
 	
-
+    int dawgs;
 };

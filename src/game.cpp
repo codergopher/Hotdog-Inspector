@@ -12,6 +12,7 @@ world(&controls)
 	SDL_ShowCursor(SDL_DISABLE);
 
 	loadTextures();
+	world.createClickableData(textures);
 	loadWorld();
 
 }

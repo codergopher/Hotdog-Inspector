@@ -32,6 +32,15 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 	return false;
 }
 
+GameWorld::GameWorld(Controls* p_controls)
+:controls(p_controls), 
+collisionFrames(2),
+timer(100),
+dawgs(0)
+{
+	allCollisions.resize(0);
+}
+
 GameWorld::~GameWorld()
 {
 	// Delete any sprites that haven't been deleted
@@ -42,6 +51,32 @@ GameWorld::~GameWorld()
 		std::cout << s->getName() << std::endl;
 		delete s;
 	}
+}
+
+void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textures)
+{
+
+	//Add all possible clickable structs
+	//HOTDOG CLEAN
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Good Hotdog 0";
+
+        createInfo.tex = p_textures["Hotdog 0"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-32, -9);
+        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        clickables.push_back(createInfo);
+    }
 }
 
 // create the camera, pretty simple
@@ -383,56 +418,22 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 		if (sprite->isClickable() && SpriteVsSprite(sprite, conveyors[0]))
 		{
-			std::cout << "moving" << std::endl;
-			std::cout << std::to_string(moveSpeed) << std::endl;
-			sprite->move(Vector2f(.1f, 0));
+
+			sprite->move(Vector2f(0.1f, 0));
 		}
-		// if (e->shouldDelete())
-		// {	
-		// 	if (e->getName() == "Particle")
-		// 	{
-
-		// 		//std::cout << "haha, going to delete this lol" << std::endl;
-		// 		std::vector<Particle*>::iterator p = std::find(particles.begin(), particles.end(), (Particle*)e);
-		// 		PhysicsObject* physicsObject = e->getPhysicsObject();
-		// 		if (physicsObject != nullptr)
-		// 			physics->deleteObject(physicsObject);
-
-		// 		delete e;
-		// 		particles.erase(p);
-		// 		allSprites.erase(i);
-		// 		continue;
-		// 	}
-		// }
 		sprite->updatePrev();
 		sprite->update(dt);
+	}
 
-		timer+= dt;
-    	if (timer > 50.0f)
+	timer+= 0.01f;
+	if (timer > 0.5f)
+	{
+    	timer = 0.0f;
     	{
-        	timer = 0;
-        	{
-            	SpriteCreateInfo createInfo = {};
-            	createInfo.name = "Test";
-
-            	createInfo.tex = p_textures[clickableTextures[0]];
-            	createInfo.alpha = 255;
-            	createInfo.flip = SDL_FLIP_NONE;
-            	createInfo.pos = Vector2f(-32, -9);
-            	createInfo.origin = Vector2f(6.f, 12.5f);
-            	createInfo.frameSize = Vector2i(12, 25);
-            	createInfo.scale = Vector2f(1.0f, 1.0f);
-            	createInfo.depth = 0;
-            	createInfo.zoomModifier = 1.f;
-
-            	//It's a clickable!
-            	createInfo.clickable = true;
-            	createInfo.halfBounds = Vector2f(2.5f, 8.5f);
-
-            	createSprite(createInfo, 9);
-            	std::cout << "spawned a dog :O" << std::endl;
-        	}
-    }
+        	createSprite(clickables.at(0), 9);
+        	dawgs++;
+        	std::cout << "\n" << dawgs << std::endl;
+    	}
 	}
 
 	//Check for collisions
