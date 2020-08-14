@@ -78,7 +78,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.halfBounds = Vector2f(2.5f, 8.5f);
         clickables.push_back(createInfo);
     }
-    	//HOTDOG MOLDY
+    //HOTDOG MOLDY
 	{
 		SpriteCreateInfo createInfo = {};
         createInfo.name = "Bad Hotdog 0";
