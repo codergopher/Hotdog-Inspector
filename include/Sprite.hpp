@@ -54,6 +54,7 @@ struct SpriteCreateInfo
 	float zoomModifier;
 
 	bool clickable;
+	bool interactsWithCursor;
 	Vector2f halfBounds;
 };
 
@@ -111,6 +112,10 @@ public:
 	const float& getZoomModifier() const { return zoomModifier; }
 
 	bool isClickable() { return clickable; }
+	bool isInteractsWithCursor() { return interactsWithCursor; }
+	bool isClicked() { return clicked; }
+
+	void setIsClicked(bool p_bool) { clicked = p_bool; }
 
 	const Vector2f& getHalfBounds() const { return halfBounds; }
 
@@ -173,6 +178,8 @@ protected:
 
 	// Every sprite has the potential to be a clickable
 	bool clickable;
+	bool interactsWithCursor;
+	bool clicked;
 	Vector2f halfBounds;
 
 	// Should the sprite be deleted?

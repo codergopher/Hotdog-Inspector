@@ -21,8 +21,17 @@ void Cursor::update(const float& p_dt)
 	// If the user is pressing left mouse, move the slotted sprite
 	if (controls->isLeftClick() && slot)
 	{
-		slot->mustDelete(true);
-		slot->setPos(getPos());
+		if (slot->isInteractsWithCursor())
+		{
+			slot->setIsClicked(true);
+			slot->setPos(getPos());
+		}
+	}
+
+	if (!(controls->isLeftClick()) && slot)
+	{
+		slot->setIsClicked(false);
+		std::cout << "haha" << std::endl;
 	}
 }
 

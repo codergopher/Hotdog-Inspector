@@ -27,6 +27,7 @@ prevAngle(0.f),
 depth(1), 
 zoomModifier(0),
 clickable(false),
+interactsWithCursor(false),
 halfBounds(0.0f, 0.0f)
 {}
 
@@ -53,6 +54,8 @@ angle(p_info.angle),
 depth(p_info.depth),
 zoomModifier(p_info.zoomModifier),
 clickable(p_info.clickable),
+interactsWithCursor(p_info.interactsWithCursor),
+clicked(false),
 halfBounds(p_info.halfBounds),
 pleaseDelete(false)
 {
