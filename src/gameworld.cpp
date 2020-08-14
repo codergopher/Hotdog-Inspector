@@ -66,7 +66,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Hotdog 0"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -9);
+        createInfo.pos = Vector2f(-33, -14);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -75,7 +75,8 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
 
         //It's a clickable!
         createInfo.clickable = true;
-        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        createInfo.interactsWithCursor = true;
+        createInfo.halfBounds = Vector2f(2.5f, 6.5f);
         clickables.push_back(createInfo);
     }
     //HOTDOG MOLDY
@@ -86,7 +87,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Hotdog 1"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -9);
+        createInfo.pos = Vector2f(-33, -14);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -95,6 +96,29 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
 
         //It's a clickable!
         createInfo.clickable = true;
+        createInfo.interactsWithCursor = true;
+        createInfo.halfBounds = Vector2f(2.5f, 6.5f);
+        clickables.push_back(createInfo);
+    }
+
+   	//HOTDOG FINGER
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Hotdog Finger";
+
+        createInfo.tex = p_textures["Finger"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-33, -14);
+        createInfo.origin = Vector2f(5.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.interactsWithCursor = true;
         createInfo.halfBounds = Vector2f(2.5f, 8.5f);
         clickables.push_back(createInfo);
     }
@@ -180,6 +204,16 @@ Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_
 	return &texts.back();
 }
 
+Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	Hotdog* h = new Hotdog(p_info);
+	hotdogs.push_back(h);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, h));
+
+	return h;
+}
+
 void GameWorld::deleteSprite(Sprite* sprite)
 {
 	// Check if it's in the cursor slot
@@ -213,7 +247,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 	if (cursorTest)
 	{
 
-		std::cout << "Deleted " << cursorTest->getName() << std::endl;
+		//std::cout << "Deleted " << cursorTest->getName() << std::endl;
 		delete cursor;
 
 		// Has been deleted, so carry on to the next sprite
@@ -224,7 +258,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 
 	if (conveyorTest)
 	{	
-		std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
 
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Conveyor*>::iterator conveyorIndex = std::find(conveyors.begin(), conveyors.end(), conveyorTest);
@@ -234,12 +268,26 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		return;
 	}
 
+	Hotdog* hotdogTest = dynamic_cast<Hotdog*>(sprite);
+
+	if (hotdogTest)
+	{	
+		//std::cout << "Deleted " << hotdogTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Hotdog*>::iterator hotdogIndex = std::find(hotdogs.begin(), hotdogs.end(), hotdogTest);
+		hotdogs.erase(hotdogIndex);
+
+		delete hotdogTest;
+		return;
+	}
+
 	Particle* particleTest = dynamic_cast<Particle*>(sprite);
 
 	if (particleTest)
 	{	
 
-		std::cout << "Deleted " << particleTest->getName() << std::endl;
+		//std::cout << "Deleted " << particleTest->getName() << std::endl;
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Particle*>::iterator particleIndex = std::find(particles.begin(), particles.end(), particleTest);
 
@@ -254,7 +302,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 
 	if (spriteTest)
 	{	
-		std::cout << "Deleted " << spriteTest->getName() << std::endl;
+		//std::cout << "Deleted " << spriteTest->getName() << std::endl;
 
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Sprite*>::iterator index = std::find(sprites.begin(), sprites.end(), spriteTest);
@@ -361,6 +409,9 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 	// Vector2f normal = normalise(delta);
 
 	// Vector2f correction = normal * deltaLength;
+
+	p_a->duringCollision(p_b);
+	p_b->duringCollision(p_a);
 	if (controls->isLeftClick())
 	{
 		// Check if p_a is a Cursor
@@ -372,7 +423,10 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 		{
 			// If the cursor slot isn't full, set it to be this slot
 			if (!cursorTest->isSlotFull())
-				cursorTest->setSlot(p_b);
+			{
+				if (p_b->isInteractsWithCursor())
+					cursorTest->setSlot(p_b);
+			}
 		}
 
 		// Check if p_a is a Cursor
@@ -383,7 +437,8 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 		{	
 			// If the cursor slot isn't full, set it to be this slot
 			if (!cursorTest->isSlotFull())
-				cursorTest->setSlot(p_a);
+				if (p_a->isInteractsWithCursor())
+					cursorTest->setSlot(p_a);
 		}
 
 		
@@ -443,6 +498,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 		sprite->updatePrev();
 		sprite->update(dt);
+		//sprite->clamp();
 	}
 
 	timer+= 0.01f;
@@ -450,9 +506,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
-        	createSprite(clickables.at(rand() % 2), 9);
+        	createHotdog(clickables.at(rand() % 3), 9);
         	dawgs++;
-        	std::cout << "\n" << dawgs << std::endl;
     	}
 	}
 

@@ -15,6 +15,7 @@
 #include "Cursor.hpp"
 #include "Character.hpp"
 #include "Text.hpp"
+#include "Hotdog.hpp"
 
 struct CollisionInfo
 {
@@ -57,6 +58,8 @@ public:
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 
+	Hotdog* createHotdog(SpriteCreateInfo& p_info, int p_drawOrder);
+
 	void deleteSprite(Sprite* sprite);
 	
 	// Not in use. The particle system currently isn't operational
@@ -97,6 +100,7 @@ private:
 	Camera camera;
 	std::vector<Sprite*> sprites;
 	std::vector<Particle*> particles;
+	std::vector<Hotdog*> hotdogs;
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;

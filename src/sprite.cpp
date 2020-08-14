@@ -27,6 +27,7 @@ prevAngle(0.f),
 depth(1), 
 zoomModifier(0),
 clickable(false),
+interactsWithCursor(false),
 halfBounds(0.0f, 0.0f)
 {}
 
@@ -53,6 +54,8 @@ angle(p_info.angle),
 depth(p_info.depth),
 zoomModifier(p_info.zoomModifier),
 clickable(p_info.clickable),
+interactsWithCursor(p_info.interactsWithCursor),
+clicked(false),
 halfBounds(p_info.halfBounds),
 pleaseDelete(false)
 {
@@ -64,6 +67,33 @@ pleaseDelete(false)
 void Sprite::setPos(Vector2f p_pos)
 {	
 	pos = p_pos;
+}
+
+void Sprite::clamp()
+{
+	if (pos.x >= 32.f)
+	{
+		pos.x = 32.f;
+		prevPos.x = pos.x;
+	}
+
+	if(pos.y >= 32.f)
+	{
+		pos.y = 32.f;
+		prevPos.y = pos.y;
+	}
+
+	if (pos.x <= -32.f)
+	{
+		pos.x = -32.f;
+		prevPos.x = pos.x;
+	}
+
+	if(pos.y <= -32.f)
+	{
+		pos.y = -32.f;
+		prevPos.y = pos.y;
+	}
 }
 
 void Sprite::move(Vector2f p_v)
@@ -126,6 +156,11 @@ void Sprite::play(AnimationCycle& p_cycle)
 void Sprite::onCollisionBegin(Sprite* p_sprite)
 {
 	
+}
+
+void Sprite::duringCollision(Sprite* p_sprite)
+{
+
 }
 
 void Sprite::onCollisionEnd(Sprite* p_sprite)
