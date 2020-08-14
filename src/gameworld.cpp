@@ -247,7 +247,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 	if (cursorTest)
 	{
 
-		std::cout << "Deleted " << cursorTest->getName() << std::endl;
+		//std::cout << "Deleted " << cursorTest->getName() << std::endl;
 		delete cursor;
 
 		// Has been deleted, so carry on to the next sprite
@@ -258,7 +258,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 
 	if (conveyorTest)
 	{	
-		std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
 
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Conveyor*>::iterator conveyorIndex = std::find(conveyors.begin(), conveyors.end(), conveyorTest);
@@ -272,7 +272,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 
 	if (hotdogTest)
 	{	
-		std::cout << "Deleted " << hotdogTest->getName() << std::endl;
+		//std::cout << "Deleted " << hotdogTest->getName() << std::endl;
 
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Hotdog*>::iterator hotdogIndex = std::find(hotdogs.begin(), hotdogs.end(), hotdogTest);
@@ -287,7 +287,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 	if (particleTest)
 	{	
 
-		std::cout << "Deleted " << particleTest->getName() << std::endl;
+		//std::cout << "Deleted " << particleTest->getName() << std::endl;
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Particle*>::iterator particleIndex = std::find(particles.begin(), particles.end(), particleTest);
 
@@ -302,7 +302,7 @@ void GameWorld::deleteSprite(Sprite* sprite)
 
 	if (spriteTest)
 	{	
-		std::cout << "Deleted " << spriteTest->getName() << std::endl;
+		//std::cout << "Deleted " << spriteTest->getName() << std::endl;
 
 		// Find the this conveyor from the conveyors, and remove it from the list
 		std::vector<Sprite*>::iterator index = std::find(sprites.begin(), sprites.end(), spriteTest);
@@ -409,6 +409,9 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 	// Vector2f normal = normalise(delta);
 
 	// Vector2f correction = normal * deltaLength;
+
+	p_a->duringCollision(p_b);
+	p_b->duringCollision(p_a);
 	if (controls->isLeftClick())
 	{
 		// Check if p_a is a Cursor

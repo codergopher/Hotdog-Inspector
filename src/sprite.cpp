@@ -131,6 +131,11 @@ void Sprite::onCollisionBegin(Sprite* p_sprite)
 	
 }
 
+void Sprite::duringCollision(Sprite* p_sprite)
+{
+	
+}
+
 void Sprite::onCollisionEnd(Sprite* p_sprite)
 {
 	
