@@ -137,6 +137,18 @@ Camera* GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 }
 
 // p_drawOrder is the drawing heiarchy
+Crate* GameWorld::createCrate(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	Crate* c = new Crate(p_info);
+	crates.push_back(c);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, c));
+
+	return c;
+}
+
+
+// p_drawOrder is the drawing heiarchy
 Conveyor* GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	Conveyor* c = new Conveyor(p_info);
@@ -268,6 +280,21 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		// Has been deleted, so carry on to the next sprite
 		return;
 	}
+
+	Crate* crateTest = dynamic_cast<Crate*>(sprite);
+
+	if (crateTest)
+	{	
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Crate*>::iterator crateIndex = std::find(crates.begin(), crates.end(), crateTest);
+		crates.erase(crateIndex);
+
+		delete crateTest;
+		return;
+	}
+
 
 	Conveyor* conveyorTest = dynamic_cast<Conveyor*>(sprite);
 

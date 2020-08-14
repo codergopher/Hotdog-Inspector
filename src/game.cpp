@@ -64,8 +64,13 @@ void Game::loadTextures()
     SDL_Texture* t8 = window->loadTexture("res/trash_can.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Trash Can 0", t8));
 
+<<<<<<< HEAD
     SDL_Texture* t9 = window->loadTexture("res/UI/X.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Lives 0", t9));
+=======
+    SDL_Texture* t9 = window->loadTexture("res/crate_0.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Crate 0", t9));
+>>>>>>> 02be9b44dac28afa368e4a6c4f69bfc8b2ba295b
 
 }
 
@@ -147,6 +152,30 @@ void Game::loadWorld()
 		c->init();
 		c->setControls(&controls);
 	}
+
+	// The crate
+	{
+		SpriteCreateInfo createInfo = {};
+		createInfo.name = "Crate";
+		createInfo.tex = textures["Crate 0"];
+		createInfo.alpha = 255;
+		createInfo.flip = SDL_FLIP_NONE;
+		createInfo.pos = Vector2f(-12, 17);
+		createInfo.angle = 0.0f;
+		createInfo.origin = Vector2f(14, 4);
+		createInfo.frameSize = Vector2i(28, 21);
+		createInfo.scale = Vector2f(1.0f, 1.0f);
+		createInfo.depth = 0;
+		createInfo.zoomModifier = 1.f;
+
+		// it's a clickable
+		//createInfo.clickable = true;
+		createInfo.clickable = true;
+		createInfo.halfBounds = Vector2f(11.f, 4.5f);
+
+	    world.createCrate(createInfo, 0);
+	}
+
 
 	// The Conveyor
 	{

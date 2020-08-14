@@ -17,6 +17,7 @@
 #include "Text.hpp"
 #include "Lives.hpp"
 #include "Hotdog.hpp"
+#include "Crate.hpp"
 
 struct CollisionInfo
 {
@@ -50,6 +51,7 @@ public:
 
 	// Create ______ (fill in the blank). The p_drawOrder specifies the layering of the 
 	// renderer. A higher p_drawOrder will result in being draw on top of lower p_drawOrder
+	Crate* createCrate(SpriteCreateInfo& p_info, int p_drawOrder);
 	Conveyor* createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
@@ -94,6 +96,7 @@ private:
 
 	// Ptr to the controls
 	Controls* controls;
+	std::vector<Crate*> crates;
 	std::vector<Conveyor*> conveyors;
 	std::list<Text> texts;
 	std::list<Character> characters;
