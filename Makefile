@@ -358,6 +358,33 @@ src/gameworld.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.s
 .PHONY : src/gameworld.cpp.s
 
+src/hotdog.obj: src/hotdog.cpp.obj
+
+.PHONY : src/hotdog.obj
+
+# target to build an object file
+src/hotdog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.obj
+.PHONY : src/hotdog.cpp.obj
+
+src/hotdog.i: src/hotdog.cpp.i
+
+.PHONY : src/hotdog.i
+
+# target to preprocess a source file
+src/hotdog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.i
+.PHONY : src/hotdog.cpp.i
+
+src/hotdog.s: src/hotdog.cpp.s
+
+.PHONY : src/hotdog.s
+
+# target to generate assembly for a file
+src/hotdog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.s
+.PHONY : src/hotdog.cpp.s
+
 src/imgui.obj: src/imgui.cpp.obj
 
 .PHONY : src/imgui.obj
@@ -519,6 +546,33 @@ src/jsoncpp.s: src/jsoncpp.cpp.s
 src/jsoncpp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.s
 .PHONY : src/jsoncpp.cpp.s
+
+src/lives.obj: src/lives.cpp.obj
+
+.PHONY : src/lives.obj
+
+# target to build an object file
+src/lives.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj
+.PHONY : src/lives.cpp.obj
+
+src/lives.i: src/lives.cpp.i
+
+.PHONY : src/lives.i
+
+# target to preprocess a source file
+src/lives.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.i
+.PHONY : src/lives.cpp.i
+
+src/lives.s: src/lives.cpp.s
+
+.PHONY : src/lives.s
+
+# target to generate assembly for a file
+src/lives.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.s
+.PHONY : src/lives.cpp.s
 
 src/main.obj: src/main.cpp.obj
 
@@ -715,6 +769,9 @@ help:
 	@echo ... src/gameworld.obj
 	@echo ... src/gameworld.i
 	@echo ... src/gameworld.s
+	@echo ... src/hotdog.obj
+	@echo ... src/hotdog.i
+	@echo ... src/hotdog.s
 	@echo ... src/imgui.obj
 	@echo ... src/imgui.i
 	@echo ... src/imgui.s
@@ -733,6 +790,9 @@ help:
 	@echo ... src/jsoncpp.obj
 	@echo ... src/jsoncpp.i
 	@echo ... src/jsoncpp.s
+	@echo ... src/lives.obj
+	@echo ... src/lives.i
+	@echo ... src/lives.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

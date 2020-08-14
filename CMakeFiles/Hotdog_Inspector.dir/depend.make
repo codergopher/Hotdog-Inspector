@@ -17,6 +17,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj: src/game.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj: src/gameworld.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.obj: src/hotdog.cpp
+
 CMakeFiles/Hotdog_Inspector.dir/src/imgui.cpp.obj: src/imgui.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/imgui_demo.cpp.obj: src/imgui_demo.cpp
@@ -28,6 +30,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj: src/imgui_sdl.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj: src/imgui_widgets.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj: src/jsoncpp.cpp
+
+CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj: src/lives.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj: src/main.cpp
 

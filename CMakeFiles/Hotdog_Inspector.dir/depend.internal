@@ -17,6 +17,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/game.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/gameworld.cpp
+CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.obj
+ C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/hotdog.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/imgui.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/imgui.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/imgui_demo.cpp.obj
@@ -29,6 +31,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/imgui_widgets.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/jsoncpp.cpp
+CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj
+ C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/lives.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj
  C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp
 CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj

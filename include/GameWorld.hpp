@@ -15,6 +15,7 @@
 #include "Cursor.hpp"
 #include "Character.hpp"
 #include "Text.hpp"
+#include "Lives.hpp"
 #include "Hotdog.hpp"
 
 struct CollisionInfo
@@ -57,6 +58,7 @@ public:
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+	Lives* createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder);
 
 	Hotdog* createHotdog(SpriteCreateInfo& p_info, int p_drawOrder);
 
@@ -101,6 +103,7 @@ private:
 	std::vector<Sprite*> sprites;
 	std::vector<Particle*> particles;
 	std::vector<Hotdog*> hotdogs;
+	std::vector<Lives> lifeCounters;
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;

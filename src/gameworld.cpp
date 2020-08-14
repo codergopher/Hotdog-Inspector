@@ -204,6 +204,21 @@ Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_
 	return &texts.back();
 }
 
+Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder)
+{
+	Lives c(p_info, p_lives);
+
+	for (int i = 0; i < c.getLives(); i++)
+	{
+		std::cout << "ko" << std::endl;
+		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &c.getSprite(i)));
+	}
+
+	lifeCounters.push_back(c);
+	return &lifeCounters.back();
+
+}
+
 Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	Hotdog* h = new Hotdog(p_info);

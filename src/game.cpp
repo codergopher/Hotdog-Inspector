@@ -64,6 +64,9 @@ void Game::loadTextures()
     SDL_Texture* t8 = window->loadTexture("res/trash_can.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Trash Can 0", t8));
 
+    SDL_Texture* t9 = window->loadTexture("res/UI/X.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Lives 0", t9));
+
 }
 
 void Game::loadWorld()
@@ -185,6 +188,23 @@ void Game::loadWorld()
 	// 	world.createText(createInfo, "cpp is better than python", 8);	
 	// 	//world.createCharacter(createInfo, "e", 8);
 	// }
+
+	// UI Lives
+	 {
+	 	SpriteCreateInfo createInfo = {};
+	 	createInfo.name = "Life Counter";
+	 	createInfo.tex = textures["Lives 0"];
+	 	createInfo.alpha = 255;
+	 	createInfo.color = Color(255, 255, 255);
+	 	createInfo.flip = SDL_FLIP_NONE;
+	 	createInfo.pos = Vector2f(-48, 0);
+	 	createInfo.origin = Vector2f(0, 0);
+	 	createInfo.frameSize = Vector2i(7, 7);
+	 	createInfo.scale = Vector2f(1.0f, 1.0f);
+	 	createInfo.depth = 0;
+	 	createInfo.zoomModifier = 1.f;
+	 	world.createLives(createInfo, 3, 10);	
+	 }
 
 	// Frame to clip off anything outside the 64x64 playpen
 	{
