@@ -55,9 +55,11 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = p_sprite->getPos();
 	}
 
-	if (p_sprite->getName() == "Conveyor" && !clicked)
+	if (p_sprite->getName() == "Crate" && !clicked)
 	{
-		
+		isDying = true;
+		clickable = false;
+		targetPos = p_sprite->getPos();
 	}
 }
 
