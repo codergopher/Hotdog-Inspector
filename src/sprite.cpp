@@ -69,6 +69,33 @@ void Sprite::setPos(Vector2f p_pos)
 	pos = p_pos;
 }
 
+void Sprite::clamp()
+{
+	if (pos.x >= 32.f)
+	{
+		pos.x = 32.f;
+		prevPos.x = pos.x;
+	}
+
+	if(pos.y >= 32.f)
+	{
+		pos.y = 32.f;
+		prevPos.y = pos.y;
+	}
+
+	if (pos.x <= -32.f)
+	{
+		pos.x = -32.f;
+		prevPos.x = pos.x;
+	}
+
+	if(pos.y <= -32.f)
+	{
+		pos.y = -32.f;
+		prevPos.y = pos.y;
+	}
+}
+
 void Sprite::move(Vector2f p_v)
 {
 	setPos(pos + p_v);
@@ -133,7 +160,7 @@ void Sprite::onCollisionBegin(Sprite* p_sprite)
 
 void Sprite::duringCollision(Sprite* p_sprite)
 {
-	
+
 }
 
 void Sprite::onCollisionEnd(Sprite* p_sprite)

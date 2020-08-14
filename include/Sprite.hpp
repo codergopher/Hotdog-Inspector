@@ -124,6 +124,8 @@ public:
 	void setAngle(float p_angle) { angle = p_angle; }
 	void setColor(Color p_color) { color = p_color; }
 
+	void clamp();
+
 	// Move the sprite by an offset
 	void move(Vector2f p_v);
 

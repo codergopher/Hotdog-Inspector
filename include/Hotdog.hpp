@@ -22,7 +22,7 @@ private:
 	float scaleLifeTime;
 	float alphaLifeTime;
 
-	Vector2f deathTarget;
+	Vector2f targetPos;
 
 	float lag;
 };

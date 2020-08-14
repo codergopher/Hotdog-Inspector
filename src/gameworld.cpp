@@ -110,7 +110,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
         createInfo.pos = Vector2f(-33, -14);
-        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.origin = Vector2f(5.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
         createInfo.depth = 0;
@@ -423,7 +423,10 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 		{
 			// If the cursor slot isn't full, set it to be this slot
 			if (!cursorTest->isSlotFull())
-				cursorTest->setSlot(p_b);
+			{
+				if (p_b->isInteractsWithCursor())
+					cursorTest->setSlot(p_b);
+			}
 		}
 
 		// Check if p_a is a Cursor
@@ -434,7 +437,8 @@ void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
 		{	
 			// If the cursor slot isn't full, set it to be this slot
 			if (!cursorTest->isSlotFull())
-				cursorTest->setSlot(p_a);
+				if (p_a->isInteractsWithCursor())
+					cursorTest->setSlot(p_a);
 		}
 
 		
@@ -494,6 +498,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 		sprite->updatePrev();
 		sprite->update(dt);
+		//sprite->clamp();
 	}
 
 	timer+= 0.01f;

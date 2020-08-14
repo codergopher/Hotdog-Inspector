@@ -129,7 +129,7 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(2.5f, 2.5f);
+		createInfo.origin = Vector2f(2.5f, 1.5f);
 		createInfo.frameSize = Vector2i(5, 5);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
