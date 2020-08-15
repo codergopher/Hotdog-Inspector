@@ -28,7 +28,7 @@ void Crate::duringCollision(Sprite* p_sprite)
 
 	if (hotdog && hotdogAmount < 6)
 	{	
-		if (!hotdog->isClicked())
+		if (!hotdog->isClicked() && hotdog->isCanKill())
 			hotdogAmount++;
 	}
 }

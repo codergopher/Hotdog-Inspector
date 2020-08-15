@@ -3,7 +3,8 @@
 Conveyor::Conveyor() {}
 
 Conveyor::Conveyor(const SpriteCreateInfo& p_info)
-:Sprite::Sprite(p_info)
+:Sprite::Sprite(p_info),
+speed(0.1f, 0.0f)
 {
 	
 	loadFrames(frameSize);

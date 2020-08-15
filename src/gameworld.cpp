@@ -33,7 +33,7 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 }
 
 GameWorld::GameWorld(Controls* p_controls)
-:moveSpeed(0.1f),
+:
 controls(p_controls), 
 collisionFrames(2),
 timer(100),
@@ -538,10 +538,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			allSprites.erase(i);
 			continue;
 		}
-		if (sprite->isClickable() && SpriteVsSprite(sprite, conveyors[0]))
-		{
-			sprite->move(Vector2f(moveSpeed, 0));
-		}
+
 		sprite->updatePrev();
 		sprite->update(dt);
 		//sprite->clamp();
