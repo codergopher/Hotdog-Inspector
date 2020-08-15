@@ -33,6 +33,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj: src/imgui_widgets.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj: src/jsoncpp.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj: src/life.cpp
+
 CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj: src/lives.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj: src/main.cpp

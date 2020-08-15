@@ -226,9 +226,9 @@ Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_dra
 
 	lifeCounters.push_back(c);
 
-	for (int i = 0; i < c.getLives(); i++)
+	for (int i = 0; i < c.getLifeCount(); i++)
 	{
-		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &lifeCounters.back().getSprite(i)));
+		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &lifeCounters.back().getLives(i)));
 	}
 
 	return &lifeCounters.back();

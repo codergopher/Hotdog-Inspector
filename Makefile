@@ -574,6 +574,33 @@ src/jsoncpp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.s
 .PHONY : src/jsoncpp.cpp.s
 
+src/life.obj: src/life.cpp.obj
+
+.PHONY : src/life.obj
+
+# target to build an object file
+src/life.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj
+.PHONY : src/life.cpp.obj
+
+src/life.i: src/life.cpp.i
+
+.PHONY : src/life.i
+
+# target to preprocess a source file
+src/life.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.i
+.PHONY : src/life.cpp.i
+
+src/life.s: src/life.cpp.s
+
+.PHONY : src/life.s
+
+# target to generate assembly for a file
+src/life.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.s
+.PHONY : src/life.cpp.s
+
 src/lives.obj: src/lives.cpp.obj
 
 .PHONY : src/lives.obj
@@ -820,6 +847,9 @@ help:
 	@echo ... src/jsoncpp.obj
 	@echo ... src/jsoncpp.i
 	@echo ... src/jsoncpp.s
+	@echo ... src/life.obj
+	@echo ... src/life.i
+	@echo ... src/life.s
 	@echo ... src/lives.obj
 	@echo ... src/lives.i
 	@echo ... src/lives.s

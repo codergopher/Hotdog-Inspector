@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj"
+  "CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj"

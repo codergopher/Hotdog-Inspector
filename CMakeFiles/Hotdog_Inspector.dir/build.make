@@ -284,9 +284,22 @@ CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\jsoncpp.cpp -o CMakeFiles\Hotdog_Inspector.dir\src\jsoncpp.cpp.s
 
+CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
+CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj: src/life.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\life.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\life.cpp
+
+CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\life.cpp > CMakeFiles\Hotdog_Inspector.dir\src\life.cpp.i
+
+CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\life.cpp -o CMakeFiles\Hotdog_Inspector.dir\src\life.cpp.s
+
 CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj: src/lives.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\lives.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\lives.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.i: cmake_force
@@ -299,7 +312,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\main.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\main.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.i: cmake_force
@@ -312,7 +325,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj: src/math.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\math.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\math.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.i: cmake_force
@@ -325,7 +338,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj: src/particle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\particle.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\particle.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.i: cmake_force
@@ -338,7 +351,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/particle.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj: src/renderwindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\renderwindow.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\renderwindow.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.i: cmake_force
@@ -351,7 +364,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/renderwindow.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj: src/sprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\sprite.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\sprite.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.i: cmake_force
@@ -364,7 +377,7 @@ CMakeFiles/Hotdog_Inspector.dir/src/sprite.cpp.s: cmake_force
 
 CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj: CMakeFiles/Hotdog_Inspector.dir/flags.make
 CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj: src/text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.obj"
 	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Hotdog_Inspector.dir\src\text.cpp.obj -c C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\src\text.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/text.cpp.i: cmake_force
@@ -393,6 +406,7 @@ Hotdog_Inspector_OBJECTS = \
 "CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj" \
 "CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj" \
 "CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj" \
+"CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj" \
 "CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj" \
 "CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj" \
 "CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj" \
@@ -420,6 +434,7 @@ Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/imgui_draw.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj
+Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj
@@ -431,7 +446,7 @@ Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/build.make
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/linklibs.rsp
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/objects1.rsp
 Hotdog_Inspector.exe: CMakeFiles/Hotdog_Inspector.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable Hotdog_Inspector.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\jwism\Documents\GitHub\Hotdog-Inspector\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable Hotdog_Inspector.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Hotdog_Inspector.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"click",
+				"clickables"
+			],
+			[
+				"text",
+				"textures"
+			],
+			[
 				"test",
 				"testTexture"
 			]
@@ -61,11 +69,39 @@
 	},
 	"file_history":
 	[
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/text.cpp",
+		"/C/Users/jwism/Downloads/message (3).txt",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Text.hpp",
+		"/C/Users/jwism/Downloads/message.txt",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/game.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/lives.cpp",
+		"/C/Users/jwism/Downloads/gameworld.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/GameWorld.hpp",
+		"/C/Users/jwism/Downloads/gameworld.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/character.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Cursor.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/gameworld.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/renderwindow.cpp",
+		"/C/devkitPro/projects/nds/Snake/source/apple.h",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/clickablespawner.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/ClickableSpawner.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/cursor.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Clickable.h",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Clickable.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Character.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Animation.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Game.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/controls.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/animation.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/Conveyor.hpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/conveyor.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/font.cpp",
+		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/camera.cpp",
 		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/include/json/json.h",
 		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/Hotdog_Inspector.sublime-project",
 		"/C/Users/jwism/Documents/Projects/Sublime Text/SDL2/WebAssembly Test/src/main.cpp",
 		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeLists.txt",
-		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp",
 		"/C/Users/jwism/Documents/GitHub/Hotdog-Inspector/cmake_install.cmake",
 		"/C/Users/jwism/Documents/Projects/Sublime Text/SDL2/Out of Control/index.html",
 		"/C/Users/jwism/Downloads/shell_minimal.html",
@@ -90,7 +126,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -104,6 +140,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"0",
+			"quit",
+			"createho",
+			"create",
+			"during",
+			"cout",
+			"haha",
+			"aha",
+			"h",
+			"hah",
+			"haha\\",
+			"haha",
+			"createhotdo",
+			"hotdog",
+			".move",
+			"vect",
+			"0.01",
+			"timer",
+			"clicka",
+			"clicla",
+			"cout",
+			"floor",
+			"texts",
 			"index",
 			"naked",
 			"owl",
@@ -132,11 +191,11 @@
 	},
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 29.0
 	},
 	"input":
 	{
-		"height": 45.0
+		"height": 47.0
 	},
 	"layout":
 	{
@@ -163,7 +222,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 352.0
+		"height": 334.0
 	},
 	"output.find_results":
 	{
@@ -172,7 +231,7 @@
 	"pinned_build_system": "Hotdog_Inspector - all",
 	"replace":
 	{
-		"height": 52.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -209,7 +268,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 231.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

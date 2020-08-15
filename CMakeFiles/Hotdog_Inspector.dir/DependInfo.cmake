@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/imgui_sdl.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/imgui_sdl.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/imgui_widgets.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/imgui_widgets.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/jsoncpp.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/jsoncpp.cpp.obj"
+  "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/life.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/life.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/lives.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/lives.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/main.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/main.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/math.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.obj"
