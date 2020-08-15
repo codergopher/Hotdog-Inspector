@@ -331,6 +331,33 @@ src/cursor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.s
 .PHONY : src/cursor.cpp.s
 
+src/furnace.obj: src/furnace.cpp.obj
+
+.PHONY : src/furnace.obj
+
+# target to build an object file
+src/furnace.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/furnace.cpp.obj
+.PHONY : src/furnace.cpp.obj
+
+src/furnace.i: src/furnace.cpp.i
+
+.PHONY : src/furnace.i
+
+# target to preprocess a source file
+src/furnace.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/furnace.cpp.i
+.PHONY : src/furnace.cpp.i
+
+src/furnace.s: src/furnace.cpp.s
+
+.PHONY : src/furnace.s
+
+# target to generate assembly for a file
+src/furnace.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/furnace.cpp.s
+.PHONY : src/furnace.cpp.s
+
 src/game.obj: src/game.cpp.obj
 
 .PHONY : src/game.obj
@@ -820,6 +847,9 @@ help:
 	@echo ... src/cursor.obj
 	@echo ... src/cursor.i
 	@echo ... src/cursor.s
+	@echo ... src/furnace.obj
+	@echo ... src/furnace.i
+	@echo ... src/furnace.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s

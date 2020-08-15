@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/conveyor.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/crate.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/cursor.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj"
+  "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/furnace.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/furnace.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/game.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/gameworld.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj"
   "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/hotdog.cpp" "C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/CMakeFiles/Hotdog_Inspector.dir/src/hotdog.cpp.obj"

@@ -15,6 +15,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.obj: src/crate.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj: src/cursor.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/furnace.cpp.obj: src/furnace.cpp
+
 CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj: src/game.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj: src/gameworld.cpp

@@ -103,7 +103,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = &p_sprite->getPos();
-		if (name == "Bad Hotdog" || name == "Hotdog Finger")
+		if (name == "Bad Hotdog" || name == "Hotdog Finger" || name == "Pig foot" || name == "Radioactive")
 		{
 			if (!lifeCounter->removeLife())
 			{

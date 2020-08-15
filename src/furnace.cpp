@@ -7,7 +7,7 @@ Furnace::Furnace()
 
 }
 Furnace::Furnace(const SpriteCreateInfo& p_info)
-:Sprite(p_info),
+:Sprite(p_info)
 {
 
 }
