@@ -230,7 +230,7 @@ void Game::loadWorld()
 	 	createInfo.scale = Vector2f(1.0f, 1.0f);
 	 	createInfo.depth = 0;
 	 	createInfo.zoomModifier = 1.f;
-	 	world.createLives(createInfo, 3, 10);	
+	 	world.createLives(createInfo, 4, 10);	
 	 }
 
 	// Frame to clip off anything outside the 64x64 playpen

@@ -23,7 +23,7 @@ bool Lives::updateLives(Uint8 p_lives)
 {
 	lives = p_lives;
 	//update actual sprites
-	for (int i = 0; i < 3 - lives; i++)
+	for (int i = 0; i < 4 - lives; i++)
 	{
 		UIsprites.at(i).play(animationSet["Enabled"]);
 		UIsprites.at(i).play(animationSet["Enabled"]);
