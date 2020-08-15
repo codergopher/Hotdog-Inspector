@@ -10,8 +10,6 @@ speed(0.1f, 0.0f)
 	loadFrames(frameSize);
 	currentFrame = frames[0];
 
-	// Load a set of Animation Cycles from a file
-	animationSet = loadAnimationFile("res/conveyor_belt_0.json");
 	// Set the playback speed of the main animation
 	animationSet["Conveyor"].playBackSpeed = 0.2f;
 }

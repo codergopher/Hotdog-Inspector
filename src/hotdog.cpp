@@ -60,6 +60,9 @@ void Hotdog::update(const float& p_dt)
 
 	if (!clicked && !targetPos)
 		canKill = false;
+
+	if (doesAnimate)
+		animate(p_dt);
 }
 
 void Hotdog::onCollisionBegin(Sprite* p_sprite)
@@ -113,5 +116,12 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 
 void Hotdog::onCollisionEnd(Sprite* p_sprite)
 {
+
+}
+
+void Hotdog::animate(const float& p_dt)
+{
+	std::cout << "haha" << std::endl;
+	play(animationSet["main"]);
 
 }

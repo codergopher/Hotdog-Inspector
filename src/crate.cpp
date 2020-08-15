@@ -14,7 +14,6 @@ shouldMoveToTarget(false),
 targetPos(0.f, 0.f),
 lag(0.02f)
 {
-	animationSet = loadAnimationFile("res/crate_0.json");
 }
 
 void Crate::onCollisionBegin(Sprite* p_sprite)

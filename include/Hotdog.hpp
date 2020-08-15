@@ -18,6 +18,8 @@ public:
 	void onCollisionEnd(Sprite* p_sprite) override;
 
 	bool isCanKill() { return canKill; }
+
+	void animate(const float& p_dt);
 private:
 
 	bool canKill;

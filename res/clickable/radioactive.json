@@ -71,7 +71,7 @@
   "size": { "w": 84, "h": 25 },
   "scale": "1",
   "frameTags": [
-   { "name": "RadioactiveHotdog", "from": 0, "to": 0, "direction": "forward" }
+   { "name": "main", "from": 0, "to": 6, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer Copy", "opacity": 255, "blendMode": "normal" },

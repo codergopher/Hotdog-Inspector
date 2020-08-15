@@ -17,7 +17,6 @@ public:
 
 	void animate(const float& p_dt);
 private:
-	std::map<std::string, AnimationCycle> animationSet;
 	int hotdogAmount;
 
 	bool shouldMoveToTarget;
