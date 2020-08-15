@@ -27,14 +27,10 @@ private:
 	float scaleLifeTime;
 	float alphaLifeTime;
 
-<<<<<<< HEAD
 	Lives* lifeCounter;
 
-	Vector2f targetPos;
-=======
 	Vector2f* targetPos;
 	Vector2f lastTargetPos;
->>>>>>> a34f7444bd6dad1b10b13d4dd48345a1c53fc223
 
 	float lag;
 };

@@ -6,29 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/gameworld.cpp
-iostream
--
-algorithm
--
-Conveyor.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Conveyor.hpp
-GameWorld.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/GameWorld.hpp
-Sprite.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Sprite.hpp
-Camera.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Camera.hpp
-Particle.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Particle.hpp
-Cursor.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Cursor.hpp
-
 C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/hotdog.cpp
 Hotdog.hpp
 C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Hotdog.hpp
-
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/lives.cpp
-Lives.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Lives.hpp
+Conveyor.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Conveyor.hpp
 
