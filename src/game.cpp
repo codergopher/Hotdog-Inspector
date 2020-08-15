@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Animation.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -69,6 +70,9 @@ void Game::loadTextures()
 
     SDL_Texture* t10 = window->loadTexture("res/crate_0.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Crate 0", t10));
+
+    SDL_Texture* t11 = window->loadTexture("res/clickable/radioactive.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Radioactive Hotdog", t11));
 
 }
 
@@ -166,6 +170,9 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
+		// it animates
+		createInfo.doesAnimate = true;
+		createInfo.animationSet = loadAnimationFile("res/crate_0.json");
 		// it's a clickable
 		//createInfo.clickable = true;
 		createInfo.clickable = true;
@@ -189,6 +196,9 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
+
+		createInfo.doesAnimate = true;
+		createInfo.animationSet = loadAnimationFile("res/conveyor_belt_0.json");
 
 		// it's a clickable
 		//createInfo.clickable = true;

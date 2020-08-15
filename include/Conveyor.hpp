@@ -21,7 +21,5 @@ public:
 	Vector2f& getSpeed() { return speed; }
 
 private:
-	std::map<std::string, AnimationCycle> animationSet;
-
 	Vector2f speed;
 };

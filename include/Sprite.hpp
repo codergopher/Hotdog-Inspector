@@ -56,6 +56,9 @@ struct SpriteCreateInfo
 	bool clickable;
 	bool interactsWithCursor;
 	Vector2f halfBounds;
+
+	bool doesAnimate;
+	std::map<std::string, AnimationCycle> animationSet;
 };
 
 // The basic unit that can be rendered
@@ -114,6 +117,7 @@ public:
 	bool isClickable() { return clickable; }
 	bool isInteractsWithCursor() { return interactsWithCursor; }
 	bool isClicked() { return clicked; }
+	bool isDoesAnimate() { return doesAnimate; }
 
 	void setIsClicked(bool p_bool) { clicked = p_bool; }
 
@@ -194,5 +198,8 @@ protected:
 	// This here is deprecated, but don't delete it unless you
 	// want to do some refactoring
 	std::vector<Frame> frames;
+
+	bool doesAnimate;
+	std::map<std::string, AnimationCycle> animationSet;
 
 };

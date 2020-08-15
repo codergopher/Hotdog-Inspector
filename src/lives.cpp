@@ -1,16 +1,16 @@
 #include "Lives.hpp"
 
-Lives::Lives(const SpriteCreateInfo& p_info, Uint8 p_lifeCount)
-:lifeCount(p_lifeCount),
+Lives::Lives(const SpriteCreateInfo& p_info, Uint8 p_lives)
+:lives(p_lives),
 spacing(8)
 {
 	// Load a set of Animation Cycles from a file
 	animationSet = loadAnimationFile("res/UI/X.json");
-	for (Uint8 i = 0; i < lifeCount; i++)
+	for (Uint8 i = 0; i < lives; i++)
 	{
 			SpriteCreateInfo tempInfo = p_info;
 			tempInfo.pos.x = tempInfo.pos.x + spacing*(i);
-			lives.push_back(Life(tempInfo));
+			UIsprites.push_back(Sprite(tempInfo));
 			// Set the playback speed of the main animation
 			animationSet["Enabled"].playBackSpeed = 1.f;
 			animationSet["Disabled"].playBackSpeed = 1.f;
@@ -19,28 +19,39 @@ spacing(8)
 	
 }
 
-bool Lives::updateLives(Uint8 p_lifeCount)
+bool Lives::updateLives(Uint8 p_lives)
 {
-	lifeCount = p_lifeCount;
+	lives = p_lives;
 	//update actual sprites
-	for (int i = 0; i < 4 - lifeCount; i++)
+	for (int i = 0; i < 4 - lives; i++)
 	{
-		lives.at(i).updateIcon(true);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
+		UIsprites.at(i).play(animationSet["Enabled"]);
 	}
-	return lifeCount > 0; //will return false if u r dead
+	return lives > 0; //will return false if u r dead
 }
 
 bool Lives::removeLife()
 {
-	return updateLives(lifeCount - 1);
+	return updateLives(lives - 1);
 }
 
-Uint8 Lives::getLifeCount()
+Uint8 Lives::getLives()
 {
-	return lifeCount;
+	return lives;
 }
 
-Sprite& Lives::getLives(Uint8 p_index)
+Sprite& Lives::getSprite(Uint8 p_index)
 {
-	return lives.at(p_index);
+	return UIsprites.at(p_index);
 }
