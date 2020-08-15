@@ -61,7 +61,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
 	//HOTDOG CLEAN
 	{
 		SpriteCreateInfo createInfo = {};
-        createInfo.name = "Good Hotdog 0";
+        createInfo.name = "Good Hotdog";
 
         createInfo.tex = p_textures["Hotdog 0"];
         createInfo.alpha = 255;
@@ -82,7 +82,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
     //HOTDOG MOLDY
 	{
 		SpriteCreateInfo createInfo = {};
-        createInfo.name = "Bad Hotdog 0";
+        createInfo.name = "Bad Hotdog";
 
         createInfo.tex = p_textures["Hotdog 1"];
         createInfo.alpha = 255;
@@ -235,9 +235,9 @@ Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_dra
 
 }
 
-Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, int p_drawOrder)
+Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, int p_drawOrder)
 {
-	Hotdog* h = new Hotdog(p_info);
+	Hotdog* h = new Hotdog(p_info, &p_lifeCounter);
 	hotdogs.push_back(h);
 
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, h));
@@ -552,7 +552,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
-        	createHotdog(clickables.at(rand() % 3), 9);
+        	createHotdog(clickables.at(rand() % 3), lifeCounters.front(), 9);
         	dawgs++;
     	}
 	}

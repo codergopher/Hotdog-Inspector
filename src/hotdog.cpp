@@ -5,14 +5,16 @@ Hotdog::Hotdog()
 
 }
 
-Hotdog::Hotdog(const SpriteCreateInfo& p_info)
-:Sprite(p_info),
+Hotdog::Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter)
+:Sprite(p_info), 
 isDying(false),
 fAlpha(255),
 scaleLifeTime(1.f),
 alphaLifeTime(300.f),
+lifeCounter(p_lifeCounter),
 targetPos(0, 0),
 lag(0.1f)
+
 {
 
 }
@@ -53,6 +55,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = p_sprite->getPos();
+		if (name == "Good Hotdog")
+		{
+			lifeCounter->removeLife();
+		}
 	}
 
 	if (p_sprite->getName() == "Crate" && !clicked)
@@ -60,6 +66,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = p_sprite->getPos();
+		if (name == "Bad Hotdog" || name == "Hotdog Finger")
+		{
+			lifeCounter->removeLife();
+		}
 	}
 }
 

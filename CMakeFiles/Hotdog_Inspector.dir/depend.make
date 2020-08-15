@@ -11,6 +11,8 @@ CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.obj: src/controls.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.obj: src/conveyor.cpp
 
+CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.obj: src/crate.cpp
+
 CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj: src/cursor.cpp
 
 CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj: src/game.cpp

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotdog_Inspector.dir/src/character.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/controls.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.obj"
+  "CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/cursor.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/game.cpp.obj"
   "CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj"

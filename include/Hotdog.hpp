@@ -2,12 +2,13 @@
 
 #include "Sprite.hpp"
 #include "Animation.hpp"
+#include "Lives.hpp"
 
 class Hotdog : public Sprite
 {
 public:
 	Hotdog();
-	Hotdog(const SpriteCreateInfo& p_info);
+	Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter);
 
 	void update(const float& p_dt) override;
 
@@ -21,6 +22,8 @@ private:
 	float fAlpha;
 	float scaleLifeTime;
 	float alphaLifeTime;
+
+	Lives* lifeCounter;
 
 	Vector2f targetPos;
 

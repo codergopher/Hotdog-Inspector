@@ -5,6 +5,7 @@
 
 #include "Math.hpp"
 #include "Sprite.hpp"
+#include "Animation.hpp"
 
 class Lives
 {
@@ -18,6 +19,7 @@ public:
 
 private:
 	Uint8 lives;
-	Uint8 spacing = 4;
+	Uint8 spacing;
 	std::vector<Sprite> UIsprites;
+	std::map<std::string, AnimationCycle> animationSet;
 };

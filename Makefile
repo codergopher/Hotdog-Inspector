@@ -277,6 +277,33 @@ src/conveyor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/conveyor.cpp.s
 .PHONY : src/conveyor.cpp.s
 
+src/crate.obj: src/crate.cpp.obj
+
+.PHONY : src/crate.obj
+
+# target to build an object file
+src/crate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.obj
+.PHONY : src/crate.cpp.obj
+
+src/crate.i: src/crate.cpp.i
+
+.PHONY : src/crate.i
+
+# target to preprocess a source file
+src/crate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.i
+.PHONY : src/crate.cpp.i
+
+src/crate.s: src/crate.cpp.s
+
+.PHONY : src/crate.s
+
+# target to generate assembly for a file
+src/crate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Hotdog_Inspector.dir\build.make CMakeFiles/Hotdog_Inspector.dir/src/crate.cpp.s
+.PHONY : src/crate.cpp.s
+
 src/cursor.obj: src/cursor.cpp.obj
 
 .PHONY : src/cursor.obj
@@ -760,6 +787,9 @@ help:
 	@echo ... src/conveyor.obj
 	@echo ... src/conveyor.i
 	@echo ... src/conveyor.s
+	@echo ... src/crate.obj
+	@echo ... src/crate.i
+	@echo ... src/crate.s
 	@echo ... src/cursor.obj
 	@echo ... src/cursor.i
 	@echo ... src/cursor.s
