@@ -192,7 +192,7 @@ void Game::loadWorld()
 
 		// it's a clickable
 		//createInfo.clickable = true;
-		createInfo.clickable = false;
+		createInfo.clickable = true;
 		createInfo.halfBounds = Vector2f(31.f, 12.f);
 
 	    world.createConveyor(createInfo, 0);

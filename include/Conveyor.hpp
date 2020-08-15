@@ -18,6 +18,10 @@ public:
 
 	void onCollisionBegin(Sprite* p_sprite) override;
 
+	Vector2f& getSpeed() { return speed; }
+
 private:
 	std::map<std::string, AnimationCycle> animationSet;
+
+	Vector2f speed;
 };

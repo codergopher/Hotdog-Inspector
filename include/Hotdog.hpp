@@ -14,15 +14,20 @@ public:
 	void onCollisionBegin(Sprite* p_sprite) override;
 	void duringCollision(Sprite* p_sprite) override;
 	void onCollisionEnd(Sprite* p_sprite) override;
+
+	bool isCanKill() { return canKill; }
 private:
 
+
+	bool canKill;
 	bool isDying;
 
 	float fAlpha;
 	float scaleLifeTime;
 	float alphaLifeTime;
 
-	Vector2f targetPos;
+	Vector2f* targetPos;
+	Vector2f lastTargetPos;
 
 	float lag;
 };
