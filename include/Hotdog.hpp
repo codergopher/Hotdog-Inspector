@@ -3,6 +3,7 @@
 #include "Sprite.hpp"
 #include "Animation.hpp"
 #include "Lives.hpp"
+extern bool quit;
 
 class Hotdog : public Sprite
 {
@@ -18,7 +19,6 @@ public:
 
 	bool isCanKill() { return canKill; }
 private:
-
 
 	bool canKill;
 	bool isDying;

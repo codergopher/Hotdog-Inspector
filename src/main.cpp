@@ -15,6 +15,8 @@
 
 #include "Controls.hpp"
 
+bool quit = false;
+
 bool kBox2DScale = 30.f;
 
 bool gShowFrameRate = false;
@@ -78,7 +80,7 @@ int main(int argc, char* args[])
 	double oneSecond = 0;
 	int framesRenderedInOneSecond = 0;
 
-	while(!game.shouldQuit())
+	while(!quit)
 	{
 		double newTime = hireTimeInSeconds();
 		double frameTime = newTime - currentTime;

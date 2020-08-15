@@ -48,7 +48,7 @@ void Cursor::update(const float& p_dt)
 	if (!(controls->isLeftClick()) && slot)
 	{
 		slot->setIsClicked(false);
-		std::cout << "haha" << std::endl;
+		//std::cout << "haha" << std::endl;
 	}
 }
 

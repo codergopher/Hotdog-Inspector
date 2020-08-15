@@ -52,7 +52,7 @@ void Crate::update(const float& p_dt)
 		move(vel);
 	}
 
-	pos.print();
+	//pos.print();
 	if (pos.y > 40.f)
 	{
 		clickable = true;

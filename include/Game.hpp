@@ -9,6 +9,8 @@
 #include "GameWorld.hpp"
 #include "Math.hpp"
 
+extern bool quit;
+
 
 // Epic Game class
 class Game
@@ -44,5 +46,5 @@ private:
 	std::map<std::string, SDL_Texture*> textures;
 
 	// Should we want to quit the game
-	bool quit;
+	//GONE
 };

@@ -73,7 +73,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 	Conveyor* conveyor = dynamic_cast<Conveyor*>(p_sprite);
 	if (conveyor)
 	{
-		std::cout << "lol" << std::endl;
+		//std::cout << "lol" << std::endl;
 		//targetPos = &p_sprite->getPos();
 		move(Vector2f(conveyor->getSpeed()));
 		lastTargetPos += conveyor->getSpeed();
@@ -87,7 +87,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 		if (name == "Good Hotdog")
 		{
-			lifeCounter->removeLife();
+			if (!lifeCounter->removeLife())
+			{
+				quit = true;
+			}
 		}
 		targetPos = &p_sprite->getPos();
 	}
@@ -99,7 +102,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 		if (name == "Bad Hotdog" || name == "Hotdog Finger")
 		{
-			lifeCounter->removeLife();
+			if (!lifeCounter->removeLife())
+			{
+				quit = true;
+			}
 		}
 		targetPos = &p_sprite->getPos();
 	}

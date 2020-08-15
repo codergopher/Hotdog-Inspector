@@ -8,7 +8,6 @@ spacing(8)
 	animationSet = loadAnimationFile("res/ui/X.json");
 	for (Uint8 i = 0; i < lives; i++)
 	{
-			std::cout << "ok" << std::endl;
 			SpriteCreateInfo tempInfo = p_info;
 			tempInfo.pos.x = tempInfo.pos.x + spacing*(i);
 			UIsprites.push_back(Sprite(tempInfo));
