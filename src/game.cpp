@@ -12,7 +12,6 @@ world(&controls)
 	SDL_ShowCursor(SDL_DISABLE);
 
 	loadTextures();
-	
 	loadWorld();
 
 }
@@ -55,29 +54,11 @@ void Game::loadTextures()
 	SDL_Texture* t5 = window->loadTexture("res/clickable/normal.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Hotdog 0", t5));
 
-    SDL_Texture* t6 = window->loadTexture("res/clickable/moldy.png");
-    textures.insert(std::pair<std::string, SDL_Texture*>("Hotdog 1", t6));
-
-    SDL_Texture* t7 = window->loadTexture("res/clickable/finger.png");
-    textures.insert(std::pair<std::string, SDL_Texture*>("Finger", t7));
-
-    SDL_Texture* t8 = window->loadTexture("res/trash_can.png");
-    textures.insert(std::pair<std::string, SDL_Texture*>("Trash Can 0", t8));
-
-<<<<<<< HEAD
-    SDL_Texture* t9 = window->loadTexture("res/UI/X.png");
-    textures.insert(std::pair<std::string, SDL_Texture*>("Lives 0", t9));
-=======
-    SDL_Texture* t9 = window->loadTexture("res/crate_0.png");
-    textures.insert(std::pair<std::string, SDL_Texture*>("Crate 0", t9));
->>>>>>> 02be9b44dac28afa368e4a6c4f69bfc8b2ba295b
-
 }
 
 void Game::loadWorld()
 {	
 
-	world.createClickableData(textures);
 	// create the world
 
 	// The camera. First param is the position of cam, second is the view port of the camera
@@ -94,7 +75,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["Floor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(1, 2);
+		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(32, 32);
 		createInfo.frameSize = Vector2i(64, 64);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -108,27 +89,6 @@ void Game::loadWorld()
 	
 	}
 
-	// Trash can
-	{
-		SpriteCreateInfo createInfo = {};
-		createInfo.name = "Trash Can";
-		createInfo.tex = textures["Trash Can 0"];
-		createInfo.alpha = 255;
-		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(24, 22);
-		createInfo.origin = Vector2f(12, 6);
-		createInfo.frameSize = Vector2i(24, 43);
-		createInfo.scale = Vector2f(1.0f, 1.0f);
-		createInfo.depth = 0;
-		createInfo.zoomModifier = 1.f;
-
-		//createInfo.clickable = true;
-		createInfo.clickable = true;
-		createInfo.halfBounds = Vector2f(12, 6);
-		world.createSprite(createInfo, 1);	
-	
-	}
-
 	//cursor
 	{
 		SpriteCreateInfo createInfo = {};
@@ -137,7 +97,7 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(2.5f, 1.5f);
+		createInfo.origin = Vector2f(2.5f, 2.5f);
 		createInfo.frameSize = Vector2i(5, 5);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
@@ -146,36 +106,12 @@ void Game::loadWorld()
 		// It's a clickable!
 		createInfo.clickable = true;
 		//createInfo.clickable = false;
-		createInfo.halfBounds = Vector2f(0.5f, 0.5f);
+		createInfo.halfBounds = Vector2f(2.5f, 2.5f);
 
 		Cursor* c = world.createCursor(createInfo, 19);
 		c->init();
 		c->setControls(&controls);
 	}
-
-	// The crate
-	{
-		SpriteCreateInfo createInfo = {};
-		createInfo.name = "Crate";
-		createInfo.tex = textures["Crate 0"];
-		createInfo.alpha = 255;
-		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(-12, 17);
-		createInfo.angle = 0.0f;
-		createInfo.origin = Vector2f(14, 4);
-		createInfo.frameSize = Vector2i(28, 21);
-		createInfo.scale = Vector2f(1.0f, 1.0f);
-		createInfo.depth = 0;
-		createInfo.zoomModifier = 1.f;
-
-		// it's a clickable
-		//createInfo.clickable = true;
-		createInfo.clickable = true;
-		createInfo.halfBounds = Vector2f(11.f, 4.5f);
-
-	    world.createCrate(createInfo, 0);
-	}
-
 
 	// The Conveyor
 	{
@@ -184,7 +120,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, -14);
+		createInfo.pos = Vector2f(0, -12);
 		createInfo.angle = 0.0f;
 		createInfo.origin = Vector2f(31, 12);
 		createInfo.frameSize = Vector2i(62, 38);
@@ -200,40 +136,23 @@ void Game::loadWorld()
 	    world.createConveyor(createInfo, 0);
 	}
 
-	// // text test
-	// {
-	// 	SpriteCreateInfo createInfo = {};
-	// 	createInfo.name = "Text";
-	// 	createInfo.tex = textures["Font 0"];
-	// 	createInfo.alpha = 255;
-	// 	createInfo.color = Color(255, 255, 255);
-	// 	createInfo.flip = SDL_FLIP_NONE;
-	// 	createInfo.pos = Vector2f(-48, 0);
-	// 	createInfo.origin = Vector2f(0, 0);
-	// 	createInfo.frameSize = Vector2i(4, 5);
-	// 	createInfo.scale = Vector2f(1.0f, 1.0f);
-	// 	createInfo.depth = 0;
-	// 	createInfo.zoomModifier = 1.f;
-	// 	world.createText(createInfo, "cpp is better than python", 8);	
-	// 	//world.createCharacter(createInfo, "e", 8);
-	// }
-
-	// UI Lives
-	 {
-	 	SpriteCreateInfo createInfo = {};
-	 	createInfo.name = "Life Counter";
-	 	createInfo.tex = textures["Lives 0"];
-	 	createInfo.alpha = 255;
-	 	createInfo.color = Color(255, 255, 255);
-	 	createInfo.flip = SDL_FLIP_NONE;
-	 	createInfo.pos = Vector2f(-48, 0);
-	 	createInfo.origin = Vector2f(0, 0);
-	 	createInfo.frameSize = Vector2i(7, 7);
-	 	createInfo.scale = Vector2f(1.0f, 1.0f);
-	 	createInfo.depth = 0;
-	 	createInfo.zoomModifier = 1.f;
-	 	world.createLives(createInfo, 3, 10);	
-	 }
+	// text test
+	{
+		SpriteCreateInfo createInfo = {};
+		createInfo.name = "Text";
+		createInfo.tex = textures["Font 0"];
+		createInfo.alpha = 255;
+		createInfo.color = Color(255, 255, 255);
+		createInfo.flip = SDL_FLIP_NONE;
+		createInfo.pos = Vector2f(-48, 0);
+		createInfo.origin = Vector2f(0, 0);
+		createInfo.frameSize = Vector2i(4, 5);
+		createInfo.scale = Vector2f(1.0f, 1.0f);
+		createInfo.depth = 0;
+		createInfo.zoomModifier = 1.f;
+		world.createText(createInfo, "cpp is better than python", 8);	
+		//world.createCharacter(createInfo, "e", 8);
+	}
 
 	// Frame to clip off anything outside the 64x64 playpen
 	{

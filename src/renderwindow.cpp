@@ -143,8 +143,8 @@ void RenderWindow::render(GameWorld& p_world, const double& p_alpha)
 
 		dst.x = roundToInt(roundToScale(x, 1/camZoom));
 		dst.y = roundToInt(roundToScale(y, 1/camZoom));
-		dst.w = roundToScale(frame.rect.w * scale.x * camZoom, camZoom);
-		dst.h = roundToScale(frame.rect.h * scale.y * camZoom, camZoom);
+		dst.w = frame.rect.w * scale.x * camZoom;
+		dst.h = frame.rect.h * scale.y * camZoom;
 
 		SDL_SetTextureAlphaMod(tex, e->getAlpha());
 		SDL_SetTextureColorMod(tex, color.r, color.g, color.b);

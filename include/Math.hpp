@@ -133,13 +133,6 @@ struct Vector2f
 		x /= p_s;
 		y /= p_s;
 	}
-
-	bool operator==(Vector2f p_v)
-	{
-		if (x == p_v.x && y == p_v.y)
-			return true;
-		return false;
-	}
 };
 
 
