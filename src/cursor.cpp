@@ -18,11 +18,37 @@ void Cursor::update(const float& p_dt)
 	// Set the cursor pos to be the mouse pos
 	setPos(*controls->getWorldMousePos());
 
+	// clamp it
+	if (pos.x >= 32.f)
+	{
+		pos.x = 32.f;
+	}
+
+	if(pos.y >= 32.f)
+		pos.y = 32.f;
+
+	if (pos.x <= -32.f)
+	{
+		pos.x = -32.f;
+	}
+
+	if(pos.y <= -32.f)
+		pos.y = -32.f;
+
 	// If the user is pressing left mouse, move the slotted sprite
 	if (controls->isLeftClick() && slot)
 	{
-		//slot->mustDelete(true);
-		slot->setPos(getPos());
+		if (slot->isInteractsWithCursor())
+		{
+			slot->setIsClicked(true);
+			slot->setPos(getPos());
+		}
+	}
+
+	if (!(controls->isLeftClick()) && slot)
+	{
+		slot->setIsClicked(false);
+		std::cout << "haha" << std::endl;
 	}
 }
 

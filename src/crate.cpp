@@ -32,6 +32,7 @@ void Crate::duringCollision(Sprite* p_sprite)
 			hotdogAmount++;
 	}
 }
+
 void Crate::update(const float& p_dt)
 {
 	if (hotdogAmount > 5)

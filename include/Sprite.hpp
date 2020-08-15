@@ -54,6 +54,7 @@ struct SpriteCreateInfo
 	float zoomModifier;
 
 	bool clickable;
+	bool interactsWithCursor;
 	Vector2f halfBounds;
 };
 
@@ -111,6 +112,10 @@ public:
 	const float& getZoomModifier() const { return zoomModifier; }
 
 	bool isClickable() { return clickable; }
+	bool isInteractsWithCursor() { return interactsWithCursor; }
+	bool isClicked() { return clicked; }
+
+	void setIsClicked(bool p_bool) { clicked = p_bool; }
 
 	const Vector2f& getHalfBounds() const { return halfBounds; }
 
@@ -118,6 +123,8 @@ public:
 	void setScale(Vector2f p_scale);
 	void setAngle(float p_angle) { angle = p_angle; }
 	void setColor(Color p_color) { color = p_color; }
+
+	void clamp();
 
 	// Move the sprite by an offset
 	void move(Vector2f p_v);
@@ -137,6 +144,7 @@ public:
 	virtual void play(AnimationCycle& p_cycle);
 
 	virtual void onCollisionBegin(Sprite* p_sprite);
+	virtual void duringCollision(Sprite* p_sprite);
 	virtual void onCollisionEnd(Sprite* p_sprite);
 
 protected:
@@ -173,6 +181,8 @@ protected:
 
 	// Every sprite has the potential to be a clickable
 	bool clickable;
+	bool interactsWithCursor;
+	bool clicked;
 	Vector2f halfBounds;
 
 	// Should the sprite be deleted?

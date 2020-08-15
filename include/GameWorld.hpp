@@ -15,6 +15,9 @@
 #include "Cursor.hpp"
 #include "Character.hpp"
 #include "Text.hpp"
+#include "Lives.hpp"
+#include "Hotdog.hpp"
+#include "Crate.hpp"
 
 struct CollisionInfo
 {
@@ -40,11 +43,15 @@ public:
 	GameWorld(){}
 	GameWorld(Controls* p_controls);
 
+	// Create the clickable structs
+	void createClickableData(std::map<std::string, SDL_Texture*> p_textures);
+
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
 
 	// Create ______ (fill in the blank). The p_drawOrder specifies the layering of the 
 	// renderer. A higher p_drawOrder will result in being draw on top of lower p_drawOrder
+	Crate* createCrate(SpriteCreateInfo& p_info, int p_drawOrder);
 	Conveyor* createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
@@ -53,6 +60,9 @@ public:
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
+	Lives* createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder);
+
+	Hotdog* createHotdog(SpriteCreateInfo& p_info, int p_drawOrder);
 
 	void deleteSprite(Sprite* sprite);
 	
@@ -77,22 +87,28 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
-
 	 //for moving clickables
-    float moveSpeed;
+    float moveSpeed = .1f;
+
+
 	// The cursor
 	Cursor* cursor;
 
 	// Ptr to the controls
 	Controls* controls;
+	std::vector<Crate*> crates;
 	std::vector<Conveyor*> conveyors;
 	std::list<Text> texts;
 	std::list<Character> characters;
+	std::list<Lives> lifeCounters;
+
 
 
 	Camera camera;
 	std::vector<Sprite*> sprites;
 	std::vector<Particle*> particles;
+	std::vector<Hotdog*> hotdogs;
+
 
 	// A ptr to all of the sprites, and all of the objects that inherit the sprite class.
 	std::multimap<int, Sprite*> allSprites;
@@ -103,10 +119,9 @@ private:
 
 	int collisionFrames;
 
-	//for spawning clickables
-	std::string clickableTextures[1] = {"Hotdog 0"};
+	    //for spawning clickables
+	std::vector<SpriteCreateInfo> clickables;
     float timer = 100;
-
+	
     int dawgs;
-
 };
