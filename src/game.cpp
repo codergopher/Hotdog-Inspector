@@ -291,6 +291,8 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
+		world.createSprite(createInfo, 31);	
+
 		world.createSprite(createInfo, 100);	
 	}
 
@@ -339,6 +341,7 @@ void Game::loadWorld()
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
+		createInfo.angle = 0;
 		createInfo.origin = Vector2f(36, 36);
 		createInfo.frameSize = Vector2i(72, 72);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
