@@ -346,8 +346,7 @@ Splash* GameWorld::createSplash(SpriteCreateInfo& p_info, int p_drawOrder)
 	return s;
 }
 
-<<<<<<< HEAD
-=======
+
 Menu* GameWorld::createMenu(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	
@@ -359,31 +358,6 @@ Menu* GameWorld::createMenu(SpriteCreateInfo& p_info, int p_drawOrder)
 	return m;
 }
 
-Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
-{
-	Character c(p_info, character);
-	characters.push_back(c);
-
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-
-	return &characters.back();
-}
-
-Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder)
-{
-	Text c(p_info, string);
-
-	for (int i = 0; i < c.getSize(); i++)
-	{
-		characters.push_back(c.getCharacter(i));
-		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-	}
-
-	texts.push_back(c);
-	return &texts.back();
-}
-
->>>>>>> e68ae186f92419ea672954fbfaf051c4db41b863
 Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder)
 {
 

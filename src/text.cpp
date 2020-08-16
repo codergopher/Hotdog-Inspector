@@ -1,4 +1,4 @@
-#include "Furnace.hpp"
+#include "Text.hpp"
 
 Text::Text()
 {

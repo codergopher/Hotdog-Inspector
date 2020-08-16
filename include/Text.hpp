@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL2/SDL_ttf>
+#include <SDL2/SDL_ttf.h>
 #include "Sprite.hpp"
 
 class Text : public Sprite
