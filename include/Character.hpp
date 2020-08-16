@@ -9,7 +9,7 @@
 class Character : public Sprite
 {
 public:
-	~Character();
+	//~Character();
 	Character();
 	Character(const SpriteCreateInfo& p_info, std::string p_character);
 

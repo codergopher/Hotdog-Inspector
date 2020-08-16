@@ -1,9 +1,9 @@
 #include "Character.hpp"
 
-Character::~Character()
-{
-	std::cout << "haha deleted char " << std::endl;
-}
+//Character::~Character()
+//{
+//	std::cout << "haha deleted char " << std::endl;
+//}
 
 Character::Character() {}
 
