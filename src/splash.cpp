@@ -4,7 +4,8 @@ Splash::Splash() {}
 
 Splash::Splash(const SpriteCreateInfo& p_info)
 :Sprite::Sprite(p_info),
-fAlpha(255),
+alphaDelta(100.f),
+fAlpha(1),
 alphaLifeTime(100.f)
 {
 	
@@ -15,12 +16,15 @@ alphaLifeTime(100.f)
 
 void Splash::update(const float& p_dt)
 {
-	if (alpha > 0)
-	{
-		fAlpha -= alphaLifeTime * p_dt;
-		alpha = roundToInt(fAlpha);
-	}
-	else
+	std::cout << fAlpha << std::endl;
+	if (alpha >254)
+		alphaDelta = -100.f;
+
+
+	fAlpha += alphaDelta * p_dt;
+	alpha = roundToInt(fAlpha);
+
+	if (alpha < 1)
 	{
 		pleaseDelete = true;
 	}

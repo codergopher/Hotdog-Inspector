@@ -312,7 +312,7 @@ void Game::loadWorld()
 		SpriteCreateInfo createInfo = {};
 		createInfo.name = "Splash";
 		createInfo.tex = textures["Splash 0"];
-		createInfo.alpha = 255;
+		createInfo.alpha = 1;
 		createInfo.flip = SDL_FLIP_NONE;
 		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(24, 24);
