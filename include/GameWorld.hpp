@@ -19,6 +19,7 @@
 #include "Hotdog.hpp"
 #include "Crate.hpp"
 #include "Furnace.hpp"
+#include "AudioManager.hpp"
 
 struct CollisionInfo
 {
@@ -49,6 +50,8 @@ public:
 
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
+	// Create audio manager
+	AudioManager* createAudioManager();
 
 	// Create ______ (fill in the blank). The p_drawOrder specifies the layering of the 
 	// renderer. A higher p_drawOrder will result in being draw on top of lower p_drawOrder
@@ -95,6 +98,9 @@ private:
 
 	// The cursor
 	Cursor* cursor;
+
+	// audio manager
+	AudioManager* audioManager;
 
 	// Ptr to the controls
 	Controls* controls;

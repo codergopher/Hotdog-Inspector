@@ -253,6 +253,13 @@ Camera* GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 	return &camera;
 }
 
+// create audio manager
+AudioManager* GameWorld::createAudioManager()
+{
+	audioManager = new AudioManager();
+	return audioManager;
+}
+
 // p_drawOrder is the drawing heiarchy
 Crate* GameWorld::createCrate(SpriteCreateInfo& p_info, int p_drawOrder)
 {
