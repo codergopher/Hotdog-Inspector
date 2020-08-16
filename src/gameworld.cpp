@@ -544,11 +544,11 @@ bool GameWorld::SpriteVsSprite(Sprite* p_a, Sprite* p_b)
 
 void GameWorld::collisionTest()
 {
-	// if (splashCounter < splashTime)
-	// {
-	// 	splash.update();
-	// }
-	if (1)
+	if (splashCounter < splashTime)
+	{
+		splash.update();
+	}
+	if (splashScreens.size() == 0)
 	{
 		std::multimap<int, Sprite*>::iterator first = allSprites.begin();
 		std::multimap<int, Sprite*>::iterator last = allSprites.end();
