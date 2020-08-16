@@ -314,6 +314,17 @@ Sprite* GameWorld::createSprite(SpriteCreateInfo& p_info, int p_drawOrder)
 	return s;
 }
 
+Sprite* GameWorld::createText(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	
+	Sprite* s = new Sprite(p_info);
+	sprites.push_back(s);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, s));
+
+	return s;
+}
+
 // Create a particle on the heap
 Particle* GameWorld::createParticle(SpriteCreateInfo& p_info, int p_drawOrder)
 {
