@@ -14,6 +14,7 @@ world(&controls)
 
 	loadTextures();
 	
+	world.setWindow(nullptr);
 	loadWorld();
 
 }

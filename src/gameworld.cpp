@@ -62,6 +62,11 @@ GameWorld::~GameWorld()
 	}
 }
 
+void GameWorld::setWindow(RenderWindow* p_window)
+{
+	window = p_window;
+}
+
 void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textures)
 {
 
