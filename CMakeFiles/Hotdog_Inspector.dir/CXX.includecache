@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/hotdog.cpp
-Hotdog.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Hotdog.hpp
-Conveyor.hpp
-C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Conveyor.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/text.cpp
+Text.hpp
+C:/Users/jwism/Documents/GitHub/Hotdog-Inspector/src/Text.hpp
 

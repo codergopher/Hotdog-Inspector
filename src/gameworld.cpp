@@ -346,6 +346,7 @@ Splash* GameWorld::createSplash(SpriteCreateInfo& p_info, int p_drawOrder)
 	return s;
 }
 
+
 Menu* GameWorld::createMenu(SpriteCreateInfo& p_info, int p_drawOrder)
 {
 	
@@ -355,30 +356,6 @@ Menu* GameWorld::createMenu(SpriteCreateInfo& p_info, int p_drawOrder)
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, m));
 
 	return m;
-}
-
-Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
-{
-	Character c(p_info, character);
-	characters.push_back(c);
-
-	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-
-	return &characters.back();
-}
-
-Text* GameWorld::createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder)
-{
-	Text c(p_info, string);
-
-	for (int i = 0; i < c.getSize(); i++)
-	{
-		characters.push_back(c.getCharacter(i));
-		allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, &characters.back()));
-	}
-
-	texts.push_back(c);
-	return &texts.back();
 }
 
 Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder)
@@ -766,7 +743,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	    		audioManager.play("spawn", 0);
 	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), audioManager, 9);
 	        	dawgs++;
-	        	texts.front().setText(std::to_string(dawgs));
+	   
 	    	}
 
 		}

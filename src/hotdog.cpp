@@ -109,10 +109,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 				quit = true;
 			}
 		}
-		else
-		{
-			audioManager->play("correct", 0);
-		}
+		//else
+		//{
+			//audioManager->play("correct", 0);
+		//}
 		targetPos = &p_sprite->getPos();
 	}
 

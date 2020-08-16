@@ -13,8 +13,6 @@
 #include "Particle.hpp"
 #include "Controls.hpp"
 #include "Cursor.hpp"
-#include "Character.hpp"
-#include "Text.hpp"
 #include "Lives.hpp"
 #include "Hotdog.hpp"
 #include "Crate.hpp"
@@ -72,9 +70,6 @@ public:
 	Splash* createSplash(SpriteCreateInfo& p_info, int p_drawOrder);
 	Menu* createMenu(SpriteCreateInfo& p_info, int p_drawOrder);
 
-	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
-
-	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 	Lives* createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder);
 
 	Hotdog* createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, AudioManager& p_audioManager, int p_drawOrder);
@@ -125,8 +120,6 @@ private:
 	std::vector<Crate*> crates;
 	std::vector<Furnace*> furnaces;
 	std::vector<Conveyor*> conveyors;
-	std::list<Text> texts;
-	std::list<Character> characters;
 	std::list<Lives> lifeCounters;
 
 

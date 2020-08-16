@@ -261,7 +261,7 @@ void Game::loadWorld()
 	}
 
 	 // Score text
-	 {
+	 /*{
 	 	SpriteCreateInfo createInfo = {};
 	 	createInfo.name = "Text";
 	 	createInfo.tex = textures["Font 0"];
@@ -276,7 +276,7 @@ void Game::loadWorld()
 	 	createInfo.zoomModifier = 1.f;
 	 	world.createText(createInfo, "00000", 10);	
 	 	//world.createCharacter(createInfo, "e", 8);
-	 }
+	 }*/
 
 	// UI Lives
 	 {

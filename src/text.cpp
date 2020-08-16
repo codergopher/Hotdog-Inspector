@@ -1,43 +1,19 @@
 #include "Text.hpp"
 
-Text::Text(const SpriteCreateInfo& p_info, std::string p_string)
-:string(p_string),
-info(p_info)
+Text::Text()
 {
-	for (Uint8 i = 0; i < string.length(); i++)
-	{
-		if (string.at(i) != ' ')
-		{
-			SpriteCreateInfo tempInfo = info;
-			tempInfo.pos.x = tempInfo.pos.x + spacing*(i);
-			std::string cur; 
-			cur += string.at(i); //for some reason I have to do += to get the char into a c++ string
-			characters.push_back(Character(tempInfo, cur));
-		}
-	}
+
+}
+Text::Text(const SpriteCreateInfo& p_info, const char* p_string)
+:Sprite(p_info)
+{
+
 }
 
-Character& Text::getCharacter(Uint8 p_index)
+
+
+void Text::update(const float& p_dt)
 {
-	return characters.at(p_index);
-}
-
-Uint8 Text::getSize()
-{
-	return characters.size();
-}
-
-void Text::setText(std::string p_string)
-{
-	for (auto& c : characters)
-	{
-
-
-		//characters.at(i).setCharacter(cur);
-		c.setCharacter("1");
-		// std::string cur; 
-		// cur += p_string.at(i);
-		//c.setCharacter("g");
-	}
+	
 }
 
