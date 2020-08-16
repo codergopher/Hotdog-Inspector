@@ -200,9 +200,9 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Rat 0"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
-        createInfo.origin = Vector2f(6.f, 12.5f);
-        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.pos = Vector2f(-33, -12);
+        createInfo.origin = Vector2f(7.5f, 4.5f);
+        createInfo.frameSize = Vector2i(15, 9);
         createInfo.scale = Vector2f(1.0f, 1.0f);
         createInfo.depth = 0;
         createInfo.zoomModifier = 1.f;
@@ -213,7 +213,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         //It's a clickable!
         createInfo.clickable = true;
         createInfo.interactsWithCursor = true;
-        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        createInfo.halfBounds = Vector2f(7.5f, 4.5f);
         clickables.push_back(createInfo);
     }
 
@@ -226,7 +226,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
         createInfo.pos = Vector2f(-33, -14);
-        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.origin = Vector2f(6.f, 8.f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
         createInfo.depth = 0;
@@ -235,7 +235,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         //It's a clickable!
         createInfo.clickable = true;
         createInfo.interactsWithCursor = true;
-        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        createInfo.halfBounds = Vector2f(2.5f, 6.5f);
         clickables.push_back(createInfo);
     }
 
