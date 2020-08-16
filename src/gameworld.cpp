@@ -207,8 +207,8 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.depth = 0;
         createInfo.zoomModifier = 1.f;
 
-        // createInfo.doesAnimate = true;
-        // createInfo.animationSet = loadAnimationFile("res/clickable/rat.json");
+        createInfo.doesAnimate = true;
+        createInfo.animationSet = loadAnimationFile("res/clickable/rat.json");
 
         //It's a clickable!
         createInfo.clickable = true;
@@ -677,7 +677,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
-        	createHotdog(clickables.at(rand() % 6), lifeCounters.front(), 9);
+        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
         	dawgs++;
     	}
 	}

@@ -233,7 +233,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(-6, -11);
+		createInfo.pos = Vector2f(-7, -10);
 		createInfo.angle = 0.0f;
 		createInfo.origin = Vector2f(31, 12);
 		createInfo.frameSize = Vector2i(62, 38);
