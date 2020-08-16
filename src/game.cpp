@@ -266,7 +266,7 @@ void Game::loadWorld()
 	 	createInfo.scale = Vector2f(1.0f, 1.0f);
 	 	createInfo.depth = 0;
 	 	createInfo.zoomModifier = 1.f;
-	 	world.createText(createInfo, "00000", 10);	
+	 	world.createText(createInfo, "cxc", 10);	
 	 	//world.createCharacter(createInfo, "e", 8);
 	 }
 

@@ -26,17 +26,7 @@ bool Lives::updateLives(Uint8 p_lives)
 	for (int i = 0; i < 4 - lives; i++)
 	{
 		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
-		UIsprites.at(i).play(animationSet["Enabled"]);
+
 	}
 	return lives > 0; //will return false if u r dead
 }

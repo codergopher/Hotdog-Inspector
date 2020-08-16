@@ -38,19 +38,20 @@ void Character::update(const float& p_dt)
 
 void Character::setCharacter(std::string p_character)
 {
-	animationSet[p_character].playBackSpeed = 1.f;
-	character = p_character;
-	if (character == "1")
+	std::cout << "p_char" << p_character << std::endl;
+	
+	character = "4";
+	
+	if (character == "7")
 	{
-		//std::cout << "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" << std::endl;
+		std::cout << "char" << character << std::endl;
 	}
+	//
 }
 
 void Character::animate(const float& p_dt)
 {	
-	if (character == "1")
-	{
-		std::cout << "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" << std::endl;
-	}
+	std::cout << "char" << character << std::endl;
+
 	play(animationSet[character]);
 }
