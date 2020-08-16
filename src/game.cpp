@@ -260,23 +260,6 @@ void Game::loadWorld()
 	    world.createConveyor(createInfo, 0);
 	}
 
-	 // Score text
-	 {
-	 	SpriteCreateInfo createInfo = {};
-	 	createInfo.name = "Text";
-	 	createInfo.tex = textures["Font 0"];
-	 	createInfo.alpha = 255;
-	 	createInfo.color = Color(255, 255, 255);
-	 	createInfo.flip = SDL_FLIP_NONE;
-	 	createInfo.pos = Vector2f(-28, -28);
-	 	createInfo.origin = Vector2f(0, 0);
-	 	createInfo.frameSize = Vector2i(4, 5);
-	 	createInfo.scale = Vector2f(1.0f, 1.0f);
-	 	createInfo.depth = 0;
-	 	createInfo.zoomModifier = 1.f;
-	 	world.createText(createInfo, "00000", 10);	
-	 	//world.createCharacter(createInfo, "e", 8);
-	 }
 
 	// UI Lives
 	 {
@@ -343,10 +326,10 @@ void Game::loadWorld()
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
-		// createInfo.doesAnimate = true;
-		// createInfo.animationSet = loadAnimationFile("res/title.json");
+		createInfo.doesAnimate = true;
+		createInfo.animationSet = loadAnimationFile("res/title.json");
 
-		world.createMenu(createInfo, 10);	
+		world.createMenu(createInfo, 20);	
 	}
 }
 

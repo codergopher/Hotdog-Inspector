@@ -13,5 +13,5 @@ Menu::Menu(const SpriteCreateInfo& p_info)
 
 void Menu::update(const float& p_dt)
 {
-	//play(animationSet["main"]);
+	play(animationSet["main"]);
 }

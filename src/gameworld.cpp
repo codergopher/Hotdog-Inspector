@@ -38,6 +38,7 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 
 GameWorld::GameWorld(Controls* p_controls)
 : 
+menu(true),
 splashTime(100.f),
 splashCounter(0.0f),
 splashScreen(true),
@@ -467,8 +468,22 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		splashScreens.erase(splashIndex);
 
 		delete splashTest;
-		std::cout << "haha" << std::endl;
 		splashScreen = false;
+		return;
+	}
+
+	Menu* menuTest = dynamic_cast<Menu*>(sprite);
+
+	if (menuTest)
+	{	
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Menu*>::iterator menuIndex = std::find(menus.begin(), menus.end(), menuTest);
+		menus.erase(menuIndex);
+
+		delete menuTest;
+		menu = false;
 		return;
 	}
 
@@ -709,8 +724,35 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 
 	}
-	std::cout << splashScreen << std::endl;
-	if (!splashScreen)
+
+	if (!splashScreen && menu)
+	{
+		
+
+		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
+		{
+			Sprite* sprite = i->second;
+
+			if (controls->isLeftClick() && sprite->getName()  == "Menu")
+			{
+				sprite->mustDelete(true);
+			}
+
+			if (sprite->shouldDelete())
+			{
+				deleteSprite(sprite);
+				allSprites.erase(i);
+				continue;
+			}
+			if (sprite->getName()  == "Menu")
+			{	
+				sprite->updatePrev();
+				sprite->update(dt);
+			}
+			//sprite->clamp();
+		}
+	}
+	if (!splashScreen && !menu)
 	{
 			// Iterate through all of the sprites and update them
 		// NOTE: Should have an Entity class and then only update Entities
