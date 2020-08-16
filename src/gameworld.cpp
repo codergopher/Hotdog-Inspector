@@ -715,7 +715,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 
 	}
-	else if(splashScreens.size() == 0)
+	else 
 	{
 			// Iterate through all of the sprites and update them
 		// NOTE: Should have an Entity class and then only update Entities
