@@ -12,6 +12,8 @@
 extern int gWinWidth;
 extern int gWinHeight;
 
+
+
 bool CollisionInfo::contains(Sprite* p_sprite)
 {
 	if (p_sprite == a)
@@ -36,8 +38,11 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 GameWorld::GameWorld(Controls* p_controls)
 :
 controls(p_controls), 
+splashTime(100.f),
+splashCounter(0.0f),
+splashScreen(true),
 collisionFrames(2),
-timer(100),
+timer(100.f),
 dawgs(0)
 {
 	allCollisions.resize(0);
@@ -715,7 +720,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 
 	}
-	else
+	std::cout << splashScreen << std::endl;
+	if (!splashScreen)
 	{
 			// Iterate through all of the sprites and update them
 		// NOTE: Should have an Entity class and then only update Entities
