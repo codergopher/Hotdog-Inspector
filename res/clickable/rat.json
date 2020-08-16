@@ -1,6 +1,6 @@
 { "frames": [
    {
-    "filename": "Sprite-0001 0.",
+    "filename": "Rat 0.png",
     "frame": { "x": 0, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -9,7 +9,7 @@
     "duration": 100
    },
    {
-    "filename": "Sprite-0001 1.",
+    "filename": "Rat 1.png",
     "frame": { "x": 15, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -18,7 +18,7 @@
     "duration": 100
    },
    {
-    "filename": "Sprite-0001 2.",
+    "filename": "Rat 2.png",
     "frame": { "x": 30, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -27,7 +27,7 @@
     "duration": 100
    },
    {
-    "filename": "Sprite-0001 3.",
+    "filename": "Rat 3.png",
     "frame": { "x": 45, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -36,7 +36,7 @@
     "duration": 100
    },
    {
-    "filename": "Sprite-0001 4.",
+    "filename": "Rat 4.png",
     "frame": { "x": 60, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -45,7 +45,7 @@
     "duration": 100
    },
    {
-    "filename": "Sprite-0001 5.",
+    "filename": "Rat 5.png",
     "frame": { "x": 75, "y": 0, "w": 15, "h": 9 },
     "rotated": false,
     "trimmed": false,
@@ -57,14 +57,15 @@
  "meta": {
   "app": "https://github.com/LibreSprite/LibreSprite/",
   "version": "1.0-dev",
-  "image": "C:\\Users\\jwism\\Pictures\\Aseprite\\Rat.png",
+  "image": "C:\\Users\\jwism\\Pictures\\Aseprite\\Rat-sheet.png",
   "format": "RGBA8888",
   "size": { "w": 90, "h": 9 },
   "scale": "1",
   "frameTags": [
+   { "name": "Main", "from": 0, "to": 5, "direction": "forward" }
   ],
   "layers": [
-   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+   { "name": "Layer", "opacity": 255, "blendMode": "normal" }
   ]
  }
 }
