@@ -19,6 +19,7 @@
 #include "Hotdog.hpp"
 #include "Crate.hpp"
 #include "Furnace.hpp"
+#include "Splash.hpp"
 #include "AudioManager.hpp"
 
 struct CollisionInfo
@@ -42,7 +43,11 @@ class GameWorld
 public:
 	// Destructor
 	~GameWorld();
-	GameWorld(){}
+	GameWorld()
+	:splashTime(100.f),
+	splashCounter(0.0f),
+    splashScreen(true)
+	{}
 	GameWorld(Controls* p_controls);
 
 	// Create the clickable structs
@@ -61,6 +66,7 @@ public:
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
+	Splash* createSplash(SpriteCreateInfo& p_info, int p_drawOrder);
 
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
@@ -95,10 +101,13 @@ private:
 	 //for moving clickables
     float moveSpeed = .1f;
 
-
+    float splashTime;
+    float splashCounter;
+    bool splashScreen;
 	// The cursor
 	Cursor* cursor;
 
+	std::vector<Splash*> splashScreens;
 	// audio manager
 	// AudioManager audioManager;
 

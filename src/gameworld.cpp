@@ -7,6 +7,7 @@
 #include "Camera.hpp"
 #include "Particle.hpp"
 #include "Cursor.hpp"
+#include "Splash.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -327,6 +328,17 @@ Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 	return cursor;
 }
 
+Splash* GameWorld::createSplash(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	
+	Splash* s = new Splash(p_info);
+	splashScreens.push_back(s);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, s));
+
+	return s;
+}
+
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
 {
 	Character c(p_info, character);
@@ -449,6 +461,22 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		return;
 	}
 
+	Splash* splashTest = dynamic_cast<Splash*>(sprite);
+
+	if (splashTest)
+	{	
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Splash*>::iterator splashIndex = std::find(splashScreens.begin(), splashScreens.end(), splashTest);
+		splashScreens.erase(splashIndex);
+
+		delete splashTest;
+		std::cout << "haha" << std::endl;
+		splashScreen = false;
+		return;
+	}
+
 	Hotdog* hotdogTest = dynamic_cast<Hotdog*>(sprite);
 
 	if (hotdogTest)
@@ -525,6 +553,7 @@ bool GameWorld::SpriteVsSprite(Sprite* p_a, Sprite* p_b)
 
 void GameWorld::collisionTest()
 {
+
 	std::multimap<int, Sprite*>::iterator first = allSprites.begin();
 	std::multimap<int, Sprite*>::iterator last = allSprites.end();
 
@@ -576,7 +605,10 @@ void GameWorld::collisionTest()
 				resolveCollision(x, y);
 			}
 		}
-	}
+	}	
+	
+
+
 }
 
 void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
@@ -660,25 +692,64 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 {
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
-
-	// Iterate through all of the sprites and update them
-	// NOTE: Should have an Entity class and then only update Entities
-	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
+	if (splashScreen)
 	{
-		Sprite* sprite = i->second;
 
-		if (sprite->shouldDelete())
+		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 		{
-			deleteSprite(sprite);
-			allSprites.erase(i);
-			continue;
+			Sprite* sprite = i->second;
+
+			if (sprite->shouldDelete())
+			{
+				deleteSprite(sprite);
+				allSprites.erase(i);
+				continue;
+			}
+			if (sprite->getName()  == "Splash")
+			{	
+				sprite->updatePrev();
+				sprite->update(dt);
+			}
+			//sprite->clamp();
+		}
+;
+	}
+	else
+	{
+		std::cout << "haha" << std::endl;
+			// Iterate through all of the sprites and update them
+		// NOTE: Should have an Entity class and then only update Entities
+		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
+		{
+			Sprite* sprite = i->second;
+
+			if (sprite->shouldDelete())
+			{
+				deleteSprite(sprite);
+				allSprites.erase(i);
+				continue;
+			}
+
+			sprite->updatePrev();
+			sprite->update(dt);
+			//sprite->clamp();
 		}
 
-		sprite->updatePrev();
-		sprite->update(dt);
-		//sprite->clamp();
-	}
+		timer+= 0.01f;
+		if (timer > 1.f)
+		{
+	    	timer = 0.0f;
+	    	{
+	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
+	        	dawgs++;
+	        	texts.front().setText(std::to_string(dawgs));
+	    	}
+		}
 
+		//Check for collisions
+		collisionTest();
+
+<<<<<<< HEAD
 	timer+= 0.01f;
 	if (timer > 1.f)
 	{
@@ -689,11 +760,10 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
         	dawgs++;
         	texts.front().setText(std::to_string(dawgs));
     	}
+=======
+		// Delete old collisions
+		updateCollisions();	
+>>>>>>> 681b95b66001b4ea2949de58b0b8a6aa08d2c4b4
 	}
 
-	//Check for collisions
-	collisionTest();
-
-	// Delete old collisions
-	updateCollisions();
 }

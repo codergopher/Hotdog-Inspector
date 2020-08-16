@@ -1,4 +1,4 @@
-#include "AudioManager.hpp"
+/*#include "AudioManager.hpp"
 
 AudioManager::AudioManager()
 {
@@ -14,3 +14,4 @@ void AudioManager::play(const char* p_clip)
 {
 	Mix_PlayChannel(-1, clips[p_clip], 0);
 }
+*/
