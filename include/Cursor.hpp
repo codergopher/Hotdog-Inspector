@@ -2,6 +2,7 @@
 #include "Math.hpp"
 #include "Sprite.hpp"
 #include "Controls.hpp"
+#include "AudioManager.hpp"
 
 // Class to draw a custom cursor to the mouse pos, and 
 // also is a Clickable item because it will iteract with Clickables
@@ -9,7 +10,7 @@ class Cursor : public Sprite
 {
 public:
 	using Sprite::Sprite;
-	void setControls(Controls* p_controls);
+	void setControls(Controls* p_controls, AudioManager* p_audioManager);
 	void init();
 	void update(const float& p_dt) override;
 
@@ -33,4 +34,8 @@ private:
 
 	// Is the slot full or empty?
 	bool slotFull;
+
+	AudioManager* audioManager;
+
+	bool playedSound = false;
 };

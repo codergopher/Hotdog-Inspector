@@ -80,6 +80,8 @@ public:
 	// Not in use. The particle system currently isn't operational
 	int getNumParticles() {	return particles.size();}
 
+	AudioManager* getAudioManager() {	return &audioManager;}
+
 	// Get a reference to all of the Sprites, used when rendering everything
 	const std::multimap<int, Sprite*>& getAllSprites();
 

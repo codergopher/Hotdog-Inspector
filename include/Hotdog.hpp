@@ -22,7 +22,7 @@ public:
 
 	void animate(const float& p_dt);
 private:
-
+	bool playedSound = false;
 	bool atLastTarget;
 
 	bool canKill;

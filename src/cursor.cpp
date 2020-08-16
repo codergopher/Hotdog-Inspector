@@ -1,8 +1,9 @@
 #include "Cursor.hpp"
 
-void Cursor::setControls(Controls* p_controls)
+void Cursor::setControls(Controls* p_controls, AudioManager* p_audioManager)
 {
 	controls = p_controls;
+	audioManager = p_audioManager;
 }
 
 void Cursor::init()
@@ -40,6 +41,11 @@ void Cursor::update(const float& p_dt)
 	{
 		if (slot->isInteractsWithCursor())
 		{
+			if (!playedSound)
+			{
+				audioManager->play("click", 0);
+				playedSound = true;
+			}
 			slot->setIsClicked(true);
 			slot->setPos(getPos());
 		}
@@ -47,6 +53,7 @@ void Cursor::update(const float& p_dt)
 
 	if (!(controls->isLeftClick()) && slot)
 	{
+		playedSound = false;
 		slot->setIsClicked(false);
 		//std::cout << "haha" << std::endl;
 	}

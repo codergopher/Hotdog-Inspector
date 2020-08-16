@@ -173,7 +173,7 @@ void Game::loadWorld()
 
 		Cursor* c = world.createCursor(createInfo, 19);
 		c->init();
-		c->setControls(&controls);
+		c->setControls(&controls, world.getAudioManager());
 	}
 
 	// The crate

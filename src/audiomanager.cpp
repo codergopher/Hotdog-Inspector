@@ -9,6 +9,7 @@ AudioManager::AudioManager()
 	clips.insert(std::pair<std::string, Mix_Chunk*>("correct", Mix_LoadWAV("res/music/correct.wav")));
 	clips.insert(std::pair<std::string, Mix_Chunk*>("wrong", Mix_LoadWAV("res/music/wrong.wav")));
 	clips.insert(std::pair<std::string, Mix_Chunk*>("track_0", Mix_LoadWAV("res/music/0.wav")));
+	clips.insert(std::pair<std::string, Mix_Chunk*>("click", Mix_LoadWAV("res/music/click.wav")));
 }
 
 void AudioManager::play(std::string p_clip, int p_loops)
