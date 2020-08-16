@@ -112,6 +112,18 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		}
 		targetPos = &p_sprite->getPos();
 	}
+
+	if (p_sprite->getName() == "Furnace" && !clicked && canKill)
+	{
+		isDying = true;
+		clickable = false;
+		targetPos = &p_sprite->getPos();
+		if (!lifeCounter->removeLife())
+		{
+			quit = true;
+		}
+		targetPos = &p_sprite->getPos();
+	}
 }
 
 void Hotdog::onCollisionEnd(Sprite* p_sprite)

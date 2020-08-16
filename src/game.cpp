@@ -184,6 +184,32 @@ void Game::loadWorld()
 	    world.createCrate(createInfo, 0);
 	}
 
+	// The crate
+	{
+		SpriteCreateInfo createInfo = {};
+		createInfo.name = "Furnace";
+		createInfo.tex = textures["Crate 0"];
+		createInfo.alpha = 255;
+		createInfo.flip = SDL_FLIP_NONE;
+		createInfo.pos = Vector2f(40, -16);
+		createInfo.angle = 0.0f;
+		createInfo.origin = Vector2f(14, 4);
+		createInfo.frameSize = Vector2i(28, 21);
+		createInfo.scale = Vector2f(1.0f, 1.0f);
+		createInfo.depth = 0;
+		createInfo.zoomModifier = 1.f;
+
+		// it animates (well not yet but maybe eventually)
+		createInfo.doesAnimate = false;
+		//createInfo.animationSet = loadAnimationFile("");
+		// it's a clickable
+		//createInfo.clickable = true;
+		createInfo.clickable = true;
+		createInfo.halfBounds = Vector2f(11.f, 4.5f);
+
+	    world.createFurnace(createInfo, 7);
+	}
+
 
 	// The Conveyor
 	{

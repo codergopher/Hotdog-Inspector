@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Hotdog.hpp"
 #include "Sprite.hpp"
 #include "Animation.hpp"
 
@@ -10,7 +9,7 @@ public:
 	Furnace();
 	Furnace(const SpriteCreateInfo& p_info);
 
-	//void update(const float& p_dt) override;
+	void update(const float& p_dt) override;
 
 	//void onCollisionBegin(Sprite* p_sprite) override;
 	//void duringCollision(Sprite* p_sprite) override;

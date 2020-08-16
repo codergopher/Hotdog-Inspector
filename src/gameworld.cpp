@@ -193,6 +193,17 @@ Crate* GameWorld::createCrate(SpriteCreateInfo& p_info, int p_drawOrder)
 	return c;
 }
 
+// p_drawOrder is the drawing heiarchy
+Furnace* GameWorld::createFurnace(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	Furnace* c = new Furnace(p_info);
+	furnaces.push_back(c);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, c));
+
+	return c;
+}
+
 
 // p_drawOrder is the drawing heiarchy
 Conveyor* GameWorld::createConveyor(SpriteCreateInfo& p_info, int p_drawOrder)
