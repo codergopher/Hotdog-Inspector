@@ -81,7 +81,7 @@ void Hotdog::onCollisionBegin(Sprite* p_sprite)
 
 void Hotdog::duringCollision(Sprite* p_sprite)
 {
-	std::cout << atLastTarget << std::endl;
+
 	Conveyor* conveyor = dynamic_cast<Conveyor*>(p_sprite);
 	if (conveyor)
 	{
@@ -95,7 +95,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 
 	}
 
-	if (p_sprite->getName() == "Trash Can" && !clicked && canKill && atLastTarget)
+	if (p_sprite->getName() == "Trash Can" && !clicked && canKill)
 	{
 		isDying = true;
 		clickable = false;
@@ -110,7 +110,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 	}
 
-	if (p_sprite->getName() == "Crate" && !clicked && canKill && atLastTarget)
+	if (p_sprite->getName() == "Crate" && !clicked && canKill)
 	{
 		isDying = true;
 		clickable = false;
@@ -125,7 +125,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 	}
 
-	if (p_sprite->getName() == "Furnace" && !clicked && canKill && atLastTarget)
+	if (p_sprite->getName() == "Furnace" && !clicked && canKill)
 	{
 		isDying = true;
 		clickable = false;
