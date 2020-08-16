@@ -9,6 +9,7 @@ Hotdog::Hotdog()
 
 Hotdog::Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter)
 :Sprite(p_info),
+atLastTarget(false),
 canKill(true),
 isDying(false),
 fAlpha(255),
@@ -63,6 +64,14 @@ void Hotdog::update(const float& p_dt)
 
 	if (doesAnimate)
 		animate(p_dt);
+
+	if (abs(lastTargetPos.x - pos.x) < 1.f && abs(lastTargetPos.y - pos.y) < 1.f)
+		atLastTarget = true;
+	else
+		atLastTarget = false;
+
+	if (atLastTarget)
+		canKill = true;
 }
 
 void Hotdog::onCollisionBegin(Sprite* p_sprite)
@@ -78,9 +87,12 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 	{
 		//std::cout << "lol" << std::endl;
 		//targetPos = &p_sprite->getPos();
-		move(Vector2f(conveyor->getSpeed()));
-		lastTargetPos += conveyor->getSpeed();
-		canKill = true;
+		if (!clicked)
+		{
+			move(Vector2f(conveyor->getSpeed()));
+			lastTargetPos += conveyor->getSpeed();
+		}
+
 	}
 
 	if (p_sprite->getName() == "Trash Can" && !clicked && canKill)
@@ -103,7 +115,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = &p_sprite->getPos();
-		if (name == "Bad Hotdog" || name == "Hotdog Finger" || name == "Pig foot" || name == "Radioactive" || name == "Rotten")
+		if (name == "Bad Hotdog" || name == "Hotdog Finger" || name == "Pig foot" || name == "Radioactive" || name == "Rotten" || name == "Rat 0" || name == "Rat 1")
 		{
 			if (!lifeCounter->removeLife())
 			{
@@ -118,10 +130,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = &p_sprite->getPos();
-		if (!lifeCounter->removeLife())
-		{
-			quit = true;
-		}
+		// if (!lifeCounter->removeLife())
+		// {
+		// 	quit = true;
+		// }
 		targetPos = &p_sprite->getPos();
 	}
 }
@@ -133,7 +145,6 @@ void Hotdog::onCollisionEnd(Sprite* p_sprite)
 
 void Hotdog::animate(const float& p_dt)
 {
-	std::cout << "haha" << std::endl;
 	play(animationSet["main"]);
 
 }

@@ -22,6 +22,8 @@ public:
 	void animate(const float& p_dt);
 private:
 
+	bool atLastTarget;
+
 	bool canKill;
 	bool isDying;
 
