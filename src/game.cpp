@@ -91,7 +91,8 @@ void Game::loadTextures()
 	SDL_Texture* t16 = window->loadTexture("res/furnace_0.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Furnace 0", t16));
 
-
+	SDL_Texture* t17 = window->loadTexture("res/spash.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Splash", t17));
 }
 
 void Game::loadWorld()
@@ -298,6 +299,23 @@ void Game::loadWorld()
 		createInfo.pos = Vector2f(0, 0);
 		createInfo.origin = Vector2f(114, 64);
 		createInfo.frameSize = Vector2i(228, 128);
+		createInfo.scale = Vector2f(1.0f, 1.0f);
+		createInfo.depth = 0;
+		createInfo.zoomModifier = 1.f;
+		world.createSprite(createInfo, 10);	
+	}
+
+	// Splash
+	{
+		SpriteCreateInfo createInfo = {};
+		createInfo.name = "Splash";
+		createInfo.tex = textures["Slash"];
+		createInfo.alpha = 255;
+		createInfo.color = Color(0, 0, 0);
+		createInfo.flip = SDL_FLIP_NONE;
+		createInfo.pos = Vector2f(0, 0);
+		createInfo.origin = Vector2f(32, 32);
+		createInfo.frameSize = Vector2i(64, 64);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
