@@ -3,13 +3,14 @@
 #include "Sprite.hpp"
 #include "Animation.hpp"
 #include "Lives.hpp"
+#include "AudioManager.hpp"
 extern bool quit;
 
 class Hotdog : public Sprite
 {
 public:
 	Hotdog();
-	Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter);
+	Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter, AudioManager* p_audioManager);
 
 	void update(const float& p_dt) override;
 
@@ -32,9 +33,12 @@ private:
 	float alphaLifeTime;
 
 	Lives* lifeCounter;
+	
 
 	Vector2f* targetPos;
 	Vector2f lastTargetPos;
 
 	float lag;
+
+	AudioManager* audioManager;
 };

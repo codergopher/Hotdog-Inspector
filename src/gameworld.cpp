@@ -383,9 +383,9 @@ Lives* GameWorld::createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_dra
 
 }
 
-Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, int p_drawOrder)
+Hotdog* GameWorld::createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, AudioManager& p_audioManager, int p_drawOrder)
 {
-	Hotdog* h = new Hotdog(p_info, &p_lifeCounter);
+	Hotdog* h = new Hotdog(p_info, &p_lifeCounter, &p_audioManager);
 	hotdogs.push_back(h);
 
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, h));
@@ -746,8 +746,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		{
 	    	timer = 0.0f;
 	    	{
-	    		audioManager.play("hit", 0);
-	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
+	    		audioManager.play("spawn", 0);
+	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), audioManager, 9);
 	        	dawgs++;
 	        	texts.front().setText(std::to_string(dawgs));
 	    	}

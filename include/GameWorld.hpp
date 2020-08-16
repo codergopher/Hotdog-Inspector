@@ -73,7 +73,7 @@ public:
 	Text* createText(SpriteCreateInfo& p_info, std::string string, int p_drawOrder);
 	Lives* createLives(SpriteCreateInfo& p_info, Uint8 p_lives, int p_drawOrder);
 
-	Hotdog* createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, int p_drawOrder);
+	Hotdog* createHotdog(SpriteCreateInfo& p_info, Lives& p_lifeCounter, AudioManager& p_audioManager, int p_drawOrder);
 
 	void deleteSprite(Sprite* sprite);
 	
