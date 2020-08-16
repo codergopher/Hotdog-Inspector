@@ -105,9 +105,6 @@ int main(int argc, char* args[])
 		accumulator += frameTime;
 		oneSecond += frameTime;
 
-		#ifdef __EMSCRIPTEN__
-		emscripten_set_main_loop(game.mainLoop, 0, 1);
-		#else
 		// If enough time has passed to do a game step, then update the game
 		while (accumulator >= dt)
 		{
@@ -119,7 +116,6 @@ int main(int argc, char* args[])
 
 			accumulator -= dt;
 		}
-		#endif
 
 		// Print the frame rate if we wish to
 		if (gShowFrameRate && oneSecond >= 1)
