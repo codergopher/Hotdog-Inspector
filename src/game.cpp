@@ -240,23 +240,23 @@ void Game::loadWorld()
 	    world.createConveyor(createInfo, 0);
 	}
 
-	// // text test
-	// {
-	// 	SpriteCreateInfo createInfo = {};
-	// 	createInfo.name = "Text";
-	// 	createInfo.tex = textures["Font 0"];
-	// 	createInfo.alpha = 255;
-	// 	createInfo.color = Color(255, 255, 255);
-	// 	createInfo.flip = SDL_FLIP_NONE;
-	// 	createInfo.pos = Vector2f(-48, 0);
-	// 	createInfo.origin = Vector2f(0, 0);
-	// 	createInfo.frameSize = Vector2i(4, 5);
-	// 	createInfo.scale = Vector2f(1.0f, 1.0f);
-	// 	createInfo.depth = 0;
-	// 	createInfo.zoomModifier = 1.f;
-	// 	world.createText(createInfo, "cpp is better than python", 8);	
-	// 	//world.createCharacter(createInfo, "e", 8);
-	// }
+	 // Score text
+	 {
+	 	SpriteCreateInfo createInfo = {};
+	 	createInfo.name = "Text";
+	 	createInfo.tex = textures["Font 0"];
+	 	createInfo.alpha = 255;
+	 	createInfo.color = Color(255, 255, 255);
+	 	createInfo.flip = SDL_FLIP_NONE;
+	 	createInfo.pos = Vector2f(-28, -16);
+	 	createInfo.origin = Vector2f(0, 0);
+	 	createInfo.frameSize = Vector2i(4, 5);
+	 	createInfo.scale = Vector2f(1.0f, 1.0f);
+	 	createInfo.depth = 0;
+	 	createInfo.zoomModifier = 1.f;
+	 	world.createText(createInfo, "001234", 10);	
+	 	//world.createCharacter(createInfo, "e", 8);
+	 }
 
 	// UI Lives
 	 {
