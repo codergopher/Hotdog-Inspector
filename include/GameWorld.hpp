@@ -48,7 +48,7 @@ public:
 	splashCounter(0.0f),
     splashScreen(true),
     timer(100.f),
-    dawgs(0.0f)
+    dawgs(0)
 	{}
 	GameWorld(Controls* p_controls);
 
