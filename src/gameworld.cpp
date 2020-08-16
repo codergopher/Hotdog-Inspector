@@ -472,6 +472,8 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		splashScreens.erase(splashIndex);
 
 		delete splashTest;
+		std::cout << "haha" << std::endl;
+		splashScreen = false;
 		return;
 	}
 
@@ -551,65 +553,60 @@ bool GameWorld::SpriteVsSprite(Sprite* p_a, Sprite* p_b)
 
 void GameWorld::collisionTest()
 {
-	if (splashCounter < splashTime)
+
+	std::multimap<int, Sprite*>::iterator first = allSprites.begin();
+	std::multimap<int, Sprite*>::iterator last = allSprites.end();
+
+	for (auto a = first; a != last; ++a)
 	{
-		splash.update();
-	}
-	if (splashScreens.size() == 0)
-	{
-		std::multimap<int, Sprite*>::iterator first = allSprites.begin();
-		std::multimap<int, Sprite*>::iterator last = allSprites.end();
-
-		for (auto a = first; a != last; ++a)
-		{
-			for (auto b = std::next(a, 1); b != last; ++b)
-			{	
-				Sprite* x = a->second;
-				Sprite* y = b->second;
-				if (&x == &y)
-				{
-					continue;
-				}
-
-				if (x->isClickable() != true)
-				{
-					continue;
-				}
-
-				if (y->isClickable() != true)
-				{
-					continue;
-				}
-
-				if (SpriteVsSprite(x, y))
-				{
-					CollisionInfo collision = {x, y};
-
-					collision.freshCollision = true;
-					collision.framesLeft = collisionFrames;
-
-					bool duplicate = false;
-					for (CollisionInfo& otherCollision : allCollisions)
-					{
-						if (collision == otherCollision)
-						{
-							duplicate = true;
-							otherCollision.freshCollision = false;
-							otherCollision.framesLeft = collisionFrames;
-
-						}
-					}
-					if (!duplicate) 
-					{
-						allCollisions.push_back(collision);
-					}
-
-
-					resolveCollision(x, y);
-				}
+		for (auto b = std::next(a, 1); b != last; ++b)
+		{	
+			Sprite* x = a->second;
+			Sprite* y = b->second;
+			if (&x == &y)
+			{
+				continue;
 			}
-		}	
-	}
+
+			if (x->isClickable() != true)
+			{
+				continue;
+			}
+
+			if (y->isClickable() != true)
+			{
+				continue;
+			}
+
+			if (SpriteVsSprite(x, y))
+			{
+				CollisionInfo collision = {x, y};
+
+				collision.freshCollision = true;
+				collision.framesLeft = collisionFrames;
+
+				bool duplicate = false;
+				for (CollisionInfo& otherCollision : allCollisions)
+				{
+					if (collision == otherCollision)
+					{
+						duplicate = true;
+						otherCollision.freshCollision = false;
+						otherCollision.framesLeft = collisionFrames;
+
+					}
+				}
+				if (!duplicate) 
+				{
+					allCollisions.push_back(collision);
+				}
+
+
+				resolveCollision(x, y);
+			}
+		}
+	}	
+	
 
 
 }
@@ -695,39 +692,65 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 {
 	camera.updatePrev();
 	camera.update(Vector2f(0.0f, 0.0f));
-
-	// Iterate through all of the sprites and update them
-	// NOTE: Should have an Entity class and then only update Entities
-	for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
+	if (splashScreen)
 	{
-		Sprite* sprite = i->second;
 
-		if (sprite->shouldDelete())
+		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
 		{
-			deleteSprite(sprite);
-			allSprites.erase(i);
-			continue;
+			Sprite* sprite = i->second;
+
+			if (sprite->shouldDelete())
+			{
+				deleteSprite(sprite);
+				allSprites.erase(i);
+				continue;
+			}
+			if (sprite->getName()  == "Splash")
+			{	
+				sprite->updatePrev();
+				sprite->update(dt);
+			}
+			//sprite->clamp();
+		}
+;
+	}
+	else
+	{
+		std::cout << "haha" << std::endl;
+			// Iterate through all of the sprites and update them
+		// NOTE: Should have an Entity class and then only update Entities
+		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)
+		{
+			Sprite* sprite = i->second;
+
+			if (sprite->shouldDelete())
+			{
+				deleteSprite(sprite);
+				allSprites.erase(i);
+				continue;
+			}
+
+			sprite->updatePrev();
+			sprite->update(dt);
+			//sprite->clamp();
 		}
 
-		sprite->updatePrev();
-		sprite->update(dt);
-		//sprite->clamp();
+		timer+= 0.01f;
+		if (timer > 1.f)
+		{
+	    	timer = 0.0f;
+	    	{
+	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
+	        	dawgs++;
+	        	texts.front().setText(std::to_string(dawgs));
+	    	}
+		}
+
+		//Check for collisions
+		collisionTest();
+
+		// Delete old collisions
+		updateCollisions();	
 	}
 
-	timer+= 0.01f;
-	if (timer > 1.f)
-	{
-    	timer = 0.0f;
-    	{
-        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
-        	dawgs++;
-        	texts.front().setText(std::to_string(dawgs));
-    	}
-	}
-
-	//Check for collisions
-	collisionTest();
-
-	// Delete old collisions
-	updateCollisions();
 }
