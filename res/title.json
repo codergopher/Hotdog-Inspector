@@ -1,0 +1,68 @@
+{ "frames": [
+   {
+    "filename": "title 0.ase",
+    "frame": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   },
+   {
+    "filename": "title 1.ase",
+    "frame": { "x": 72, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   },
+   {
+    "filename": "title 2.ase",
+    "frame": { "x": 144, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   },
+   {
+    "filename": "title 3.ase",
+    "frame": { "x": 216, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   },
+   {
+    "filename": "title 4.ase",
+    "frame": { "x": 288, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   },
+   {
+    "filename": "title 5.ase",
+    "frame": { "x": 360, "y": 0, "w": 72, "h": 72 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 72, "h": 72 },
+    "sourceSize": { "w": 72, "h": 72 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.0-dev",
+  "image": "/home/martin/Documents/GitHub/Hotdog-Inspector/res/title.png",
+  "format": "RGBA8888",
+  "size": { "w": 432, "h": 72 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "main", "from": 0, "to": 5, "direction": "forward" }
+  ]
+ }
+}
