@@ -349,6 +349,24 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
     "duration": 100
+   },
+   {
+    "filename": "font 39.ase",
+    "frame": { "x": 156, "y": 0, "w": 4, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
+    "sourceSize": { "w": 4, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "font 40.ase",
+    "frame": { "x": 160, "y": 0, "w": 4, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
+    "sourceSize": { "w": 4, "h": 5 },
+    "duration": 100
    }
  ],
  "meta": {
@@ -356,7 +374,7 @@
   "version": "1.0-dev",
   "image": "C:\\Users\\jwism\\Pictures\\Aseprite\\font.png",
   "format": "RGBA8888",
-  "size": { "w": 156, "h": 5 },
+  "size": { "w": 164, "h": 5 },
   "scale": "1",
   "frameTags": [
    { "name": "a", "from": 0, "to": 0, "direction": "forward" },
@@ -397,7 +415,9 @@
    { "name": ".", "from": 35, "to": 35, "direction": "forward" },
    { "name": "!", "from": 36, "to": 36, "direction": "forward" },
    { "name": "?", "from": 37, "to": 37, "direction": "forward" },
-   { "name": "/", "from": 38, "to": 38, "direction": "forward" }
+   { "name": "/", "from": 38, "to": 38, "direction": "forward" },
+   { "name": "0", "from": 39, "to": 39, "direction": "forward" },
+   { "name": ":", "from": 40, "to": 40, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer", "opacity": 255, "blendMode": "normal" },

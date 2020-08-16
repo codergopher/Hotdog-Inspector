@@ -62,3 +62,9 @@ CMakeFiles/Hotdog_Inspector.dir/src/math.cpp.o
 CMakeFiles/TargetDirectories.txt
 CMakeFiles/Makefile2
 CMakeFiles/Makefile.cmake
+*.includecache
+*.a
+*.obj
+*.obj
+*.obj
+CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj
