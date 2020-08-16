@@ -274,7 +274,7 @@ void Game::loadWorld()
 	 	createInfo.alpha = 255;
 	 	createInfo.color = Color(255, 255, 255);
 	 	createInfo.flip = SDL_FLIP_NONE;
-	 	createInfo.pos = Vector2f(9, -29);
+	 	createInfo.pos = Vector2f(8, -29);
 	 	createInfo.origin = Vector2f(0, 0);
 	 	createInfo.frameSize = Vector2i(7, 7);
 	 	createInfo.scale = Vector2f(1.0f, 1.0f);
