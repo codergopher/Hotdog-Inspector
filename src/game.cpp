@@ -344,10 +344,10 @@ void Game::loadWorld()
 	// 	createInfo.depth = 0;
 	// 	createInfo.zoomModifier = 1.f;
 
-	// 	createInfo.doesAnimate = true;
-	// 	createInfo.animationSet = loadAnimationFile("res/title.json");
+	// 	// createInfo.doesAnimate = true;
+	// 	// createInfo.animationSet = loadAnimationFile("res/title.json");
 
-	// 	world.createMenu(createInfo, 30);	
+	// 	world.createMenu(createInfo, 10);	
 	// }
 }
 
