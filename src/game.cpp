@@ -109,7 +109,7 @@ void Game::loadWorld()
 	// The controls need a ptr to the camera, so that we can calculate the
 	// in game coordinates of the mouse
 	controls.setCamera(&world.getCamera());
-	
+	world.createAudioManager();
 	// The floor
 	{
 		SpriteCreateInfo createInfo = {};
