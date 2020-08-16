@@ -15,6 +15,7 @@ public:
 	void update(const float& p_dt) override;
 
 private:
+	float alphaDelta;
 	float fAlpha;
 	float alphaLifeTime;
 };
