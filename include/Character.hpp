@@ -14,6 +14,8 @@ public:
 
 	void update(const float& p_dt) override;
 
+	void setCharacter(std::string p_character);
+
 	void animate(const float& p_dt);
 
 private:

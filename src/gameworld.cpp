@@ -679,6 +679,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
     	{
         	createHotdog(clickables.at(rand() % 6), lifeCounters.front(), 9);
         	dawgs++;
+        	texts.front().setText("111111");
+        	std::cout << "yo gw.cpp" << std::endl;
     	}
 	}
 

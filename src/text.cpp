@@ -26,3 +26,15 @@ Uint8 Text::getSize()
 {
 	return characters.size();
 }
+
+void Text::setText(std::string p_string)
+{
+	std::cout << "yueuerhghpeguebptg" << std::endl;
+	for (Uint8 i = 0; i < string.length(); i++)
+	{
+		std::string cur; 
+		cur += p_string.at(i);
+		characters.at(i).setCharacter("1");
+	}
+}
+

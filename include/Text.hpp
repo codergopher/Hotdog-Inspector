@@ -13,6 +13,8 @@ public:
 	Text(const SpriteCreateInfo& p_info, std::string p_string);
 	Character& getCharacter(Uint8 p_index);
 	Uint8 getSize();
+	void setText(std::string p_string);
+
 	//void update(const float& p_dt) override;
 
 private:
