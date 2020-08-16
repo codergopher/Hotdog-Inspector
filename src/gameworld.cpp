@@ -749,21 +749,19 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		//Check for collisions
 		collisionTest();
 
-<<<<<<< HEAD
-	timer+= 0.01f;
-	if (timer > 1.f)
-	{
-    	timer = 0.0f;
-    	{
-    		//audioManager->play("hit");
-        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
-        	dawgs++;
-        	texts.front().setText(std::to_string(dawgs));
-    	}
-=======
-		// Delete old collisions
-		updateCollisions();	
->>>>>>> 681b95b66001b4ea2949de58b0b8a6aa08d2c4b4
-	}
+		timer+= 0.01f;
+		if (timer > 1.f)
+		{
+	    	timer = 0.0f;
+	    	{
+	    		//audioManager->play("hit");
+	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
+	        	dawgs++;
+	        	texts.front().setText(std::to_string(dawgs));
+	    	}
 
+			// Delete old collisions
+			updateCollisions();	
+		}
+	}
 }
