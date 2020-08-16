@@ -31,9 +31,16 @@ void Text::setText(std::string p_string)
 {
 	for (auto& c : characters)
 	{
+<<<<<<< HEAD
+		std::string cur; 
+		cur += p_string.at(i);
+		//characters.at(i).setCharacter(cur);
+		characters.at(i).setCharacter("1");
+=======
 		// std::string cur; 
 		// cur += p_string.at(i);
-		c.setCharacter("3");
+		//c.setCharacter("g");
+>>>>>>> ccf3993bae31fe14029b2f8be53286f50dc95dc2
 	}
 }
 

@@ -25,28 +25,59 @@ Character::Character(const SpriteCreateInfo& p_info, std::string p_character)
 	// Load a set of Animation Cycles from a file
 	animationSet = loadAnimationFile("res/font.json");
 	// Set the playback speed of the main animation
-	//animationSet[character].playBackSpeed = 1.f;
+	animationSet[character].playBackSpeed = 1.f;
 }
 
 void Character::update(const float& p_dt)
 {
 
 	animate(p_dt);
-
+	
 	
 }
 
 void Character::setCharacter(std::string p_character)
 {
+<<<<<<< HEAD
+	animationSet[p_character].playBackSpeed = 1.f;
 	character = p_character;
-
-	std::cout << "char at setCharacter" << character << std::endl;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = p_character;
+	character = "5";
+	if (character == "1")
+=======
+	std::cout << "p_char" << p_character << std::endl;
 	
+	character = "4";
+	
+	if (character == "7")
+>>>>>>> ccf3993bae31fe14029b2f8be53286f50dc95dc2
+	{
+		std::cout << "char" << character << std::endl;
+	}
+	//
 }
 
 void Character::animate(const float& p_dt)
 {	
-	std::cout << "char at animate" << character << std::endl;
-	//character = "4";
-	play(animationSet["2"]);
+<<<<<<< HEAD
+	if (character == "1")
+	{
+		std::cout << "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" << std::endl;
+	}
+=======
+	std::cout << "char" << character << std::endl;
+>>>>>>> ccf3993bae31fe14029b2f8be53286f50dc95dc2
+
+	play(animationSet[character]);
+	
 }
