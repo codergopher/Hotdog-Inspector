@@ -94,6 +94,10 @@ void Game::loadTextures()
 	SDL_Texture* t17 = window->loadTexture("res/spash.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Splash 0", t17));
 
+
+   	SDL_Texture* t18 = window->loadTexture("res/title.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Menu 0", t18));
+
 }
 
 
@@ -324,6 +328,27 @@ void Game::loadWorld()
 		createInfo.zoomModifier = 1.f;
 		world.createSplash(createInfo, 30);	
 	}
+
+	// Menu
+	// {
+	// 	SpriteCreateInfo createInfo = {};
+	// 	createInfo.name = "Menu";
+	// 	createInfo.tex = textures["Menu 0"];
+	// 	createInfo.alpha = 255;
+	// 	createInfo.color = Color(0, 0, 0);
+	// 	createInfo.flip = SDL_FLIP_NONE;
+	// 	createInfo.pos = Vector2f(0, 0);
+	// 	createInfo.origin = Vector2f(36, 36);
+	// 	createInfo.frameSize = Vector2i(72, 72);
+	// 	createInfo.scale = Vector2f(1.0f, 1.0f);
+	// 	createInfo.depth = 0;
+	// 	createInfo.zoomModifier = 1.f;
+
+	// 	createInfo.doesAnimate = true;
+	// 	createInfo.animationSet = loadAnimationFile("res/title.json");
+
+	// 	world.createMenu(createInfo, 30);	
+	// }
 }
 
 // Should the game quit?

@@ -8,6 +8,7 @@
 #include "Particle.hpp"
 #include "Cursor.hpp"
 #include "Splash.hpp"
+#include "Menu.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -343,6 +344,17 @@ Splash* GameWorld::createSplash(SpriteCreateInfo& p_info, int p_drawOrder)
 	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, s));
 
 	return s;
+}
+
+Menu* GameWorld::createMenu(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	
+	Menu* m = new Menu(p_info);
+	menus.push_back(m);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, m));
+
+	return m;
 }
 
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)

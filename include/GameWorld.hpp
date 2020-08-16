@@ -21,6 +21,7 @@
 #include "Furnace.hpp"
 #include "Splash.hpp"
 #include "AudioManager.hpp"
+#include "Menu.hpp"
 
 struct CollisionInfo
 {
@@ -69,6 +70,7 @@ public:
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
 	Splash* createSplash(SpriteCreateInfo& p_info, int p_drawOrder);
+	Menu* createMenu(SpriteCreateInfo& p_info, int p_drawOrder);
 
 	Character* createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder);
 
@@ -102,6 +104,8 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
+	bool menu;
+
 	 //for moving clickables
     float moveSpeed = .1f;
 
@@ -112,6 +116,7 @@ private:
 	Cursor* cursor;
 
 	std::vector<Splash*> splashScreens;
+	std::vector<Menu*> menus;
 	// audio manager
 	AudioManager audioManager;
 
