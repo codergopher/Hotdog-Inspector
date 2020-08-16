@@ -7,8 +7,8 @@ Hotdog::Hotdog()
 
 }
 
-Hotdog::Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter)
-:Sprite(p_info),
+Hotdog::Hotdog(const SpriteCreateInfo& p_info, Lives* p_lifeCounter, AudioManager* p_audioManager)
+:Sprite(p_info), 
 atLastTarget(false),
 canKill(true),
 isDying(false),
@@ -18,7 +18,8 @@ alphaLifeTime(300.f),
 lifeCounter(p_lifeCounter),
 targetPos(nullptr),
 lastTargetPos(pos),
-lag(0.1f)
+lag(0.1f),
+audioManager(p_audioManager)
 
 {
 	lastTargetPos = pos;
@@ -102,6 +103,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 		if (name == "Good Hotdog")
 		{
+			audioManager->play("wrong", 0);
 			if (!lifeCounter->removeLife())
 			{
 				quit = true;
@@ -117,6 +119,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		targetPos = &p_sprite->getPos();
 		if (name == "Bad Hotdog" || name == "Hotdog Finger" || name == "Pig foot" || name == "Radioactive" || name == "Rotten" || name == "Rat 0" || name == "Rat 1")
 		{
+			audioManager->play("wrong", 0);
 			if (!lifeCounter->removeLife())
 			{
 				quit = true;
@@ -130,6 +133,7 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = &p_sprite->getPos();
+		audioManager->play("wrong", 0);
 		if (!lifeCounter->removeLife())
 		{
 			quit = true;
