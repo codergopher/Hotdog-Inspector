@@ -258,6 +258,7 @@ Camera* GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 AudioManager* GameWorld::createAudioManager()
 {
 	audioManager = AudioManager();
+	audioManager.play("track_0", -1);
 	return &audioManager;
 }
 
@@ -735,17 +736,6 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			//sprite->clamp();
 		}
 
-		timer+= 0.01f;
-		if (timer > 1.f)
-		{
-	    	timer = 0.0f;
-	    	{
-	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
-	        	dawgs++;
-	        	texts.front().setText(std::to_string(dawgs));
-	    	}
-		}
-
 		//Check for collisions
 		collisionTest();
 
@@ -754,7 +744,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		{
 	    	timer = 0.0f;
 	    	{
-	    		audioManager.play("hit");
+	    		audioManager.play("hit", 0);
 	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
 	        	dawgs++;
 	        	texts.front().setText(std::to_string(dawgs));

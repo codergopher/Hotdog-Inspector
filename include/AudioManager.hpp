@@ -6,7 +6,7 @@ class AudioManager
 {
 public:
 	AudioManager();
-	void play(std::string p_clip);
+	void play(std::string p_clip, int p_loop);
 private:
 	std::map<std::string, Mix_Chunk*> clips;
 };

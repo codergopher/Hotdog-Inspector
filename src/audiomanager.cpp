@@ -11,8 +11,7 @@ AudioManager::AudioManager()
 	clips.insert(std::pair<std::string, Mix_Chunk*>("track_0", Mix_LoadWAV("res/music/0.wav")));
 }
 
-void AudioManager::play(std::string p_clip)
+void AudioManager::play(std::string p_clip, int p_loop)
 {
-	std::cout << "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" << std::endl;
-	Mix_PlayChannel(-1, clips[p_clip], 0);
+	Mix_PlayChannel(-1, clips[p_clip], p_loop);
 }
