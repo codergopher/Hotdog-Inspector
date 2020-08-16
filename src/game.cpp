@@ -311,8 +311,8 @@ void Game::loadWorld()
 		world.createSplash(createInfo, 30);	
 	}
 
-	TTF_Font* font = TTF_OpenFont("res/font.ttf", 4);
-	// Text 
+	// TTF_Font* font = TTF_OpenFont("res/font.ttf", 4);
+	// // Text 
 	// {
 	// 	SpriteCreateInfo createInfo = {};
 	// 	createInfo.name = "Text";
