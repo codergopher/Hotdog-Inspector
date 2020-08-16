@@ -735,9 +735,11 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			sprite->update(dt);
 			//sprite->clamp();
 		}
-
 		//Check for collisions
 		collisionTest();
+		
+		// Delete old collisions
+		updateCollisions();	
 
 		timer+= 0.01f;
 		if (timer > 1.f)
@@ -750,8 +752,6 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	        	texts.front().setText(std::to_string(dawgs));
 	    	}
 
-			// Delete old collisions
-			updateCollisions();	
 		}
 	}
 }
