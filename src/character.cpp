@@ -46,17 +46,10 @@ void Character::setCharacter(std::string p_character)
 	animationSet[p_character].playBackSpeed = 1.f;
 	character = p_character;
 
-	std::cout << "p_char" << p_character << std::endl;
-	
-	
-	std::cout << "char" << character << std::endl;
-
 }
 
 void Character::animate(const float& p_dt)
 {	
-
- 	std::cout << "char" << character << std::endl;
 
 	play(animationSet[character]);
 	

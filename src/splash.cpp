@@ -16,7 +16,6 @@ alphaLifeTime(100.f)
 
 void Splash::update(const float& p_dt)
 {
-	std::cout << fAlpha << std::endl;
 	if (fAlpha >254)
 		alphaDelta = -90.f;
 
