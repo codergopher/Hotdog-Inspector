@@ -747,7 +747,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		{
 	    	timer = 0.0f;
 	    	{
-	    		//audioManager->play("hit");
+	    		audioManager.play("hit");
 	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
 	        	dawgs++;
 	        	texts.front().setText(std::to_string(dawgs));
@@ -755,5 +755,4 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 
 		}
 	}
-
 }
