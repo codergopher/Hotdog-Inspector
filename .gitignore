@@ -86,3 +86,5 @@ build.bat
 CMakeFiles/3.17.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
 CMakeFiles/Progress/26
 CMakeFiles/Progress/10
+src/game.cpp
+CMakeFiles/Progress/9

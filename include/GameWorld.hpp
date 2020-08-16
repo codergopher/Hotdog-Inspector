@@ -3,7 +3,6 @@
 #include <vector>
 #include <map>
 #include <set>
-#include "RenderWindow.hpp"
 #include <memory>
 
 #include "Sprite.hpp"
@@ -52,8 +51,6 @@ public:
     dawgs(0)
 	{}
 	GameWorld(Controls* p_controls);
-
-	void setWindow(RenderWindow* p_window);
 
 	// Create the clickable structs
 	void createClickableData(std::map<std::string, SDL_Texture*> p_textures);
@@ -104,7 +101,6 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
-	RenderWindow* window;
 	bool menu;
 
 	 //for moving clickables

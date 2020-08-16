@@ -17,6 +17,8 @@
 
 #include "Controls.hpp"
 
+SDL_Renderer* gRenderer;
+
 bool quit = false;
 
 bool kBox2DScale = 30.f;

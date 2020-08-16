@@ -13,8 +13,6 @@ world(&controls)
 	SDL_ShowCursor(SDL_DISABLE);
 
 	loadTextures();
-	
-	world.setWindow(nullptr);
 	loadWorld();
 
 }
@@ -315,22 +313,22 @@ void Game::loadWorld()
 
 	TTF_Font* font = TTF_OpenFont("res/font.ttf", 4);
 	// Text 
-	{
-		SpriteCreateInfo createInfo = {};
-		createInfo.name = "Text";
-		createInfo.alpha = 255;
-		createInfo.color = Color(0, 0, 0);
-		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, 0);
-		createInfo.origin = Vector2f(36, 36);
-		createInfo.frameSize = Vector2i(72, 72);
-		createInfo.scale = Vector2f(1.0f, 1.0f);
-		createInfo.depth = 0;
-		createInfo.zoomModifier = 1.f;
+	// {
+	// 	SpriteCreateInfo createInfo = {};
+	// 	createInfo.name = "Text";
+	// 	createInfo.alpha = 255;
+	// 	createInfo.color = Color(0, 0, 0);
+	// 	createInfo.flip = SDL_FLIP_NONE;
+	// 	createInfo.pos = Vector2f(0, 0);
+	// 	createInfo.origin = Vector2f(36, 36);
+	// 	createInfo.frameSize = Vector2i(72, 72);
+	// 	createInfo.scale = Vector2f(1.0f, 1.0f);
+	// 	createInfo.depth = 0;
+	// 	createInfo.zoomModifier = 1.f;
 	
-		SDL_Color color = {255, 255, 255};
-		world.createText(createInfo, "Round 1", font, color, 8);	
-	}
+	// 	SDL_Color color = {255, 255, 255};
+	// 	world.createText(createInfo, "Round 1", font, color, 8);	
+	// }
 
 
 	// Menu
