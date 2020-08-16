@@ -36,11 +36,11 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 }
 
 GameWorld::GameWorld(Controls* p_controls)
-:
-controls(p_controls), 
+: 
 splashTime(100.f),
 splashCounter(0.0f),
 splashScreen(true),
+controls(p_controls),
 collisionFrames(2),
 timer(100.f),
 dawgs(0)
