@@ -17,14 +17,15 @@ alphaLifeTime(100.f)
 void Splash::update(const float& p_dt)
 {
 	std::cout << fAlpha << std::endl;
-	if (alpha >254)
+	if (fAlpha >254)
 		alphaDelta = -100.f;
 
 
 	fAlpha += alphaDelta * p_dt;
-	alpha = roundToInt(fAlpha);
-
-	if (alpha < 1)
+	color.r = roundToInt(fAlpha);
+	color.r = roundToInt(fAlpha);
+	color.r = roundToInt(fAlpha);
+	if (fAlpha < 1)
 	{
 		pleaseDelete = true;
 	}
