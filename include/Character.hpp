@@ -9,6 +9,7 @@
 class Character : public Sprite
 {
 public:
+	~Character();
 	Character();
 	Character(const SpriteCreateInfo& p_info, std::string p_character);
 
@@ -20,5 +21,6 @@ public:
 
 private:
 	std::string character;
+	std::string laracter;
 	std::map<std::string, AnimationCycle> animationSet;
 };
