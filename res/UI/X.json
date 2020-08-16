@@ -6,7 +6,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 7, "h": 7 },
     "sourceSize": { "w": 7, "h": 7 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "UI_X 1.ase",
@@ -15,7 +15,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 7, "h": 7 },
     "sourceSize": { "w": 7, "h": 7 },
-    "duration": 100
+    "duration": 0
    }
  ],
  "meta": {

@@ -65,7 +65,7 @@ void Hotdog::update(const float& p_dt)
 	if (doesAnimate)
 		animate(p_dt);
 
-	if (abs(lastTargetPos.x - pos.x) < 1.f && abs(lastTargetPos.y - pos.y) < 1.f)
+	if (abs(lastTargetPos.x - pos.x) < 4.f && abs(lastTargetPos.y - pos.y) < 4.f)
 		atLastTarget = true;
 	else
 		atLastTarget = false;

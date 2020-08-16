@@ -29,13 +29,18 @@ Uint8 Text::getSize()
 
 void Text::setText(std::string p_string)
 {
-	std::cout << "yueuerhghpeguebptg" << std::endl;
-	for (Uint8 i = 0; i < string.length(); i++)
+	for (auto& c : characters)
 	{
+<<<<<<< HEAD
 		std::string cur; 
 		cur += p_string.at(i);
 		//characters.at(i).setCharacter(cur);
 		characters.at(i).setCharacter("1");
+=======
+		// std::string cur; 
+		// cur += p_string.at(i);
+		//c.setCharacter("g");
+>>>>>>> ccf3993bae31fe14029b2f8be53286f50dc95dc2
 	}
 }
 
