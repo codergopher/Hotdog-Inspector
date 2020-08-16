@@ -68,3 +68,10 @@ CMakeFiles/Makefile.cmake
 *.obj
 *.obj
 CMakeFiles/Hotdog_Inspector.dir/src/gameworld.cpp.obj
+*.sh
+*.check_cache
+*.internal
+CMakeFiles/progress.marks
+Hotdog
+Hotdog Inspector.sublime-project
+Hotdog Inspector.sublime-workspace
