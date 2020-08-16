@@ -190,6 +190,55 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         clickables.push_back(createInfo);
     }
 
+
+
+   	//Eating rat
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Rat 0";
+
+        createInfo.tex = p_textures["Rat 0"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-33, -14);
+        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        // createInfo.doesAnimate = true;
+        // createInfo.animationSet = loadAnimationFile("res/clickable/rat.json");
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.interactsWithCursor = true;
+        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        clickables.push_back(createInfo);
+    }
+
+    //Rat 1
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Rat 1";
+
+        createInfo.tex = p_textures["Rat 1"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-33, -14);
+        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.interactsWithCursor = true;
+        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        clickables.push_back(createInfo);
+    }
+
 }
 
 // create the camera, pretty simple

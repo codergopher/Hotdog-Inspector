@@ -80,6 +80,14 @@ void Game::loadTextures()
     SDL_Texture* t13 = window->loadTexture("res/clickable/rotten.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Rotten 0", t13));
 
+    SDL_Texture* t14 = window->loadTexture("res/clickable/rat.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Rat 0", t14));
+
+
+	SDL_Texture* t15 = window->loadTexture("res/clickable/rat 2.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Rat 1", t15));
+
+
 }
 
 void Game::loadWorld()
