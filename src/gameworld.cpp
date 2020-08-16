@@ -749,28 +749,12 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		//Check for collisions
 		collisionTest();
 
-<<<<<<< HEAD
-	timer+= 0.01f;
-	if (timer > 1.f)
-	{
-    	timer = 0.0f;
-    	{
-    		audioManager.play("hit");
-        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
-        	dawgs++;
-        	texts.front().setText(std::to_string(dawgs));
-    	}
-		// Delete old collisions
-		updateCollisions();	
-	}
-}
-=======
 		timer+= 0.01f;
 		if (timer > 1.f)
 		{
 	    	timer = 0.0f;
 	    	{
-	    		//audioManager->play("hit");
+	    		audioManager.play("hit");
 	        	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
 	        	dawgs++;
 	        	texts.front().setText(std::to_string(dawgs));
@@ -780,5 +764,4 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			updateCollisions();	
 		}
 	}
->>>>>>> 423f124ef6a57a19863a55a91eac9e116677682e
 }
