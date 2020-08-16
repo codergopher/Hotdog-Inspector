@@ -93,6 +93,9 @@ void Game::loadTextures()
 
 	SDL_Texture* t17 = window->loadTexture("res/spash.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Splash 0", t17));
+
+	SDL_Texture* t18 = window->loadTexture("res/spash.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Splash 0", t17));
 }
 
 
