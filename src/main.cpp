@@ -56,6 +56,8 @@ int main(int argc, char* args[])
 		std::cout << "Failed to init SDL. ERROR : " << SDL_GetError() << std::endl;
 	if (!IMG_Init(IMG_INIT_PNG))
 		std::cout << "Failed to init SDL_image ERROR :" << IMG_GetError() << std::endl;
+	TTF_Init();
+
 	
 	// Window/renderer combo. 
 	RenderWindow window("HotDog Inspector v1.0 FPS:", gWinWidth, gWinHeight);

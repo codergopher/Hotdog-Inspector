@@ -4,7 +4,7 @@ Text::Text()
 {
 
 }
-Text::Text(const SpriteCreateInfo& p_info, const char* p_string, TTF_Font* p_font, SDL_Color p_color)
+Text::Text(const SpriteCreateInfo& p_info, const char* p_string, TTF_Font* p_font, SDL_Color* p_color)
 :Sprite(p_info)
 {
 	SDL_Surface* surfaceMessage = TTF_RenderText_Blended(p_font, p_string, p_olor);

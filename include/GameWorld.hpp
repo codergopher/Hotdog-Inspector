@@ -20,6 +20,7 @@
 #include "Splash.hpp"
 #include "AudioManager.hpp"
 #include "Menu.hpp"
+#include "Text.hpp"
 
 struct CollisionInfo
 {
@@ -65,6 +66,7 @@ public:
 	Furnace* createFurnace(SpriteCreateInfo& p_info, int p_drawOrder);
 	Conveyor* createConveyor(SpriteCreateInfo& p_info, int p_drawOrder);
 	Sprite* createSprite(SpriteCreateInfo& p_info, int p_drawOrder);
+	Text* createText(SpriteCreateInfo& p_info, const char* p_string, TTF_Font* p_font, SDL_Color p_color, int p_drawOrder);
 	Particle* createParticle(SpriteCreateInfo& p_info, int p_drawOrder);
 	Cursor* createCursor(SpriteCreateInfo& p_info, int p_drawOrder);
 	Splash* createSplash(SpriteCreateInfo& p_info, int p_drawOrder);
@@ -126,6 +128,7 @@ private:
 
 	Camera camera;
 	std::vector<Sprite*> sprites;
+	std::vector<Sprite*> texts;
 	std::vector<Particle*> particles;
 	std::vector<Hotdog*> hotdogs;
 
