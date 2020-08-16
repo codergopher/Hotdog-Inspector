@@ -7,6 +7,7 @@
 #include "Camera.hpp"
 #include "Particle.hpp"
 #include "Cursor.hpp"
+#include "Splash.hpp"
 
 extern int gWinWidth;
 extern int gWinHeight;
@@ -320,6 +321,17 @@ Cursor* GameWorld::createCursor(SpriteCreateInfo& p_info, int p_drawOrder)
 	return cursor;
 }
 
+Splash* GameWorld::createSplash(SpriteCreateInfo& p_info, int p_drawOrder)
+{
+	
+	Splash* s = new Splash(p_info);
+	splashScreens.push_back(s);
+
+	allSprites.insert(std::pair<int, Sprite*>(p_drawOrder, s));
+
+	return s;
+}
+
 Character* GameWorld::createCharacter(SpriteCreateInfo& p_info, std::string character, int p_drawOrder)
 {
 	Character c(p_info, character);
@@ -442,6 +454,20 @@ void GameWorld::deleteSprite(Sprite* sprite)
 		return;
 	}
 
+	Splash* splashTest = dynamic_cast<Splash*>(sprite);
+
+	if (splashTest)
+	{	
+		//std::cout << "Deleted " << conveyorTest->getName() << std::endl;
+
+		// Find the this conveyor from the conveyors, and remove it from the list
+		std::vector<Splash*>::iterator splashIndex = std::find(splashScreens.begin(), splashScreens.end(), splashTest);
+		splashScreens.erase(splashIndex);
+
+		delete splashTest;
+		return;
+	}
+
 	Hotdog* hotdogTest = dynamic_cast<Hotdog*>(sprite);
 
 	if (hotdogTest)
@@ -518,58 +544,67 @@ bool GameWorld::SpriteVsSprite(Sprite* p_a, Sprite* p_b)
 
 void GameWorld::collisionTest()
 {
-	std::multimap<int, Sprite*>::iterator first = allSprites.begin();
-	std::multimap<int, Sprite*>::iterator last = allSprites.end();
-
-	for (auto a = first; a != last; ++a)
+	// if (splashCounter < splashTime)
+	// {
+	// 	splash.update();
+	// }
+	if (1)
 	{
-		for (auto b = std::next(a, 1); b != last; ++b)
-		{	
-			Sprite* x = a->second;
-			Sprite* y = b->second;
-			if (&x == &y)
-			{
-				continue;
-			}
+		std::multimap<int, Sprite*>::iterator first = allSprites.begin();
+		std::multimap<int, Sprite*>::iterator last = allSprites.end();
 
-			if (x->isClickable() != true)
-			{
-				continue;
-			}
-
-			if (y->isClickable() != true)
-			{
-				continue;
-			}
-
-			if (SpriteVsSprite(x, y))
-			{
-				CollisionInfo collision = {x, y};
-
-				collision.freshCollision = true;
-				collision.framesLeft = collisionFrames;
-
-				bool duplicate = false;
-				for (CollisionInfo& otherCollision : allCollisions)
+		for (auto a = first; a != last; ++a)
+		{
+			for (auto b = std::next(a, 1); b != last; ++b)
+			{	
+				Sprite* x = a->second;
+				Sprite* y = b->second;
+				if (&x == &y)
 				{
-					if (collision == otherCollision)
+					continue;
+				}
+
+				if (x->isClickable() != true)
+				{
+					continue;
+				}
+
+				if (y->isClickable() != true)
+				{
+					continue;
+				}
+
+				if (SpriteVsSprite(x, y))
+				{
+					CollisionInfo collision = {x, y};
+
+					collision.freshCollision = true;
+					collision.framesLeft = collisionFrames;
+
+					bool duplicate = false;
+					for (CollisionInfo& otherCollision : allCollisions)
 					{
-						duplicate = true;
-						otherCollision.freshCollision = false;
-						otherCollision.framesLeft = collisionFrames;
+						if (collision == otherCollision)
+						{
+							duplicate = true;
+							otherCollision.freshCollision = false;
+							otherCollision.framesLeft = collisionFrames;
 
+						}
 					}
-				}
-				if (!duplicate) 
-				{
-					allCollisions.push_back(collision);
-				}
+					if (!duplicate) 
+					{
+						allCollisions.push_back(collision);
+					}
 
 
-				resolveCollision(x, y);
+					resolveCollision(x, y);
+				}
 			}
-		}
+		}	
 	}
+
+
 }
 
 void GameWorld::resolveCollision(Sprite* p_a, Sprite* p_b)
