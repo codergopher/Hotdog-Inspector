@@ -88,6 +88,10 @@ void Game::loadTextures()
     textures.insert(std::pair<std::string, SDL_Texture*>("Rat 1", t15));
 
 
+	SDL_Texture* t16 = window->loadTexture("res/furnace_0.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Furnace 0", t16));
+
+
 }
 
 void Game::loadWorld()
@@ -195,28 +199,28 @@ void Game::loadWorld()
 	    world.createCrate(createInfo, 1);
 	}
 
-	// The crate
+	// The furnace
 	{
 		SpriteCreateInfo createInfo = {};
 		createInfo.name = "Furnace";
-		createInfo.tex = textures["Crate 0"];
+		createInfo.tex = textures["Furnace 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(40, -16);
+		createInfo.pos = Vector2f(32, -7);
 		createInfo.angle = 0.0f;
-		createInfo.origin = Vector2f(14, 4);
-		createInfo.frameSize = Vector2i(28, 21);
+		createInfo.origin = Vector2f(7.5f, 13);
+		createInfo.frameSize = Vector2i(15, 35);
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
 
 		// it animates (well not yet but maybe eventually)
-		createInfo.doesAnimate = false;
-		//createInfo.animationSet = loadAnimationFile("");
+		createInfo.doesAnimate = true;
+		createInfo.animationSet = loadAnimationFile("res/furnace_0.json");
 		// it's a clickable
 		//createInfo.clickable = true;
 		createInfo.clickable = true;
-		createInfo.halfBounds = Vector2f(11.f, 4.5f);
+		createInfo.halfBounds = Vector2f(7.5f, 13.f);
 
 	    world.createFurnace(createInfo, 7);
 	}
@@ -229,7 +233,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, -11);
+		createInfo.pos = Vector2f(-6, -11);
 		createInfo.angle = 0.0f;
 		createInfo.origin = Vector2f(31, 12);
 		createInfo.frameSize = Vector2i(62, 38);

@@ -17,10 +17,10 @@ Furnace::Furnace(const SpriteCreateInfo& p_info)
 
 void Furnace::update(const float& p_dt)
 {
-	//animate(p_dt);
+	animate(p_dt);
 }
 
-/*void Furnace::animate(const float& p_dt)
+void Furnace::animate(const float& p_dt)
 {
-	
-}*/
+	play(animationSet["main"]);
+}

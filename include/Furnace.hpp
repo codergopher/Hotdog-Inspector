@@ -14,7 +14,7 @@ public:
 	//void onCollisionBegin(Sprite* p_sprite) override;
 	//void duringCollision(Sprite* p_sprite) override;
 
-	//void animate(const float& p_dt);
+	void animate(const float& p_dt);
 private:
 	//std::map<std::string, AnimationCycle> animationSet;
 };
