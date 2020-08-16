@@ -101,7 +101,10 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
-	float hotdogThreshold;
+
+	int levelAt;
+	float levels[10];
+	float levelDelta;
 	bool menu;
 
 
