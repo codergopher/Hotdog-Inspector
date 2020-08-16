@@ -715,9 +715,8 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		}
 
 	}
-	else
+	else if(splashScreens.size() == 0)
 	{
-		std::cout << "haha" << std::endl;
 			// Iterate through all of the sprites and update them
 		// NOTE: Should have an Entity class and then only update Entities
 		for (std::multimap<int, Sprite*>::iterator i = allSprites.begin(); i != allSprites.end(); ++i)

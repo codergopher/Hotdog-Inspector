@@ -46,7 +46,9 @@ public:
 	GameWorld()
 	:splashTime(100.f),
 	splashCounter(0.0f),
-    splashScreen(true)
+    splashScreen(true),
+    timer(100.f),
+    dawgs(0.0f)
 	{}
 	GameWorld(Controls* p_controls);
 
@@ -141,7 +143,7 @@ private:
 
 	    //for spawning clickables
 	std::vector<SpriteCreateInfo> clickables;
-    float timer = 100;
+    float timer;
 	
     int dawgs;
 
