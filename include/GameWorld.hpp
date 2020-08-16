@@ -56,7 +56,7 @@ public:
 	// Create a camera
 	Camera* createCamera(Vector2f p_pos, Vector2f p_size);
 	// Create audio manager
-	AudioManager* createAudioManager();
+	//AudioManager* createAudioManager();
 
 	// Create ______ (fill in the blank). The p_drawOrder specifies the layering of the 
 	// renderer. A higher p_drawOrder will result in being draw on top of lower p_drawOrder
@@ -109,7 +109,7 @@ private:
 
 	std::vector<Splash*> splashScreens;
 	// audio manager
-	AudioManager* audioManager;
+	// AudioManager audioManager;
 
 	// Ptr to the controls
 	Controls* controls;
