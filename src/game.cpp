@@ -326,7 +326,8 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createText(createInfo, "Round 1", font, createInfo.color);	
+		SDL_Color color = {255, 255, 255};
+		world.createText(createInfo, "Round 1", font, color, 8);	
 	}
 
 
