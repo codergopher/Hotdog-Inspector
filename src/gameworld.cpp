@@ -66,7 +66,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Hotdog 0"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -87,7 +87,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Hotdog 1"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -109,7 +109,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Finger"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(5.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -131,7 +131,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Radioactive Hotdog"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(5.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -155,7 +155,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Pig Foot"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);
@@ -176,7 +176,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.tex = p_textures["Rotten 0"];
         createInfo.alpha = 255;
         createInfo.flip = SDL_FLIP_NONE;
-        createInfo.pos = Vector2f(-33, -14);
+        createInfo.pos = Vector2f(-33, -11);
         createInfo.origin = Vector2f(6.f, 12.5f);
         createInfo.frameSize = Vector2i(12, 25);
         createInfo.scale = Vector2f(1.0f, 1.0f);

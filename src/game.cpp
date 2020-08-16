@@ -184,7 +184,7 @@ void Game::loadWorld()
 		createInfo.clickable = true;
 		createInfo.halfBounds = Vector2f(11.f, 4.5f);
 
-	    world.createCrate(createInfo, 0);
+	    world.createCrate(createInfo, 1);
 	}
 
 	// The crate
@@ -221,7 +221,7 @@ void Game::loadWorld()
 		createInfo.tex = textures["Conveyor 0"];
 		createInfo.alpha = 255;
 		createInfo.flip = SDL_FLIP_NONE;
-		createInfo.pos = Vector2f(0, -14);
+		createInfo.pos = Vector2f(0, -11);
 		createInfo.angle = 0.0f;
 		createInfo.origin = Vector2f(31, 12);
 		createInfo.frameSize = Vector2i(62, 38);
@@ -248,13 +248,13 @@ void Game::loadWorld()
 	 	createInfo.alpha = 255;
 	 	createInfo.color = Color(255, 255, 255);
 	 	createInfo.flip = SDL_FLIP_NONE;
-	 	createInfo.pos = Vector2f(-28, -16);
+	 	createInfo.pos = Vector2f(-28, -28);
 	 	createInfo.origin = Vector2f(0, 0);
 	 	createInfo.frameSize = Vector2i(4, 5);
 	 	createInfo.scale = Vector2f(1.0f, 1.0f);
 	 	createInfo.depth = 0;
 	 	createInfo.zoomModifier = 1.f;
-	 	world.createText(createInfo, "001234", 10);	
+	 	world.createText(createInfo, "00000", 10);	
 	 	//world.createCharacter(createInfo, "e", 8);
 	 }
 
