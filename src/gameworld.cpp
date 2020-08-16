@@ -254,11 +254,11 @@ Camera* GameWorld::createCamera(Vector2f p_pos, Vector2f p_size)
 }
 
 // create audio manager
-AudioManager* GameWorld::createAudioManager()
+/*AudioManager* GameWorld::createAudioManager()
 {
-	audioManager = new AudioManager();
-	return audioManager;
-}
+	audioManager = AudioManager();
+	return &audioManager;
+}*/
 
 // p_drawOrder is the drawing heiarchy
 Crate* GameWorld::createCrate(SpriteCreateInfo& p_info, int p_drawOrder)
@@ -684,6 +684,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
+    		//audioManager->play("hit");
         	createHotdog(clickables.at(rand() % 8), lifeCounters.front(), 9);
         	dawgs++;
         	texts.front().setText(std::to_string(dawgs));

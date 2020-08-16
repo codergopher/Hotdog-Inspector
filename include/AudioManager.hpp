@@ -5,7 +5,7 @@ class AudioManager
 {
 public:
 	AudioManager();
-	void Play(const char* p_clip);
+	void play(const char* p_clip);
 private:
 	std::map<const char*, Mix_Chunk*> clips;
 };
