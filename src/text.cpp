@@ -34,6 +34,7 @@ void Text::setText(std::string p_string)
 	{
 		std::string cur; 
 		cur += p_string.at(i);
+		//characters.at(i).setCharacter(cur);
 		characters.at(i).setCharacter("1");
 	}
 }
