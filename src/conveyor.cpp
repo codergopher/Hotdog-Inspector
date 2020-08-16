@@ -16,7 +16,8 @@ speed(0.1f, 0.0f)
 
 void Conveyor::update(const float& p_dt)
 {
-
+	speed.x += 0.001f;
+	animationSet["Conveyor"].playBackSpeed += 0.001f;
 	animate(p_dt);
 }
 
