@@ -6,7 +6,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 1.ase",
@@ -15,7 +15,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 2.ase",
@@ -24,7 +24,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 3.ase",
@@ -33,7 +33,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 4.ase",
@@ -42,7 +42,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 5.ase",
@@ -51,7 +51,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 6.ase",
@@ -60,7 +60,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 7.ase",
@@ -69,7 +69,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 8.ase",
@@ -78,7 +78,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 9.ase",
@@ -87,7 +87,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 10.ase",
@@ -96,7 +96,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 11.ase",
@@ -105,7 +105,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 12.ase",
@@ -114,7 +114,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 13.ase",
@@ -123,7 +123,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 14.ase",
@@ -132,7 +132,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 15.ase",
@@ -141,7 +141,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 16.ase",
@@ -150,7 +150,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 17.ase",
@@ -159,7 +159,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 18.ase",
@@ -168,7 +168,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 19.ase",
@@ -177,7 +177,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 20.ase",
@@ -186,7 +186,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 21.ase",
@@ -195,7 +195,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 22.ase",
@@ -204,7 +204,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 23.ase",
@@ -213,7 +213,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 24.ase",
@@ -222,16 +222,16 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 25.ase",
-    "frame": { "x": 100, "y": 0, "w": 4, "h": 5 },
+    "frame": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 26.ase",
@@ -240,7 +240,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 27.ase",
@@ -249,7 +249,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 28.ase",
@@ -258,7 +258,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 29.ase",
@@ -267,7 +267,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 30.ase",
@@ -276,7 +276,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 31.ase",
@@ -285,7 +285,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 32.ase",
@@ -294,7 +294,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 33.ase",
@@ -303,7 +303,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 34.ase",
@@ -312,7 +312,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 35.ase",
@@ -321,7 +321,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 36.ase",
@@ -330,7 +330,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 37.ase",
@@ -339,7 +339,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 38.ase",
@@ -348,7 +348,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 39.ase",
@@ -357,7 +357,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    },
    {
     "filename": "font 40.ase",
@@ -366,7 +366,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 4, "h": 5 },
     "sourceSize": { "w": 4, "h": 5 },
-    "duration": 100
+    "duration": 0
    }
  ],
  "meta": {

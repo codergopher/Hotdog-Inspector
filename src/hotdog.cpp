@@ -130,10 +130,10 @@ void Hotdog::duringCollision(Sprite* p_sprite)
 		isDying = true;
 		clickable = false;
 		targetPos = &p_sprite->getPos();
-		// if (!lifeCounter->removeLife())
-		// {
-		// 	quit = true;
-		// }
+		if (!lifeCounter->removeLife())
+		{
+			quit = true;
+		}
 		targetPos = &p_sprite->getPos();
 	}
 }

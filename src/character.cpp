@@ -25,7 +25,7 @@ Character::Character(const SpriteCreateInfo& p_info, std::string p_character)
 	// Load a set of Animation Cycles from a file
 	animationSet = loadAnimationFile("res/font.json");
 	// Set the playback speed of the main animation
-	animationSet[character].playBackSpeed = 1.f;
+	//animationSet[character].playBackSpeed = 1.f;
 }
 
 void Character::update(const float& p_dt)
@@ -38,20 +38,15 @@ void Character::update(const float& p_dt)
 
 void Character::setCharacter(std::string p_character)
 {
-	std::cout << "p_char" << p_character << std::endl;
+	character = p_character;
+
+	std::cout << "char at setCharacter" << character << std::endl;
 	
-	character = "4";
-	
-	if (character == "7")
-	{
-		std::cout << "char" << character << std::endl;
-	}
-	//
 }
 
 void Character::animate(const float& p_dt)
 {	
-	std::cout << "char" << character << std::endl;
-
-	play(animationSet[character]);
+	std::cout << "char at animate" << character << std::endl;
+	//character = "4";
+	play(animationSet["2"]);
 }

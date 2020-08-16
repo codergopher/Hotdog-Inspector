@@ -33,7 +33,7 @@ void Text::setText(std::string p_string)
 	{
 		// std::string cur; 
 		// cur += p_string.at(i);
-		//c.setCharacter("g");
+		c.setCharacter("3");
 	}
 }
 
