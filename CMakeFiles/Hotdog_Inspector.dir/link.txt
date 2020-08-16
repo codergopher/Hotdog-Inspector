@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Hotdog_Inspector.dir/objects.a
-C:\mingw64\bin\ar.exe cr CMakeFiles\Hotdog_Inspector.dir/objects.a @CMakeFiles\Hotdog_Inspector.dir\objects1.rsp
-C:\mingw64\bin\g++.exe  -std=c++17 -m64 -g -Wall -I include -I C:/SDL2-w64/include -L C:/SDL2-w64/lib   -Wl,--whole-archive CMakeFiles\Hotdog_Inspector.dir/objects.a -Wl,--no-whole-archive  -o Hotdog_Inspector.exe -Wl,--out-implib,libHotdog_Inspector.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Hotdog_Inspector.dir\linklibs.rsp
