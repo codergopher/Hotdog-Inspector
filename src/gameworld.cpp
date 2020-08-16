@@ -168,6 +168,28 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.halfBounds = Vector2f(2.5f, 8.5f);
         clickables.push_back(createInfo);
     }
+   	//Rotten
+	{
+		SpriteCreateInfo createInfo = {};
+        createInfo.name = "Rotten";
+
+        createInfo.tex = p_textures["Rotten 0"];
+        createInfo.alpha = 255;
+        createInfo.flip = SDL_FLIP_NONE;
+        createInfo.pos = Vector2f(-33, -14);
+        createInfo.origin = Vector2f(6.f, 12.5f);
+        createInfo.frameSize = Vector2i(12, 25);
+        createInfo.scale = Vector2f(1.0f, 1.0f);
+        createInfo.depth = 0;
+        createInfo.zoomModifier = 1.f;
+
+        //It's a clickable!
+        createInfo.clickable = true;
+        createInfo.interactsWithCursor = true;
+        createInfo.halfBounds = Vector2f(2.5f, 8.5f);
+        clickables.push_back(createInfo);
+    }
+
 }
 
 // create the camera, pretty simple
@@ -606,7 +628,7 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 	{
     	timer = 0.0f;
     	{
-        	createHotdog(clickables.at(rand() % 5), lifeCounters.front(), 9);
+        	createHotdog(clickables.at(rand() % 6), lifeCounters.front(), 9);
         	dawgs++;
     	}
 	}

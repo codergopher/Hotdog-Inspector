@@ -77,6 +77,9 @@ void Game::loadTextures()
     SDL_Texture* t12 = window->loadTexture("res/clickable/pig_foot.png");
     textures.insert(std::pair<std::string, SDL_Texture*>("Pig Foot", t12));
 
+    SDL_Texture* t13 = window->loadTexture("res/clickable/rotten.png");
+    textures.insert(std::pair<std::string, SDL_Texture*>("Rotten 0", t13));
+
 }
 
 void Game::loadWorld()
