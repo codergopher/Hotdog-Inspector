@@ -38,6 +38,7 @@ bool operator ==(CollisionInfo& p_a, CollisionInfo& p_b)
 
 GameWorld::GameWorld(Controls* p_controls)
 : 
+hotdogThreshold(50.f),
 menu(true),
 splashTime(100.f),
 splashCounter(0.0f),
@@ -788,8 +789,9 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 		// Delete old collisions
 		updateCollisions();	
 
-		timer+= 0.01f;
-		if (timer > 1.f)
+		hotdogThreshold -= 0.01f;
+		timer+= 0.1f;
+		if (timer > hotdogThreshold)
 		{
 	    	timer = 0.0f;
 	    	{

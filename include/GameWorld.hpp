@@ -101,10 +101,9 @@ public:
 	// Move everything forward in time, by a set amount(dt)
 	void update(const double& dt, std::map<std::string, SDL_Texture*> textures);
 private:
+	float hotdogThreshold;
 	bool menu;
 
-	 //for moving clickables
-    float moveSpeed = .1f;
 
     float splashTime;
     float splashCounter;

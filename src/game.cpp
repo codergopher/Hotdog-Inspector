@@ -291,7 +291,7 @@ void Game::loadWorld()
 		createInfo.scale = Vector2f(1.0f, 1.0f);
 		createInfo.depth = 0;
 		createInfo.zoomModifier = 1.f;
-		world.createSprite(createInfo, 10);	
+		world.createSprite(createInfo, 100);	
 	}
 
 	// Splash
