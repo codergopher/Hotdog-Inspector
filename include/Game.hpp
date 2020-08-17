@@ -17,6 +17,7 @@ extern bool quit;
 class Game
 {
 public:
+	Game(){}
 	Game(RenderWindow* p_window);
 	~Game();
 	GameWorld& getWorld()

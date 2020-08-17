@@ -13,6 +13,7 @@ class RenderWindow
 {
 public:
 	// Constructor. Takes a title, and size of window
+	RenderWindow(){}
 	RenderWindow(const char* p_title, int p_w, int p_h);
 
 	// Load a SDL_Texture

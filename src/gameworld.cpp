@@ -809,7 +809,6 @@ void GameWorld::update(const double& dt, std::map<std::string, SDL_Texture*> p_t
 			levelAt++;
 			levelDelta = 0.0f;
 		}
-		std::cout << levelAt << std::endl;
 		timer+= 0.3f;
 		if (timer > levels[levelAt])
 		{

@@ -50,46 +50,31 @@ double hireTimeInSeconds()
 	return t;
 }
 
-int main(int argc, char* args[])
-{	
-	// Seed the random funtion, so that
-	// we can get truly random numbers
-	srand((unsigned)time(0));
+// Time stepping
 
+// Dt is deltaTime. This is the amount of times we update our game per second
+static const double dt = 0.01f; // 100 updates per second
 
-	// Initialise SDL and SDL_image
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-		std::cout << "Failed to init SDL. ERROR : " << SDL_GetError() << std::endl;
-	if (!IMG_Init(IMG_INIT_PNG))
-		std::cout << "Failed to init SDL_image ERROR :" << IMG_GetError() << std::endl;
-	TTF_Init();
+// The accumulater allows us to have smooth rendering.
+// Since our game runs at a set amout of updates per seconds,
+// we want to be able to render between updates
+static double accumulator = 0.0f;
+static double currentTime = hireTimeInSeconds();
 
-	
-	// Window/renderer combo. 
-	RenderWindow window("HotDog Inspector v1.0 FPS:", gWinWidth, gWinHeight);
+static double oneSecond = 0;
+static int framesRenderedInOneSecond = 0;
 
-	// The game icon(see the taskbar when you run the game)
-	SDL_Surface* icon = window.loadSurface("res/idea_1.png");
-	window.setIcon(icon);
+RenderWindow window;
+Game* game;
 
-	// The game
-	Game game(&window);
-	
+void init()
+{
+	window = RenderWindow("HotDog Inspector v1.0 FPS:", gWinWidth, gWinHeight);
+	game = new Game(&window);
+}
 
-	// Time stepping
-
-	// Dt is deltaTime. This is the amount of times we update our game per second
-	const double dt = 0.01f; // 100 updates per second
-
-	// The accumulater allows us to have smooth rendering.
-	// Since our game runs at a set amout of updates per seconds,
-	// we want to be able to render between updates
-	double accumulator = 0.0f;
-	double currentTime = hireTimeInSeconds();
-
-	double oneSecond = 0;
-	int framesRenderedInOneSecond = 0;
-
+void mainLoop()
+{
 	while(!quit)
 	{
 		double newTime = hireTimeInSeconds();
@@ -114,7 +99,7 @@ int main(int argc, char* args[])
 
 
 
-			game.mainLoop(dt);
+			game->mainLoop(dt);
 
 
 			accumulator -= dt;
@@ -138,7 +123,7 @@ int main(int argc, char* args[])
 		window.clear();
 
 		// Render the game
-		window.render(game.getWorld(), alpha);
+		window.render(game->getWorld(), alpha);
 
 		// Draw what we have rendered to the screen
 		window.display();
@@ -147,6 +132,34 @@ int main(int argc, char* args[])
 		// Now 1 frame has passed, so we increment the amount of frames rendered in 1 second
 		framesRenderedInOneSecond++;
 	}
+}
+
+int main(int argc, char* args[])
+{	
+	// Seed the random funtion, so that
+	// we can get truly random numbers
+	srand((unsigned)time(0));
+
+
+	// Initialise SDL and SDL_image
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		std::cout << "Failed to init SDL. ERROR : " << SDL_GetError() << std::endl;
+	if (!IMG_Init(IMG_INIT_PNG))
+		std::cout << "Failed to init SDL_image ERROR :" << IMG_GetError() << std::endl;
+	TTF_Init();
+
+	init();	
+	// Window/renderer combo. 
+	
+
+	// The game icon(see the taskbar when you run the game)
+	SDL_Surface* icon = window.loadSurface("res/idea_1.png");
+	window.setIcon(icon);
+
+	
+	// the main loop
+	mainLoop();
+
 
 	window.cleanup();
 	
