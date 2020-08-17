@@ -1,0 +1,86 @@
+{ "frames": [
+   {
+    "filename": "furnace_0 0.ase",
+    "frame": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 1.ase",
+    "frame": { "x": 15, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 2.ase",
+    "frame": { "x": 30, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 3.ase",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 4.ase",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 5.ase",
+    "frame": { "x": 75, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 6.ase",
+    "frame": { "x": 90, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   },
+   {
+    "filename": "furnace_0 7.ase",
+    "frame": { "x": 105, "y": 0, "w": 15, "h": 35 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 15, "h": 35 },
+    "sourceSize": { "w": 15, "h": 35 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.0-dev",
+  "image": "/home/martin/Documents/GitHub/Hotdog-Inspector/res/furnace_0.png",
+  "format": "RGBA8888",
+  "size": { "w": 120, "h": 35 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "main", "from": 0, "to": 7, "direction": "forward" }
+  ]
+ }
+}
