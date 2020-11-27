@@ -29,6 +29,7 @@ public:
 	void loadWorld();
 	void mainLoop(const float& p_dt);
 	bool shouldQuit();
+	bool isUserExitReq();
 private:
 	// The controls is currently the state of the mouse
 	// I am considering placing the controls in the main loop in main.cpp,

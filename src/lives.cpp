@@ -5,7 +5,7 @@ Lives::Lives(const SpriteCreateInfo& p_info, Uint8 p_lives)
 spacing(8)
 {
 	// Load a set of Animation Cycles from a file
-	animationSet = loadAnimationFile("res/UI/X.json");
+	animationSet = loadAnimationFile("romfs:/UI/X.json");
 	for (Uint8 i = 0; i < lives; i++)
 	{
 			SpriteCreateInfo tempInfo = p_info;

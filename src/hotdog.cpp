@@ -41,7 +41,7 @@ void Hotdog::update(const float& p_dt)
 		}
 		else
 		{
-			pleaseDelete = true;
+			//pleaseDelete = true;
 		}
 	}
 

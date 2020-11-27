@@ -1,5 +1,7 @@
 #pragma once
 
+#include <switch.h>
+
 #include <SDL2/SDL.h>
 #include "Math.hpp"
 #include "Camera.hpp"
@@ -25,6 +27,7 @@ public:
 	bool isLeftClick();
 	bool isRightClick();
 	bool isMiddleClick();
+	bool isExitButtonClick();
 
 	void update(SDL_Event* p_event);
 	void printState();
@@ -36,6 +39,7 @@ private:
 	bool leftClick;
 	bool rightClick;
 	bool middleClick;
+	bool quit = false;
 
 	// Amount of scrolling done in a set amout of time
 	int mouseWheelDelta;

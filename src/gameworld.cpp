@@ -161,7 +161,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.zoomModifier = 1.f;
 
         createInfo.doesAnimate = true;
-        createInfo.animationSet = loadAnimationFile("res/clickable/radioactive.json");
+        createInfo.animationSet = loadAnimationFile("romfs:/clickable/radioactive.json");
 
         //It's a clickable!
         createInfo.clickable = true;
@@ -230,7 +230,7 @@ void GameWorld::createClickableData(std::map<std::string, SDL_Texture*> p_textur
         createInfo.zoomModifier = 1.f;
 
         createInfo.doesAnimate = true;
-        createInfo.animationSet = loadAnimationFile("res/clickable/rat.json");
+        createInfo.animationSet = loadAnimationFile("romfs:/clickable/rat.json");
 
         //It's a clickable!
         createInfo.clickable = true;

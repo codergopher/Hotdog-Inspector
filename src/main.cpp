@@ -3,6 +3,8 @@
 #include <emscripten/html5.h>
 #endif
 
+#include <switch.h>
+
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -75,7 +77,7 @@ void init()
 
 void mainLoop()
 {
-	while(!quit)
+	while(!quit && ! game->isUserExitReq())
 	{
 		double newTime = hireTimeInSeconds();
 		double frameTime = newTime - currentTime;
@@ -132,6 +134,7 @@ void mainLoop()
 
 int main(int argc, char* args[])
 {	
+	romfsInit();
 	// Seed the random funtion, so that
 	// we can get truly random numbers
 	srand((unsigned)time(0));
@@ -146,11 +149,6 @@ int main(int argc, char* args[])
 
 	init();	
 	// Window/renderer combo. 
-	
-
-	// The game icon(see the taskbar when you run the game)
-	SDL_Surface* icon = window.loadSurface("res/idea_1.png");
-	window.setIcon(icon);
 
 	
 	// the main loop

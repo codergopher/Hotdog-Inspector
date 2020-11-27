@@ -33,86 +33,54 @@ bool Controls::isMiddleClick()
 	return middleClick;
 }
 
+bool Controls::isExitButtonClick(){
+	return quit;
+}
 
 void Controls::update(SDL_Event* p_event)
 {
-	//update the world mouse position
+	//Reset
+	leftClick = false;
+
+	//Update inputs
+	hidScanInput();
+	u32 kHeld = hidKeysHeld(CONTROLLER_P1_AUTO);
+	u32 touches = hidTouchCount();
+	touchPosition tp;
 
 	Vector2i mouseCoords;
 
-	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-	worldMousePos = toVector2f(mouseCoords);
+	mouseCoords = {0, 0};
 
+	
+	//Only single touch support
+	if (touches >= 1){
+		//Read only 'first' touch
+		hidTouchRead(&tp, 0);
+		mouseCoords = {tp.px, tp.py};
+		leftClick = true;
+
+		mouseCoords.x = tp.px;
+		mouseCoords.y = tp.py;
+	}
+
+	//update the world mouse position
+	worldMousePos = toVector2f(mouseCoords);
 
 	worldMousePos -= camera->getPos() + camera->getHalfSize();
 	worldMousePos /= camera->getZoom();
 
-	//update the screen mouse position
-
-	mouseCoords = {0, 0};
-
-	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-
+	//update screen space position
 	screenMousePos = toVector2f(mouseCoords);
 
+	if (kHeld & KEY_A){
+		leftClick = true;
+	}
+
+	if (kHeld & KEY_PLUS){
+		quit = true;
+	}
 
 	// Update the mouse buttons and the mouse wheel
 	mouseWheelDelta = 0;
-
-
-	if (p_event->type == SDL_MOUSEBUTTONDOWN)
-	{
-		switch (p_event->button.button)
-		{
-			case SDL_BUTTON_LEFT:
-				leftClick = true;
-				break;
-			case SDL_BUTTON_RIGHT:
-				rightClick = true;
-				break;
-			case SDL_BUTTON_MIDDLE:
-				middleClick = true;
-				break;
-		}
-	}
-	else if (p_event->type == SDL_MOUSEBUTTONUP)
-	{
-		switch (p_event->button.button)
-		{
-			case SDL_BUTTON_LEFT:
-				leftClick = false;
-				break;
-			case SDL_BUTTON_RIGHT:
-				rightClick = false;
-				break;
-			case SDL_BUTTON_MIDDLE:
-				middleClick = false;
-				break;
-		}	
-	}
-	else if (p_event->type == SDL_MOUSEWHEEL)
-	{
-		if (p_event->wheel.y != 0)
-			mouseWheelDelta += p_event->wheel.y;
-
-		else
-			mouseWheelDelta = 0;
-	}
-
-
-}
-
-// Nice little fucntion to pin the state of everything
-void Controls::printState()
-{
-	std::cout << "Mouse screen coords: ";
-	screenMousePos.print();
-	std::cout << std::endl;
-	std::cout << "Mouse world coords: ";
-	worldMousePos.print();
-
-	std::cout << "Left Mouse Button: " << leftClick << std::endl;
-	std::cout << "Right Mouse Mutton: " << rightClick << std::endl;
-	std::cout << "Middle Mouse Button: " << middleClick << std::endl;
-	std::cout << "Mouse wheel delta: " << mouseWheelDelta << std::endl; 
 }

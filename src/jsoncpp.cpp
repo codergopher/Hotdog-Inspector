@@ -2617,10 +2617,12 @@ char const* Exception::what() const noexcept { return msg_.c_str(); }
 RuntimeError::RuntimeError(String const& msg) : Exception(msg) {}
 LogicError::LogicError(String const& msg) : Exception(msg) {}
 JSONCPP_NORETURN void throwRuntimeError(String const& msg) {
-  throw RuntimeError(msg);
+  //throw RuntimeError(msg);
+  break;
 }
 JSONCPP_NORETURN void throwLogicError(String const& msg) {
-  throw LogicError(msg);
+  //throw LogicError(msg);
+  break;
 }
 #else // !JSON_USE_EXCEPTION
 JSONCPP_NORETURN void throwRuntimeError(String const& msg) {
